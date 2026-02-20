@@ -1,0 +1,3380 @@
+[
+  {
+    "id": "sait-software-development",
+    "name": "Software Development",
+    "institution": "SAIT",
+    "institutionId": "sait",
+    "description": "Two-year diploma focused on full-stack development, mobile applications, and database design. Hands-on training using industry-standard tools and frameworks with real-world projects.",
+    "credentials": "Diploma",
+    "duration": "2 years",
+    "tuition": {
+      "domestic": 8240,
+      "international": 19850,
+      "note": "per year, does not include textbooks or supplies"
+    },
+    "prerequisites": {
+      "domestic": [
+        "High school diploma or equivalent",
+        "English 30-1 or English 30-2 (50% minimum)",
+        "Math 30-1 or Math 30-2 or Pure Math 30 or Applied Math 30 (50% minimum)"
+      ],
+      "international": [
+        "High school diploma or international equivalent (12 years education)",
+        "English proficiency: IELTS 6.0 (no band below 5.5) OR TOEFL iBT 80",
+        "Math equivalency required",
+        "Credential evaluation may be required"
+      ]
+    },
+    "url": "https://www.sait.ca/programs-and-courses/diplomas/software-development",
+    "careerPaths": [
+      "Software Developer",
+      "Full-Stack Developer",
+      "Web Developer",
+      "Mobile App Developer",
+      "Junior Software Engineer"
+    ],
+    "skills": [
+      "Full-Stack Development",
+      "JavaScript/React",
+      "Database Design",
+      "Version Control (Git)",
+      "Agile Methodologies",
+      "API Development",
+      "Mobile Development"
+    ],
+    "nocCodes": [
+      "21232",
+      "21234"
+    ],
+    "additionalInfo": {
+      "startDates": [
+        "September"
+      ],
+      "deliveryMode": "On-campus",
+      "applicationDeadline": "Applications accepted on rolling basis",
+      "coopAvailable": false,
+      "practicum": "Capstone project in final semester"
+    }
+  },
+  {
+    "id": "sait-btech-software-development",
+    "name": "Bachelor of Technology - Software Development",
+    "institution": "SAIT",
+    "institutionId": "sait",
+    "description": "Two-year degree program( after diploma) designed to accelerate careers in full-stack development. Students design, develop and delpoy software solutions using recent technologies, advanced design patterns, algorithms and data structures. Builds on existing IT diploma with focus on programming, web development, database design, software testing, and security.",
+    "credentials": "Bachelor of Technology (BTech)",
+    "duration": "2 years (after completion of IT diploma)",
+    "tuition": {
+      "domestic": 12739,
+      "international": 22000,
+      "note": "per year, does not include textbooks or supplies"
+    },
+    "prerequisites": {
+      "note": "Non-direct entry degree. Requires completion of IT diploma before admission.",
+      "domestic": [
+        "SAIT Information Technology diploma OR equvalent from accredited institution",
+        "Minimum 2.3 cumulative GPA (67% or C+)",
+        "Eligible diplomas include: SAIT Software Development diploma, SAIT Information Technology - Software Development major",
+        "English language proficiency required"
+      ],
+      "international": [
+        "SAIT Information Technology diploma OR equvalent from accredited institution",
+        "Minimum 2.3 cumulative GPA (67% or C+)",
+        "English proficiency: IELTS 6.5 (no band below 5.5) OR TOEFL iBT 80",
+        "Credential evaluation may be required for non-SAIT diplomas"
+      ]
+    },
+    "url": "https://www.sait.ca/programs-and-courses/degrees/bachelor-of-technology-software-development",
+    "careerPaths": [
+      "Business Systems Specialists",
+      "Computer and Informaation Systems Manager",
+      "Computer Systems Developers and Programmers",
+      "Information Systems Specialists",
+      "Software Developers and Programmers",
+      "Web Designers",
+      "Web Developers and Programmers"
+    ],
+    "skills": [
+      "Programming",
+      "Web development",
+      "Database Design",
+      "Software Testing",
+      "Security and more"
+    ],
+    "nocCodes": [
+      "21232",
+      "21234",
+      "21233",
+      "21222",
+      "21230"
+    ],
+    "additionalInfo": {
+      "startDates": [
+        "September",
+        "January"
+      ],
+      "deliveryMode": "On-campus(Main Campus)",
+      "applicationDeadline": "June 30 (Fall, domestic), May 29 (Fall, international), October 23 (Winter, domestic), October 9 (Winter, international)",
+      "coopAvailable": true,
+      "programCredits": "60 credits (20 courses)",
+      "totalProgramLength": " 4 years total (2 years diploma + 2 years degree)",
+      "specialNotes": "Degree completion program for IT diploma graduates. Multiple start dates per year. Optional co-op workplacement available.",
+      "pathwayPrograms": "Accepts graduates from SAIT Software Development diploma and IT - Software Development major diploma",
+      "transferCreditsAvailable": true,
+      "transferNote": "Transfer agreements available with Alberta institutions. Visit https://transferalberta.alberta.ca/transfer-alberta-search/#/audienceTypeStep or see program page for details."
+    }
+  },
+  {
+    "id": "sait-accounting-certificate",
+    "name": "Accounting",
+    "institution": "SAIT",
+    "institutionId": "sait",
+    "description": "One-year certificate program equipping students with essential knowledge and skills for accounting, finance, and business management roles. Covers accounting fundamentals including financial statements, accounts receivable/payable, full-cycle accounting, and leveraging information technology. Culminates in work-integrated learning capstone project.",
+    "credentials": "Certificate",
+    "duration": "1 year",
+    "tuition": {
+      "domestic": 7699,
+      "international": 15000,
+      "note": "total program cost (can be completed over up to 5 years), does not include books and supplies"
+    },
+    "prerequisites": {
+      "domestic": [
+        "Math 30-1 or Math 30-2 (50% minimum)",
+        "English language proficiency required"
+      ],
+      "international": [
+        "High school diploma or international equivalent",
+        "English language proficiency: IELTS 6.0 (no band below 5.5) OR TOEFL iBT 80 (verify exact requirements)",
+        "Math equivalency to Alberta Math 30-1 or 30-2"
+      ]
+    },
+    "url": "https://www.sait.ca/programs-and-courses/certificates/accounting",
+    "careerPaths": [
+      "Bookkeeper",
+      "Accounting Clerk",
+      "Junior Accountant",
+      "Accounts Payable/Receivable Clerk",
+      "Financial Clerk"
+    ],
+    "skills": [
+      "Accounting Fundamentals",
+      "Financial Statement Preparation",
+      "Accounts Receivable/Payable Management",
+      "Full-Cycle Accounting",
+      "Journal Entries and Reconciliation",
+      "Fixed Assets and Depreciation",
+      "Information Technology for Accounting",
+      "Business Acumen",
+      "Ethical Standards in Accounting"
+    ],
+    "nocCodes": [
+      "13100",
+      "13102",
+      "13110",
+      "11100"
+    ],
+    "additionalInfo": {
+      "startDates": [
+        "May",
+        "September",
+        "January"
+      ],
+      "deliveryMode": "On-campus or Online",
+      "applicationDeadline": "Rolling admissions (April 30 for Spring, June 30 for Fall, October 23 for Winter)",
+      "programCredits": "30 credits (10 courses)",
+      "flexibleCompletion": "Up to 5 years to complete",
+      "specialNotes": "Small class sizes (max 40 students). Includes capstone work-integrated learning project. Can be completed part-time or full-time. Transfer pathway to SAIT diploma and degree programs."
+    }
+  },
+  {
+    "id": "sait-business-admin-accounting-diploma",
+    "name": "Business Administration - Accounting Major",
+    "institution": "SAIT",
+    "institutionId": "sait",
+    "description": "Two-year diploma building practical and fundamental accounting skills with focus on analyzing company financial performance. Students learn accounting principles in real business contexts, financial statement preparation, tax calculation, financial concepts application, and management information systems. Prepares students for Certified Public Accountant Advanced Certificate.",
+    "credentials": "Diploma",
+    "duration": "2 years",
+    "tuition": {
+      "domestic": 7699,
+      "international": 16500,
+      "note": "per year, does not include books and supplies"
+    },
+    "prerequisites": {
+      "domestic": [
+        "High school diploma",
+        "Math 30-1 or Math 30-2 (50% minimum)",
+        "English 30-1 (50% minimum) OR English 30-2 (60% minimum)"
+      ],
+      "international": [
+        "High school diploma or international equivalent (12 years education)",
+        "English language proficiency: IELTS 6.0 (no band below 5.5) OR TOEFL iBT 80 (verify exact requirements)",
+        "Math equivalency to Alberta Math 30-1 or 30-2",
+        "Credential evaluation may be required"
+      ]
+    },
+    "url": "https://www.sait.ca/programs-and-courses/diplomas/business-administration-accounting",
+    "careerPaths": [
+      "Accountant",
+      "Junior Accountant",
+      "Financial Analyst",
+      "Tax Preparer",
+      "Bookkeeper",
+      "Accounts Manager"
+    ],
+    "skills": [
+      "Accounting Principles",
+      "Financial Statement Preparation",
+      "Tax Calculation and Compliance",
+      "Financial Analysis",
+      "Management Information Systems",
+      "Business Finance Concepts",
+      "Ethical Standards in Accounting",
+      "Investment Evaluation"
+    ],
+    "nocCodes": [
+      "11100",
+      "11101",
+      "13100",
+      "13102"
+    ],
+    "additionalInfo": {
+      "startDates": [
+        "May",
+        "September",
+        "January"
+      ],
+      "deliveryMode": "On-campus or Online",
+      "applicationDeadline": "Rolling admissions (April 30 for Spring, June 30 for Fall, October 23 for Winter)",
+      "programCredits": "60 credits (20 courses)",
+      "specialNotes": "Students declare major before second year. CPA Advanced Certificate preparation included. Transfer agreements available - see https://www.transferalberta.ca. Can transfer to Athabasca University Bachelor of Management or Griffith University Bachelor of Commerce."
+    }
+  },
+  {
+    "id": "sait-bba-accounting",
+    "name": "Bachelor of Business Administration - Accounting Major",
+    "institution": "SAIT",
+    "institutionId": "sait",
+    "description": "Four-year business degree focused on measuring financial performance, advanced accounting topics, and quantitative skills. Includes courses required to enter the Chartered Professional Accountant (CPA) Professional Education Program. Blends management and financial accounting concepts with emphasis on ethics, financial reporting, tax regulations, and management information systems.",
+    "credentials": "Bachelor of Business Administration (BBA)",
+    "duration": "4 years",
+    "tuition": {
+      "domestic": 9049,
+      "international": 17500,
+      "note": "per year (2025/26 estimate), does not include books and supplies"
+    },
+    "prerequisites": {
+      "domestic": [
+        "High school diploma",
+        "English 30-1 (minimum 60%)",
+        "Math 30-1 (minimum 60%) OR Math 30-2 (minimum 70%)",
+        "Two courses from Group A (academics): Accounting, Biology, Business, Chemistry, Economics, Finance, Geography, History, IT, Languages, Marketing, Math 31, Philosophy, Physics, Political Science, Psychology, Science, Social Studies 30-1, Sociology",
+        "One additional course from Group A or Group B (Art, Drama, Music, PE, Religion, Social Studies 30-2)",
+        "Overall minimum average of 65%"
+      ],
+      "international": [
+        "High school diploma or international equivalent (12 years education)",
+        "English language proficiency: IELTS 6.5 (no band below 5.5) OR TOEFL iBT 86 (verify exact requirements)",
+        "Math equivalency to Alberta Math 30-1 or 30-2",
+        "Academic course equivalencies",
+        "Credential evaluation required"
+      ],
+      "alternativePathways": [
+        "SAIT Business Administration diploma with minimum 2.3 GPA (67%)",
+        "Two-year diploma or bachelor's degree with 2.3 GPA plus English 30-1 and Math 30-1/30-2 equivalents"
+      ]
+    },
+    "url": "https://www.sait.ca/programs-and-courses/degrees/bachelor-of-business-administration-accounting",
+    "careerPaths": [
+      "Accountant",
+      "Financial Analyst",
+      "Auditor",
+      "Tax Accountant",
+      "Management Accountant",
+      "CPA (with additional certification)"
+    ],
+    "skills": [
+      "Financial Accounting",
+      "Management Accounting",
+      "Tax Regulations",
+      "Financial Reporting",
+      "Audit and Assurance",
+      "Management Information Systems",
+      "Ethical Decision-Making",
+      "Financial Analysis"
+    ],
+    "nocCodes": [
+      "11100",
+      "11101",
+      "10010",
+      "13100"
+    ],
+    "additionalInfo": {
+      "startDates": [
+        "September"
+      ],
+      "deliveryMode": "On-campus (Main Campus)",
+      "applicationDeadline": "June 30 (domestic), May 29 (international)",
+      "coopAvailable": false,
+      "programCredits": "120 credits (39 courses total)",
+      "cpaCertification": "Includes courses required for CPA Professional Education Program",
+      "minorsAvailable": [
+        "Construction Project Management",
+        "Energy, Oil and Gas"
+      ],
+      "specialNotes": "First semester common for all majors. Students declare major in second semester through competitive screening process. Transfer agreements available with Lethbridge College, Portage College, Northwestern Polytechnic, Bow Valley College - see https://www.transferalberta.ca. Graduates can pursue MBA or MPAcc at University of Saskatchewan, Colorado State University, or Vancouver Island University."
+    }
+  },
+  {
+    "id": "sait-bsc-construction-project-management",
+    "name": "Bachelor of Science Construction Project Management",
+    "institution": "SAIT",
+    "institutionId": "sait",
+    "description": "Canada's only four-year undergraduate science degree in construction management. Blends practical skill sets with foundational and advanced concepts in construction technology and project management best practices. Curriculum aligns with residential, commercial, industrial, and infrastructure industry needs. Includes internship for real-world application and networking with industry leaders.",
+    "credentials": "Bachelor of Science (BSc)",
+    "duration": "4 years",
+    "tuition": {
+      "domestic": 9049,
+      "international": 19500,
+      "note": "per year (average), does not include books and supplies"
+    },
+    "prerequisites": {
+      "domestic": [
+        "High school diploma",
+        "English 30-1",
+        "Math 30-1",
+        "Two courses from Group A: Math 31, Biology 30, Chemistry 30, Physics 30, Science 30",
+        "One course from Group A or Group B (Art, Drama, Music, PE, Religion, Social Studies, Languages)",
+        "Overall minimum average of 70%"
+      ],
+      "international": [
+        "High school diploma or international equivalent (12 years education)",
+        "English language proficiency: IELTS 6.5 (no band below 5.5) OR TOEFL iBT 86 (verify exact requirements)",
+        "Math equivalency to Alberta Math 30-1",
+        "Science course equivalencies",
+        "Credential evaluation required"
+      ],
+      "alternativePathways": [
+        "Two-year diploma or bachelor's degree with 2.3 GPA (67%) plus English 30-1 and Math 30-1 or Math 30-2"
+      ]
+    },
+    "url": "https://www.sait.ca/programs-and-courses/degrees/bachelor-of-science-construction-project-management",
+    "careerPaths": [
+      "Construction Project Manager",
+      "Site Superintendent",
+      "Project Coordinator",
+      "Construction Manager",
+      "Estimator",
+      "Construction Scheduler"
+    ],
+    "skills": [
+      "Construction Project Management",
+      "Project Planning and Scheduling",
+      "Cost Estimation and Budgeting",
+      "Construction Technology",
+      "Soil Mechanics and Foundation Design",
+      "Building Codes and Regulations",
+      "Construction Materials and Methods",
+      "Critical Thinking and Problem-Solving",
+      "Leadership and Communication",
+      "Mathematical and Physical Science Applications"
+    ],
+    "nocCodes": [
+      "70010",
+      "22303",
+      "72012",
+      "72010",
+      "72011"
+    ],
+    "additionalInfo": {
+      "startDates": [
+        "May",
+        "September",
+        "January"
+      ],
+      "deliveryMode": "On-campus (Main Campus)",
+      "applicationDeadline": "April 30 (Spring), June 30 (Fall), October 23 (Winter)",
+      "programCredits": "123 credits (41 courses)",
+      "internshipRequired": true,
+      "specialNotes": "Canada's only 4-year undergraduate construction management degree. Includes mandatory internship. Transfer options to University of Victoria MBA, University of Calgary Haskayne MBA/Master of Management. Transfer agreements available - see https://www.transferalberta.ca"
+    }
+  },
+  {
+    "id": "sait-mechanical-engineering-technology",
+    "name": "Mechanical Engineering Technology",
+    "institution": "SAIT",
+    "institutionId": "sait",
+    "description": "Two-year hands-on diploma program providing technical, analytical and problem-solving skills for careers in mechanical engineering. Foundation in core engineering principles combined with practical application and design. Students choose from three specializations in Year 2: Design and Analysis (mechanical systems, vibrations, thermodynamics), Design and Automation (automated systems, PLCs, robotics), or Design and Development (prototyping, rapid prototyping, ergonomic design).",
+    "credentials": "Diploma",
+    "duration": "2 years",
+    "tuition": {
+      "domestic": 8389,
+      "international": 18500,
+      "note": "per year, does not include books and supplies"
+    },
+    "prerequisites": {
+      "domestic": [
+        "High school diploma",
+        "Math 30-1 (60% minimum) OR Math 30-2 (75% minimum)",
+        "English 30-1 or English 30-2 (60% minimum)",
+        "Physics 20 and Chemistry 20 (60% each) OR Science 30 (60% minimum)"
+      ],
+      "international": [
+        "High school diploma or international equivalent (12 years education)",
+        "English language proficiency: IELTS 6.0 (no band below 5.5) OR TOEFL iBT 80 (verify exact requirements)",
+        "Math equivalency to Alberta Math 30-1 or 30-2",
+        "Physics and Chemistry equivalencies required",
+        "Credential evaluation may be required"
+      ]
+    },
+    "url": "https://www.sait.ca/programs-and-courses/diplomas/mechanical-engineering-technology",
+    "careerPaths": [
+      "Mechanical Engineering Technologist",
+      "Design Technologist",
+      "CAD Designer",
+      "Product Development Technologist",
+      "Manufacturing Engineer",
+      "Automation Technician"
+    ],
+    "skills": [
+      "Computer-Aided Design (CAD)",
+      "Mechanical System Design",
+      "Engineering Mathematics and Science",
+      "Thermodynamics and Energy Systems",
+      "Fluid Mechanics",
+      "Vibration Analysis",
+      "Automation and Robotics",
+      "Rapid Prototyping",
+      "Problem-Solving and Analysis"
+    ],
+    "nocCodes": [
+      "22301",
+      "22302",
+      "22212"
+    ],
+    "additionalInfo": {
+      "startDates": [
+        "September",
+        "January"
+      ],
+      "deliveryMode": "On-campus (Main Campus)",
+      "applicationDeadline": "June 30 (Fall), October 23 (Winter)",
+      "programCredits": "60 credits (24 courses)",
+      "specializations": [
+        "Design and Analysis (mechanical systems, vibrations, thermodynamics)",
+        "Design and Automation (PLCs, robotics, automated systems)",
+        "Design and Development (prototyping, rapid prototyping, ergonomics)"
+      ],
+      "specialNotes": "Students declare specialization before Year 2 based on academic performance and preference. Transfer agreements available with Lakehead University (BEng Mechanical), UBC (BASc Mechanical), University of Calgary (BSc Energy Engineering), and others - see https://www.transferalberta.ca"
+    }
+  },
+  {
+    "id": "sait-electrical-engineering-technology",
+    "name": "Electrical Engineering Technology",
+    "institution": "SAIT",
+    "institutionId": "sait",
+    "description": "Two to three-year diploma program providing diverse skill set in electrical engineering for careers in renewable and conventional energy. Foundation for lifelong learning in rapidly evolving electrical engineering technologies. Covers electricity and power systems, electrical circuit design, automation and control systems, with hands-on labs simulating real-world challenges. Includes project management, industry standards compliance, and professional skills training.",
+    "credentials": "Diploma",
+    "duration": "2 years (full-time) or 3 years (part-time blended)",
+    "tuition": {
+      "domestic": 8554,
+      "international": 19000,
+      "note": "per year (average for 2-year program), does not include books and supplies"
+    },
+    "prerequisites": {
+      "domestic": [
+        "High school diploma",
+        "Math 30-1 (60% minimum) OR Math 30-2 (75% minimum)",
+        "English 30-1 (60% minimum) OR English 30-2 (75% minimum)",
+        "Physics 20 (60% minimum)"
+      ],
+      "international": [
+        "High school diploma or international equivalent (12 years education)",
+        "English language proficiency: IELTS 6.0 (no band below 5.5) OR TOEFL iBT 80 (verify exact requirements)",
+        "Math equivalency to Alberta Math 30-1 or 30-2",
+        "Physics equivalency required",
+        "Credential evaluation may be required"
+      ]
+    },
+    "url": "https://www.sait.ca/programs-and-courses/diplomas/electrical-engineering-technology",
+    "careerPaths": [
+      "Electrical Engineering Technologist",
+      "Power Systems Technologist",
+      "Electrical Designer",
+      "Automation Technician",
+      "Control Systems Technician",
+      "Electrical Project Coordinator"
+    ],
+    "skills": [
+      "Electrical Circuit Design",
+      "Power Generation and Distribution",
+      "Renewable Energy Integration",
+      "Industrial Automation and Control Systems",
+      "Electrical System Analysis",
+      "Project Management",
+      "Industry Standards and Codes Compliance",
+      "Problem-Solving and Troubleshooting",
+      "Smart Grid Technologies"
+    ],
+    "nocCodes": [
+      "22310",
+      "21310",
+      "72011"
+    ],
+    "additionalInfo": {
+      "startDates": [
+        "May",
+        "September",
+        "January"
+      ],
+      "deliveryMode": "On-campus (full-time) or Blended (part-time evenings/weekends)",
+      "applicationDeadline": "April 30 (Spring), June 30 (Fall), October 23 (Winter)",
+      "programCredits": "67.5 credits (25 courses)",
+      "flexibleScheduling": true,
+      "specialNotes": "Flexible learning options: complete in 2 years full-time (daytime) or 3 years part-time (blended evenings/weekends). Co-op placements and industry-sponsored projects available. Transfer agreements with UVic/Camosun (BEng Electrical/Computer Engineering), Thompson Rivers University - see https://www.transferalberta.ca"
+    }
+  },
+  {
+    "id": "sait-bba-financial-services",
+    "name": "Bachelor of Business Administration - Financial Services Major",
+    "institution": "SAIT",
+    "institutionId": "sait",
+    "description": "Four-year business degree for careers in financial advising, banking, investing, and insurance. Provides essential skills and industry certifications including Investment Funds in Canada (IFIC) and Canadian Securities Course (CSC). Students learn to analyze client needs, provide tailored financial solutions, master relationship selling, and uphold ethical and regulatory standards in the financial services industry.",
+    "credentials": "Bachelor of Business Administration (BBA)",
+    "duration": "4 years",
+    "tuition": {
+      "domestic": 9049,
+      "international": 17500,
+      "note": "per year (2025/26 estimate), does not include books and supplies"
+    },
+    "prerequisites": {
+      "domestic": [
+        "High school diploma",
+        "English 30-1 (minimum 60%)",
+        "Math 30-1 (minimum 60%) OR Math 30-2 (minimum 70%)",
+        "Two courses from Group A (academics): Accounting, Biology, Business, Chemistry, Economics, Finance, Geography, History, IT, Languages, Marketing, Math 31, Philosophy, Physics, Political Science, Psychology, Science, Social Studies 30-1, Sociology",
+        "One additional course from Group A or Group B (Art, Drama, Music, PE, Religion, Social Studies 30-2)",
+        "Overall minimum average of 65%"
+      ],
+      "international": [
+        "High school diploma or international equivalent (12 years education)",
+        "English language proficiency: IELTS 6.5 (no band below 5.5) OR TOEFL iBT 86 (verify exact requirements)",
+        "Math equivalency to Alberta Math 30-1 or 30-2",
+        "Academic course equivalencies",
+        "Credential evaluation required"
+      ],
+      "alternativePathways": [
+        "SAIT Business Administration diploma with minimum 2.3 GPA (67%)",
+        "Two-year diploma or bachelor's degree with 2.3 GPA plus English 30-1 and Math 30-1/30-2 equivalents"
+      ]
+    },
+    "url": "https://www.sait.ca/programs-and-courses/degrees/bachelor-of-business-administration-financial-services",
+    "careerPaths": [
+      "Financial Advisor",
+      "Investment Advisor",
+      "Financial Planner",
+      "Banking Relationship Manager",
+      "Insurance Advisor",
+      "Wealth Management Specialist"
+    ],
+    "skills": [
+      "Personal Financial Planning",
+      "Investment Analysis",
+      "Financial Product Knowledge",
+      "Client Needs Assessment",
+      "Relationship Selling",
+      "Canadian Financial Systems Knowledge",
+      "Ethical and Regulatory Compliance",
+      "Financial Communication",
+      "Risk Management"
+    ],
+    "nocCodes": [
+      "11100",
+      "11101",
+      "11102",
+      "11103",
+      "64400"
+    ],
+    "additionalInfo": {
+      "startDates": [
+        "September"
+      ],
+      "deliveryMode": "On-campus (Main Campus)",
+      "applicationDeadline": "June 30 (domestic), May 29 (international)",
+      "coopAvailable": false,
+      "programCredits": "120 credits (39 courses total)",
+      "industryCertifications": [
+        "Investment Funds in Canada (IFIC)",
+        "Canadian Securities Course (CSC)"
+      ],
+      "minorsAvailable": [
+        "Construction Project Management",
+        "Energy, Oil and Gas"
+      ],
+      "specialNotes": "First semester common for all majors. Students declare major in second semester through competitive screening process. Includes industry-recognized certifications (IFIC, CSC). Transfer agreements available with Bow Valley College - see https://www.transferalberta.ca"
+    }
+  },
+  {
+    "id": "sait-bba-human-resources",
+    "name": "Bachelor of Business Administration - Human Resource Management Major",
+    "institution": "SAIT",
+    "institutionId": "sait",
+    "description": "Four-year business degree accredited by Human Resources Institute of Alberta (HRIA) preparing students for careers in human resources management. Covers HR theory and practice, employment law, leadership, health and safety programs, compensation, skills development, and employment relationships. Graduates receive Certified Professional in Human Resources (CPHR) designation upon completion.",
+    "credentials": "Bachelor of Business Administration (BBA) + CPHR",
+    "duration": "4 years",
+    "tuition": {
+      "domestic": 9049,
+      "international": 17500,
+      "note": "per year (2025/26 estimate), does not include books and supplies"
+    },
+    "prerequisites": {
+      "domestic": [
+        "High school diploma",
+        "English 30-1 (minimum 60%)",
+        "Math 30-1 (minimum 60%) OR Math 30-2 (minimum 70%)",
+        "Two courses from Group A (academics): Accounting, Biology, Business, Chemistry, Economics, Finance, Geography, History, IT, Languages, Marketing, Math 31, Philosophy, Physics, Political Science, Psychology, Science, Social Studies 30-1, Sociology",
+        "One additional course from Group A or Group B (Art, Drama, Music, PE, Religion, Social Studies 30-2)",
+        "Overall minimum average of 65%"
+      ],
+      "international": [
+        "High school diploma or international equivalent (12 years education)",
+        "English language proficiency: IELTS 6.5 (no band below 5.5) OR TOEFL iBT 86 (verify exact requirements)",
+        "Math equivalency to Alberta Math 30-1 or 30-2",
+        "Academic course equivalencies",
+        "Credential evaluation required"
+      ],
+      "alternativePathways": [
+        "SAIT Business Administration diploma with minimum 2.3 GPA (67%)",
+        "Two-year diploma or bachelor's degree with 2.3 GPA plus English 30-1 and Math 30-1/30-2 equivalents"
+      ]
+    },
+    "url": "https://www.sait.ca/programs-and-courses/degrees/bachelor-of-business-administration-human-resource-management",
+    "careerPaths": [
+      "Human Resources Manager",
+      "HR Generalist",
+      "Recruitment Specialist",
+      "Training and Development Coordinator",
+      "Compensation and Benefits Analyst",
+      "Employee Relations Specialist"
+    ],
+    "skills": [
+      "HR Management Practices",
+      "Employment Law and Regulations",
+      "Leadership and Professional Development",
+      "HR Data Analysis and Reporting",
+      "Health, Safety and Wellness Programs",
+      "Employment Relationships and Labor Relations",
+      "Recruitment and Selection",
+      "Training and Development"
+    ],
+    "nocCodes": [
+      "10011",
+      "11200",
+      "12101"
+    ],
+    "additionalInfo": {
+      "startDates": [
+        "September"
+      ],
+      "deliveryMode": "On-campus (Main Campus)",
+      "applicationDeadline": "June 30 (domestic), May 29 (international)",
+      "coopAvailable": false,
+      "programCredits": "120 credits (39 courses total)",
+      "professionalDesignation": "CPHR (Certified Professional in Human Resources) - included with graduation",
+      "accreditation": "Accredited by Human Resources Institute of Alberta (HRIA)",
+      "minorsAvailable": [
+        "Construction Project Management",
+        "Energy, Oil and Gas"
+      ],
+      "specialNotes": "First semester common for all majors. Students declare major in second semester through competitive screening process. Graduates earn CPHR designation upon completion. Transfer agreements available with Lethbridge College, Portage College, Bow Valley College - see https://www.transferalberta.ca"
+    }
+  },
+  {
+    "id": "sait-business-admin-financial-services-diploma",
+    "name": "Business Administration - Financial Services Major",
+    "institution": "SAIT",
+    "institutionId": "sait",
+    "description": "Two-year diploma preparing students for careers in financial services including financial planning, investment advising, insurance, trust management, and compliance. Students learn Canadian financial system, relationship selling, client needs assessment, financial planning concepts, and industry regulations. Includes preparation for Investment Funds in Canada (IFIC) exam.",
+    "credentials": "Diploma",
+    "duration": "2 years",
+    "tuition": {
+      "domestic": 7699,
+      "international": 16500,
+      "note": "per year, does not include books and supplies"
+    },
+    "prerequisites": {
+      "domestic": [
+        "High school diploma",
+        "Math 30-1 or Math 30-2 (50% minimum)",
+        "English 30-1 (50% minimum) OR English 30-2 (60% minimum)"
+      ],
+      "international": [
+        "High school diploma or international equivalent (12 years education)",
+        "English language proficiency: IELTS 6.0 (no band below 5.5) OR TOEFL iBT 80 (verify exact requirements)",
+        "Math equivalency to Alberta Math 30-1 or 30-2",
+        "Credential evaluation may be required"
+      ]
+    },
+    "url": "https://www.sait.ca/programs-and-courses/diplomas/business-administration-financial-services",
+    "careerPaths": [
+      "Financial Services Representative",
+      "Junior Financial Advisor",
+      "Insurance Agent",
+      "Investment Funds Representative",
+      "Banking Associate",
+      "Financial Planning Assistant"
+    ],
+    "skills": [
+      "Canadian Financial System Knowledge",
+      "Financial Planning Fundamentals",
+      "Relationship Selling",
+      "Client Needs Assessment",
+      "Financial Products Knowledge",
+      "Investment Concepts",
+      "Financial Communication",
+      "Regulatory Compliance"
+    ],
+    "nocCodes": [
+      "11102",
+      "11103",
+      "64400"
+    ],
+    "additionalInfo": {
+      "startDates": [
+        "May",
+        "September",
+        "January"
+      ],
+      "deliveryMode": "On-campus or Online",
+      "applicationDeadline": "Rolling admissions (April 30 for Spring, June 30 for Fall, October 23 for Winter)",
+      "programCredits": "60 credits (20 courses)",
+      "examPreparation": "IFIC (Investment Funds in Canada) exam preparation included",
+      "specialNotes": "Students declare major before second year. IFIC exam prep included. Transfer pathway to Griffith University Bachelor of Commerce in Finance. Transfer agreements available - see https://www.transferalberta.ca"
+    }
+  },
+  {
+    "id": "sait-business-admin-hr-diploma",
+    "name": "Business Administration - Human Resource Management Major",
+    "institution": "SAIT",
+    "institutionId": "sait",
+    "description": "Two-year diploma preparing students for careers in HR including recruitment, training, payroll, and HR management. Students learn HR management practices, employment law and regulations, leadership skills, and HR data analysis. Covers essential HR tasks in real-world business contexts with practical exercises and scenarios.",
+    "credentials": "Diploma",
+    "duration": "2 years",
+    "tuition": {
+      "domestic": 7699,
+      "international": 16500,
+      "note": "per year, does not include books and supplies"
+    },
+    "prerequisites": {
+      "domestic": [
+        "High school diploma",
+        "Math 30-1 or Math 30-2 (50% minimum)",
+        "English 30-1 (50% minimum) OR English 30-2 (60% minimum)"
+      ],
+      "international": [
+        "High school diploma or international equivalent (12 years education)",
+        "English language proficiency: IELTS 6.0 (no band below 5.5) OR TOEFL iBT 80 (verify exact requirements)",
+        "Math equivalency to Alberta Math 30-1 or 30-2",
+        "Credential evaluation may be required"
+      ]
+    },
+    "url": "https://www.sait.ca/programs-and-courses/diplomas/business-administration-human-resource-management",
+    "careerPaths": [
+      "HR Assistant",
+      "Recruitment Coordinator",
+      "HR Coordinator",
+      "Payroll Administrator",
+      "Training Coordinator",
+      "Junior HR Generalist"
+    ],
+    "skills": [
+      "HR Management Practices",
+      "Employment Law Basics",
+      "Recruitment and Selection",
+      "Training and Development",
+      "HR Data Collection and Analysis",
+      "Payroll Administration",
+      "Leadership and Professional Skills",
+      "Employee Relations"
+    ],
+    "nocCodes": [
+      "10011",
+      "12101",
+      "13110"
+    ],
+    "additionalInfo": {
+      "startDates": [
+        "May",
+        "September",
+        "January"
+      ],
+      "deliveryMode": "On-campus or Online",
+      "applicationDeadline": "Rolling admissions (April 30 for Spring, June 30 for Fall, October 23 for Winter)",
+      "graduateEmploymentRate": "82%",
+      "averageStartingSalary": 54390,
+      "programCredits": "60 credits (20 courses)",
+      "specialNotes": "Students declare major before second year. Transfer pathway to Griffith University Bachelor of Business. Transfer agreements available - see https://www.transferalberta.ca"
+    }
+  },
+  {
+    "id": "nait-software-development",
+    "name": "Software Development",
+    "institution": "NAIT",
+    "institutionId": "nait",
+    "description": "Two-year diploma program providing hands-on training in full-stack web development, AI, data science, and DevOps. Part of the Digital Media and IT (DMIT) stream, focusing on practical industry skills.",
+    "credentials": "Diploma",
+    "duration": "2 years",
+    "tuition": {
+      "domestic": 10200,
+      "international": 21500,
+      "note": "Estimated first-year tuition; excludes mandatory fees and books"
+    },
+    "prerequisites": {
+      "domestic": [
+        "High school diploma or equivalent",
+        "English 30-1 or English 30-2 (60% minimum)",
+        "Math 30-1 or Math 30-2 (60% minimum)"
+      ],
+      "international": [
+        "High school diploma or international equivalent",
+        "English language proficiency: IELTS 6.5 (no band below 5.0) OR TOEFL iBT 80 (no section below 20)",
+        "Math equivalency to Alberta Math 30-1 or 30-2",
+        "Credential evaluation (IQAS or equivalent) may be required"
+      ]
+    },
+    "url": "https://www.nait.ca/programs/software-development",
+    "careerPaths": [
+      "Software Developer",
+      "Full-Stack Web Developer",
+      "DevOps Engineer",
+      "Data Analyst",
+      "AI Developer"
+    ],
+    "skills": [
+      "Full-Stack Development",
+      "Database Design",
+      "Cloud Computing",
+      "Agile Methodologies",
+      "UI/UX Design",
+      "Artificial Intelligence Fundamentals"
+    ],
+    "nocCodes": [
+      "21232",
+      "21230",
+      "21234"
+    ],
+    "additionalInfo": {
+      "startDates": [
+        "September",
+        "January"
+      ],
+      "deliveryMode": "Hybrid (On-campus and Online components)",
+      "applicationDeadline": "Rolling admissions (typically closes when full)",
+      "graduateEmploymentRate": "85%",
+      "averageStartingSalary": 52000,
+      "programCredits": "60 credits",
+      "specialNotes": "Requires a laptop (BYOD). Highly competitive program with emphasis on project-based learning.",
+      "transferCreditsAvailable": true,
+      "transferNote": "Up to 50% of program requirements can be satisfied via transfer credit. Minimum 80% curriculum match required.",
+      "pathwayPrograms": "Graduates are eligible to ladder into BAIST - Information Systems or BTech in Management."
+    }
+  },
+  {
+    "id": "nait-baist-is",
+    "name": "Bachelor of Applied Information Systems Technology - Information Systems",
+    "institution": "NAIT",
+    "institutionId": "nait",
+    "description": "A two-year degree completion program (following a diploma) designed to bridge technical coding skills with business strategy. Focuses on enterprise-level software development and systems planning.",
+    "credentials": "Bachelor of Applied Information Systems Technology (BAIST)",
+    "duration": "2 years (post-diploma)",
+    "tuition": {
+      "domestic": 11500,
+      "international": 23000,
+      "note": "Per year; based on standard course load"
+    },
+    "prerequisites": {
+      "domestic": [
+        "Completion of an IT-related diploma (e.g., Software Development)",
+        "Minimum cumulative GPA of 2.3"
+      ],
+      "international": [
+        "Recognized IT diploma or equivalent 60-credit post-secondary credential",
+        "English language proficiency: IELTS 6.5 (no band below 5.0) OR TOEFL iBT 80",
+        "Minimum GPA equivalent of 2.3 on a 4.0 scale"
+      ]
+    },
+    "url": "https://www.nait.ca/programs/baist-information-systems",
+    "careerPaths": [
+      "Systems Analyst",
+      "Enterprise Software Developer",
+      "IT Project Manager",
+      "Information Systems Consultant"
+    ],
+    "skills": [
+      "Enterprise Systems Architecture",
+      "Advanced Database Management",
+      "Business Process Analysis",
+      "Project Management",
+      "Strategic IT Planning"
+    ],
+    "nocCodes": [
+      "21222",
+      "21220",
+      "20012"
+    ],
+    "additionalInfo": {
+      "startDates": [
+        "September"
+      ],
+      "deliveryMode": "On-campus",
+      "applicationDeadline": "June 1 (Fall intake)",
+      "programCredits": "60 additional credits (total 120 with diploma)",
+      "specialNotes": "Includes a mandatory 4-month capstone project or work term.",
+      "transferCreditsAvailable": true,
+      "transferNote": "Accepts graduates from recognized IT diplomas across Canada. Visit https://transferalberta.alberta.ca/",
+      "pathwayPrograms": "Direct laddering from NAIT Software Development diploma."
+    }
+  },
+  {
+    "id": "nait-business-admin-accounting",
+    "name": "Business Administration - Accounting",
+    "institution": "NAIT",
+    "institutionId": "nait",
+    "description": "A two-year diploma program providing a solid foundation in financial theory and technical accounting expertise. Students master manual accounting techniques and current industry software through hands-on learning.",
+    "credentials": "Diploma",
+    "duration": "2 years",
+    "tuition": {
+      "domestic": 10500,
+      "international": 22050,
+      "note": "Estimated first-year tuition; excludes books and mandatory fees"
+    },
+    "prerequisites": {
+      "domestic": [
+        "English 30-1 or English 30-2 (65% minimum)",
+        "Math 30-1 or Math 30-2 (65% minimum)",
+        "Three additional Grade 12 courses (30-level, 5-credit)",
+        "Overall minimum average of 65% in the five required courses"
+      ],
+      "international": [
+        "High school diploma or international equivalent",
+        "English language proficiency: IELTS 6.0 (no band below 6.0) OR TOEFL iBT 70 (no section below 17)",
+        "Math equivalency to Alberta Math 30-1 or 30-2",
+        "Credential evaluation may be required"
+      ]
+    },
+    "url": "https://www.nait.ca/programs/business-administration-accounting",
+    "careerPaths": [
+      "Bookkeeper",
+      "Accounting Technician",
+      "Accounts Payable/Receivable Clerk",
+      "Payroll Administrator"
+    ],
+    "skills": [
+      "Financial Accounting",
+      "Managerial Accounting",
+      "Accounting Software (SAGE/QuickBooks)",
+      "Canadian Tax Fundamentals",
+      "Budgeting and Financial Reporting"
+    ],
+    "nocCodes": [
+      "12200",
+      "14200",
+      "13110"
+    ],
+    "additionalInfo": {
+      "startDates": [
+        "September",
+        "January",
+        "May"
+      ],
+      "deliveryMode": "On-campus, Online, or Hybrid",
+      "applicationDeadline": "Rolling admissions; programs fill quickly",
+      "programCredits": "60 credits",
+      "transferCreditsAvailable": true,
+      "transferNote": "Max 50% of program; requires 80% curriculum match and $100 evaluation fee for external institutions.",
+      "pathwayPrograms": "Eligible to ladder into BBA - Accounting and Analytics with a minimum 2.0 GPA."
+    }
+  },
+  {
+    "id": "nait-bba-accounting-analytics",
+    "name": "Bachelor of Business Administration - Accounting and Analytics",
+    "institution": "NAIT",
+    "institutionId": "nait",
+    "description": "A four-year degree (or 2-year post-diploma) that advances students into complex financial decision-making, auditing, and corporate taxation. Prepares graduates for the Chartered Professional Accountant (CPA) designation.",
+    "credentials": "Bachelor of Business Administration (BBA)",
+    "duration": "4 years (Total)",
+    "tuition": {
+      "domestic": 11200,
+      "international": 23500,
+      "note": "Per year; rates vary by course load"
+    },
+    "prerequisites": {
+      "domestic": [
+        "Completion of a Business-related diploma (Accounting preferred)",
+        "Minimum Graduation GPA of 2.0"
+      ],
+      "international": [
+        "Recognized Business diploma or 60 post-secondary credits",
+        "English language proficiency: IELTS 6.5 (no band below 5.0) OR TOEFL iBT 80",
+        "Minimum GPA equivalent of 2.0 on a 4.0 scale"
+      ]
+    },
+    "url": "https://www.nait.ca/programs/bba-accounting-and-analytics",
+    "careerPaths": [
+      "Chartered Professional Accountant (CPA) Candidate",
+      "Auditor",
+      "Financial Analyst",
+      "Tax Specialist",
+      "Controller"
+    ],
+    "skills": [
+      "Advanced Financial Reporting",
+      "External Auditing",
+      "Corporate and Personal Taxation",
+      "Business Intelligence and Data Analytics",
+      "Strategic Management"
+    ],
+    "nocCodes": [
+      "11100",
+      "11101",
+      "11102"
+    ],
+    "additionalInfo": {
+      "startDates": [
+        "September",
+        "January",
+        "May"
+      ],
+      "deliveryMode": "On-campus or Online",
+      "coopAvailable": true,
+      "coopNote": "Optional 4, 8, or 12-month paid work terms available after second year.",
+      "programCredits": "120 total credits",
+      "specialNotes": "Lays the groundwork for CPA Professional Education Program (PEP) entry.",
+      "transferCreditsAvailable": true,
+      "transferNote": "Advanced standing available for graduates of accredited business diplomas."
+    }
+  },
+  {
+    "id": "nait-bus-admin-finance-dip",
+    "name": "Business Administration - Finance",
+    "institution": "NAIT",
+    "institutionId": "nait",
+    "description": "A two-year diploma focusing on the fundamentals of sound financial management. Students investigate market trends, analyze economic factors, and master stock trading and corporate investing through hands-on case competitions.",
+    "credentials": "Diploma",
+    "duration": "2 years",
+    "tuition": {
+      "domestic": 9180,
+      "international": 22050,
+      "note": "Estimated for 2026/27; international rate based on $735/credit full course load."
+    },
+    "prerequisites": {
+      "domestic": [
+        "English 30-1 or 30-2 (minimum 60%)",
+        "Math 30-1 or 30-2 (minimum 60%)"
+      ],
+      "international": [
+        "High school diploma or international equivalent",
+        "English proficiency: IELTS 6.5 (no band below 5.5) OR Duolingo 115",
+        "Math 30-2 equivalency (60% minimum)"
+      ]
+    },
+    "url": "https://www.nait.ca/programs/business-administration-finance",
+    "careerPaths": [
+      "Banker",
+      "Financial Planner",
+      "Stockbroker",
+      "Financial Analyst",
+      "Credit Coordinator"
+    ],
+    "skills": [
+      "Financial Management",
+      "Economic Analysis",
+      "Stock Trading Fundamentals",
+      "Corporate Investing",
+      "Introductory Financial Accounting",
+      "Business Mathematics"
+    ],
+    "nocCodes": [
+      "12102",
+      "11102"
+    ],
+    "additionalInfo": {
+      "startDates": [
+        "September",
+        "January",
+        "May"
+      ],
+      "deliveryMode": "Choice (In-person, Online, or Hybrid)",
+      "transferCreditsAvailable": true,
+      "pathwayPrograms": "Eligible to ladder into the BBA - Finance degree with a minimum 2.0 Graduation GPA.",
+      "professionalDesignations": "Foundation for CFP (Certified Financial Planner) and PRM (Professional Risk Manager)."
+    }
+  },
+  {
+    "id": "nait-bba-finance-degree",
+    "name": "Bachelor of Business Administration - Finance",
+    "institution": "NAIT",
+    "institutionId": "nait",
+    "description": "A four-year degree designed for high-level financial decision-making. Covers advanced investment strategies, portfolio management, and risk analysis. Prepares students for senior leadership and professional designations.",
+    "credentials": "Bachelor of Business Administration (BBA)",
+    "duration": "4 years",
+    "tuition": {
+      "domestic": 9250,
+      "international": 24255,
+      "note": "Estimated per year for 2026/27; Year 2-4 international tuition is approx. $24,255 based on course selection."
+    },
+    "prerequisites": {
+      "highSchool": [
+        "Overall minimum average of 65% in five required Grade 12 courses",
+        "English 30-1 or 30-2 (minimum 65%)",
+        "Math 30-1 or 30-2 (minimum 65%)"
+      ],
+      "postSecondary": [
+        "Completion of a related Business diploma with minimum 2.0 GPA for Year 3 entry",
+        "Provisional entry available for GPAs between 1.7 and 2.0 via Open Studies pathway"
+      ]
+    },
+    "url": "https://www.nait.ca/programs/bba-finance",
+    "careerPaths": [
+      "Investment Banker",
+      "Portfolio Manager",
+      "Financial Consultant",
+      "Senior Financial Analyst",
+      "Risk Management Officer"
+    ],
+    "skills": [
+      "Advanced Financial Theory",
+      "Portfolio Management",
+      "Investment Strategy",
+      "Risk Management Analysis",
+      "Applied Business Ethics",
+      "Market Research"
+    ],
+    "nocCodes": [
+      "11101",
+      "11103",
+      "10010"
+    ],
+    "additionalInfo": {
+      "coopAvailable": true,
+      "coopNote": "Provides professional work experience with top-tier financial firms.",
+      "specialNotes": "Curriculum provides a strong foundation for the CFA (Chartered Financial Analyst) designation levels.",
+      "deliveryMode": "Choice (In-person, Online, or Hybrid)"
+    }
+  },
+  {
+    "id": "nait-civil-eng-tech-dip",
+    "name": "Civil Engineering Technology",
+    "institution": "NAIT",
+    "institutionId": "nait",
+    "description": "A two-year diploma focusing on the design and maintenance of infrastructure like roads, bridges, and water systems. Includes hands-on training in CADD, structural design, and project management with an optional co-op stream.",
+    "credentials": "Diploma",
+    "duration": "2 years (2.5 years with co-op)",
+    "tuition": {
+      "domestic": 10565,
+      "international": 26460,
+      "note": "Estimated per year for 2026/27 based on full course load; excludes books, supplies, and mandatory student fees."
+    },
+    "prerequisites": {
+      "domestic": [
+        "High school diploma or equivalent",
+        "English 30-2 (minimum 60%)",
+        "Math 30-2 (minimum 60%)",
+        "Physics 20 or Science 20 (minimum 60%)"
+      ],
+      "international": [
+        "High school diploma or international equivalent",
+        "English proficiency: IELTS 6.5 (no band below 5.5) OR Duolingo 115",
+        "Math and Physics equivalencies required (60% minimum)",
+        "Credential evaluation (e.g., IQAS or WES) may be required"
+      ]
+    },
+    "url": "https://www.nait.ca/programs/civil-engineering-technology",
+    "careerPaths": [
+      "Civil Engineering Technologist",
+      "Construction Estimator",
+      "Project Management Coordinator",
+      "Structural Design Detailer",
+      "Municipal Engineering Technologist",
+      "Materials Testing Technician",
+      "CAD/BIM Technician",
+      "Site Inspector"
+    ],
+    "skills": [
+      "CADD (AutoCAD/MicroStation)",
+      "Structural & Geotechnical Design",
+      "Urban Services Design",
+      "Surveying & Pavement Design",
+      "Project Management",
+      "Technical Reporting"
+    ],
+    "nocCodes": [
+      "22300",
+      "22303",
+      "22233"
+    ],
+    "additionalInfo": {
+      "startDates": [
+        "September"
+      ],
+      "deliveryMode": "In-person (On-campus)",
+      "applicationDeadline": "Rolling basis (Domestic: Oct 1; International: Aug 1)",
+      "coopAvailable": true,
+      "coopNote": "Students apply after Semester 1; involves two 24-week work placements.",
+      "pathwayPrograms": "Graduates can ladder into NAIT's BTech (Management) or BTech (Construction Management). Transfer to UofA Engineering requires a competitive GPA (typically 3.5+).",
+      "techRequirement": "PC laptop required (approx. $2,000 cost) with specific GPU requirements for CAD software."
+    }
+  },
+  {
+    "id": "nait-mech-eng-tech-dip",
+    "name": "Mechanical Engineering Technology",
+    "institution": "NAIT",
+    "institutionId": "nait",
+    "description": "A hands-on diploma focusing on the design, testing, and manufacturing of mechanical systems for industries like oil and gas and agriculture.",
+    "credentials": "Diploma",
+    "duration": "2 years",
+    "tuition": {
+      "domestic": 10500,
+      "international": 30650,
+      "note": "Estimated first-year tuition for international students is significantly higher due to lab-intensive requirements."
+    },
+    "prerequisites": {
+      "domestic": [
+        "English 30-2 (60%)",
+        "Math 30-1 (60%)",
+        "Physics 30 (60%)"
+      ],
+      "international": [
+        "IELTS 6.5 (no band below 5.0)",
+        "Credential evaluation required"
+      ]
+    },
+    "url": "https://www.nait.ca/programs/mechanical-engineering-technology",
+    "careerPaths": [
+      "Mechanical Engineering Technologist",
+      "Manufacturing Designer",
+      "Mechanical Estimator",
+      "Product Testing Technician",
+      "Quality Control Inspector"
+    ],
+    "skills": [
+      "Design 3D modelling",
+      "PLC progamming",
+      "Robotics",
+      "Pneumatics"
+    ],
+    "additionalInfo": {
+      "transferCreditsAvailable": true,
+      "pathwayPrograms": "Graduates can ladder into NAIT's BTech (Management) or bridge to Lakehead University for a BEng degree.",
+      "specializations": [
+        "Design and Analysis",
+        "Design and Development",
+        "Design and Automation"
+      ]
+    }
+  },
+  {
+    "id": "nait-hr-mgmt-diploma",
+    "name": "Business Administration - Human Resource Management",
+    "institution": "NAIT",
+    "institutionId": "nait",
+    "description": "Two-year diploma program combining classroom theory with hands-on case studies and simulations like mock interviews and mediation. Covers organizational change, employment law, and contract negotiations.",
+    "credentials": "Diploma",
+    "duration": "2 years",
+    "tuition": {
+      "domestic": 9038,
+      "international": 22050,
+      "note": "Estimated for 2026/27 academic year; excludes books and supplies"
+    },
+    "prerequisites": {
+      "domestic": [
+        "High school diploma or equivalent",
+        "English 30-1 or English 30-2 (60% minimum)",
+        "Math 30-1 or Math 30-2 or Applied Math 30 (60% minimum)"
+      ],
+      "international": [
+        "High school diploma or international equivalent",
+        "English proficiency: IELTS 6.5 (no band below 5.5) OR Duolingo 115",
+        "Math 30-2 equivalency (60% minimum)",
+        "Credential evaluation required"
+      ]
+    },
+    "url": "https://www.nait.ca/programs/business-administration-human-resources",
+    "careerPaths": [
+      "HR Coordinator",
+      "Recruitment Officer",
+      "Payroll and Benefits Administrator",
+      "HR Advisor",
+      "HR Supervisor"
+    ],
+    "skills": [
+      "Recruitment and Selection",
+      "Employment Law",
+      "Conflict Resolution",
+      "Negotiation",
+      "Benefits Administration",
+      "Organizational Behaviour",
+      "Labor Management Relations"
+    ],
+    "nocCodes": [
+      "12101",
+      "14102"
+    ],
+    "additionalInfo": {
+      "startDates": [
+        "September",
+        "January",
+        "May"
+      ],
+      "deliveryMode": "Choice (In-person, Online, or Hybrid)",
+      "applicationDeadline": "Rolling admissions",
+      "coopAvailable": false,
+      "professionalCredit": "Accredited by CPHR Alberta; waiver of NKE exam with 70%+ GPA"
+    }
+  },
+  {
+    "id": "nait-hr-mgmt-degree",
+    "name": "Bachelor of Business Administration - Human Resources Management",
+    "institution": "NAIT",
+    "institutionId": "nait",
+    "description": "Four-year degree (or two-year bridge for diploma holders) focusing on the strategic management of an organization's people. Includes advanced training in labor law, compensation strategy, and performance management.",
+    "credentials": "Bachelor of Business Administration (BBA)",
+    "duration": "4 years",
+    "tuition": {
+      "domestic": 8993,
+      "international": 22050,
+      "note": "Estimated per year for 2026/27; degree students typically pay per credit"
+    },
+    "prerequisites": {
+      "domestic": [
+        "Overall minimum average of 65% in five required Grade 12 courses",
+        "English 30-1 or English 30-2 (65% minimum)",
+        "Math 30-1 or Math 30-2 (65% minimum)"
+      ],
+      "international": [
+        "High school diploma with 65% average in core subjects",
+        "English proficiency: IELTS 6.5 (no band below 5.5) OR Duolingo 115",
+        "Business Diploma Pathway: 2.0 GPA in a related diploma for Year 3 entry"
+      ]
+    },
+    "url": "https://www.nait.ca/programs/bba-human-resources-management",
+    "careerPaths": [
+      "Human Resources Manager",
+      "Labor Relations Specialist",
+      "Compensation and Benefits Analyst",
+      "Training and Development Manager",
+      "Employee Relations Specialist"
+    ],
+    "skills": [
+      "Strategic HR Planning",
+      "Employee Relations",
+      "Performance Management Systems",
+      "Compensation Strategy",
+      "Labor Laws",
+      "Leadership & Ethics",
+      "Strategic Management"
+    ],
+    "nocCodes": [
+      "10011",
+      "11200"
+    ],
+    "additionalInfo": {
+      "startDates": [
+        "September",
+        "January",
+        "May"
+      ],
+      "deliveryMode": "Choice (In-person, Online, or Hybrid)",
+      "applicationDeadline": "Rolling admissions",
+      "coopAvailable": true,
+      "professionalCredit": "Foundational prep for CPHR designation; 3 years exp required vs 8 for diploma"
+    }
+  },
+  {
+    "id": "uofa-nursing-bscn",
+    "name": "Bachelor of Science in Nursing",
+    "institution": "University of Alberta",
+    "institutionId": "uofa",
+    "description": "Four year program that gives you the most comprehensive training for exciting career in nursing. You will learn in a world-class clinical setting using the latest technology, including cutting-edge patient simulation.",
+    "credentials": "Bachelor of Science in Nursing (BScN)",
+    "duration": "4 years",
+    "tuition": {
+      "domestic": 8343,
+      "international": 35908,
+      "note": "per year, does not include textbooks and supplies, Residence is Off-Campus"
+    },
+    "prerequisites": {
+      "domestic": [
+        "High School diploma",
+        "English Language Arts 30-1",
+        "Biology 30",
+        "Chemistry 30",
+        "Science 30",
+        "Mathematics 30-1",
+        "Mathematics 30-2*",
+        "Mathematics 31",
+        "Fine Arts",
+        "Humanities",
+        "Languags other than English",
+        "Physical Education",
+        "Math/Sciences",
+        "Casper Test"
+      ],
+      "international": [
+        "High School diploma or international equivalent (12 years education)",
+        "English(Literature & Composition)",
+        "Biology",
+        "Chemistry",
+        "Calculus",
+        "Mathematics",
+        "Fine Arts",
+        "Humanities",
+        "Languages other than English",
+        "Physical Education",
+        "Math/Sciences",
+        "Casper Test",
+        "English proficiency: IELTS 5.5(no band below 5.0) or TOEFL(iBT) 53 (no band score less than 14 )",
+        "Credential evaluation may be required"
+      ]
+    },
+    "url": "https://www.ualberta.ca/en/undergraduate-programs/bachelor-of-science-in-nursing-nursing.html",
+    "careerPaths": [
+      "Register Nurse(RN)",
+      "Mental Health Nurse",
+      "Community Health Nurse",
+      "Long Term Care Nurse",
+      "Nurse Practioner*",
+      "Nurse Educator",
+      "Travel Nurse",
+      "Nursing Officer",
+      "Nursing Leadership*"
+    ],
+    "skills": [
+      "Communication",
+      "Care",
+      "Leadership",
+      "Patient Care",
+      "Clinical Assessment",
+      "Health Education"
+    ],
+    "nocCodes": [
+      "31301"
+    ],
+    "additionalInfo": {
+      "startDates": [
+        "September"
+      ],
+      "deliveryMode": "On-Campus",
+      "applicationDeadline": "March 1"
+    }
+  },
+  {
+    "id": "uofa-software-developer",
+    "name": "Bachelor of Science in Computing Science",
+    "institution": "University of Alberta",
+    "institutionId": "uofa",
+    "description": "This program highlight the interdisciplinary nature of computing and offer the flexibility to combine studies in computing sciences with other areas of study.",
+    "credentials": "BSc in Computing Science",
+    "duration": "4 years",
+    "tuition": {
+      "domestic": 7150,
+      "international": 39792,
+      "note": "per year residence is Off-Campus, does not include textbooks and supplies"
+    },
+    "prerequisites": {
+      "domestic": [
+        "High School diploma",
+        "English Language Arts 30-1",
+        "Mathematics 30-1",
+        "Biology 30",
+        "Chemistry 30",
+        "Mathematics 31",
+        "Physics 30",
+        "Computing Science ADV(CTS-5Cr)",
+        "Fine Arts",
+        "Humanities",
+        "Languags other than English",
+        "Math/Sciences"
+      ],
+      "international": [
+        "High School diploma or international equivalent (12 years education)",
+        "English(Literature & Composition)",
+        "Biology",
+        "Chemistry",
+        "Calculus",
+        "Mathematics",
+        "Physics",
+        "Fine Arts",
+        "Humanities",
+        "Languages other than English",
+        "Math/Sciences",
+        "English proficiency: IELTS 5.5(no band below 5.0) or TOEFL(iBT) 53 (no band score less than 14 )",
+        "Credential evaluation may be required"
+      ]
+    },
+    "url": "https://www.ualberta.ca/en/undergraduate-programs/bachelor-of-science-with-major-computing-science.html",
+    "careerPaths": [
+      "Air traffic Management",
+      "Animator",
+      "Application Analyst / Developer",
+      "AI Specialist",
+      "Communications Control Technician",
+      "Corporate Security Specialist",
+      "Database Design and Management",
+      "Help Desk Analyst",
+      "Robotics Engineer",
+      "Software Engineer",
+      "Strategic Analyst",
+      "Systems Analyst",
+      "Video Game Designer",
+      "Webmaster"
+    ],
+    "skills": [
+      "Software Developer",
+      "Data Structures and Algorithms",
+      "Database Management",
+      "Web Development",
+      "Object-Oriented Programming",
+      "Problem Solving",
+      "Software Testing and Debugging"
+    ],
+    "nocCodes": [
+      "21232"
+    ],
+    "additionalInfo": {
+      "startDates": [
+        "September"
+      ],
+      "deliveryMode": "On-Campus",
+      "applicationDeadline": "March 1"
+    }
+  },
+  {
+    "id": "uofa-accounting",
+    "name": "Bachelor of Commerce (Accounting)",
+    "institution": "University of Alberta",
+    "institutionId": "uofa",
+    "description": "Accounting is the practice of gathering, analysis, and Communicating financial information, and is a crucial aspect of every business and organization.",
+    "credentials": "Bachelor of Commerce Accounting",
+    "duration": "4 years",
+    "tuition": {
+      "domestic": 10466,
+      "international": 46546,
+      "note": "per year residence in Off-Campus, does not include textbooks and supplies, graduates can take Chartered Professional Accountant(CPA) certification"
+    },
+    "prerequisites": {
+      "domestic": [
+        "High School diploma",
+        "English Language Arts 30-1",
+        "Mathematics 30-1",
+        "Fine Arts",
+        "Humanities",
+        "Languags other than English",
+        "Math/Sciences"
+      ],
+      "international": [
+        "High School diploma or international equivalent (12 years education)",
+        "English(Literature & Composition)",
+        "Mathematics",
+        "Fine Arts",
+        "Humanities",
+        "Languages other than English",
+        "Math/Sciences",
+        "English proficiency: IELTS 5.5(no band below 5.0) or TOEFL(iBT) 53 (no band score less than 14 )",
+        "Credential evaluation may be required"
+      ]
+    },
+    "url": "https://www.ualberta.ca/en/undergraduate-programs/bachelor-of-commerce-accounting.html",
+    "careerPaths": [
+      "Accountant",
+      "Accountant Manager",
+      "Articling",
+      "Financial Analyst",
+      "Internal Audit Analyst",
+      "Junior Accountant",
+      "Operations Manager",
+      "Public Accountant",
+      "Staff Accountant",
+      "Staff Auditor"
+    ],
+    "skills": [
+      "Financial Accounting",
+      "Financial Reporting",
+      "Audit and Assurance",
+      "Tax Preparation",
+      "Cost Accounting",
+      "Excel and Accounting Software",
+      "Financial Analysis"
+    ],
+    "nocCodes": [
+      "11100"
+    ],
+    "additionalInfo": {
+      "startDates": [
+        "September 1"
+      ],
+      "deliveryMode": "On-Campus",
+      "applicationDeadline": "March 1"
+    }
+  },
+  {
+    "id": "uofa-electrical-engineering",
+    "name": "Bachelor of Science in Electrical Engineering",
+    "institution": "University of Alberta",
+    "institutionId": "uofa",
+    "description": "This program prepares you for the design and development of electrical, electronic, and electromagnetic systems, ranging from the devices we use every day, to advanced robotics and instrumentation, to large scale telecommunications and data storage applications and more.",
+    "credentials": "Bachelor of Science in Electrical Engineering",
+    "duration": "5 years(with co-op)",
+    "tuition": {
+      "domestic": 9467,
+      "international": 49952,
+      "note": "per year residence in Off-Campus, does not include textbooks and supplies"
+    },
+    "prerequisites": {
+      "directEntry": null,
+      "qualifyingYear": {
+        "description": "All Engineering students must complete a common Qualifying Year curriculum before selecting their specialization",
+        "requirements": {
+          "domestic": [
+            "High School diploma",
+            "English Languages Arts 30-1",
+            "Mathematics 30-1",
+            "Mathematics 31",
+            "Chemistry 30",
+            "Physics 30"
+          ],
+          "international": [
+            "High School diploma or international equivalent (12 years education)",
+            "English(Literature & Composition)",
+            "Mathematics",
+            "Fine Arts",
+            "Humanities",
+            "Languags other than English",
+            "Math/Sciences",
+            "English proficiency: IELTS 5.5(no band below 5.0) or TOEFL(iBT) 53 (no band score less than 14 )",
+            "Credential evaluation may be required"
+          ]
+        },
+        "url": "https://www.ualberta.ca/en/undergraduate-programs/bachelor-of-science-in-engineering-qualifying-year.html",
+        "transferStudents": {
+          "description": "Students wit post-seconadary coursework considered based on GPA and transfer credits",
+          "url": "https://www.ualberta.ca/en/engineering/admissions-programs/undergraduate/admissions/transfer-options/from-engineering-transfer-program.html"
+        }
+      }
+    },
+    "url": "https://www.ualberta.ca/en/undergraduate-programs/bachelor-of-science-in-electrical-engineering-electrical-engineering.html",
+    "careerPaths": [
+      "Electrical Engineer",
+      "Avionics Engineer",
+      "Communications Engineer",
+      "Electromagnetic Engineer",
+      "Hardware Engineer",
+      "Nanofabrication Engineer",
+      "Optical Engineer",
+      "Robotics Engineer",
+      "SCADA Engineer",
+      "Systems Integration Engineer",
+      "Telecommunications Engineer",
+      "Test Engineer"
+    ],
+    "skills": [
+      "Circuit Design",
+      "Power Systems",
+      "Signal Processing",
+      "Embedded Systems",
+      "Electrical Troubleshooting",
+      "AutoCAD/MATLAB"
+    ],
+    "nocCodes": [
+      "21310"
+    ],
+    "additionalInfo": {
+      "startDates": [
+        "September 1"
+      ],
+      "deliveryMode": "On-Campus",
+      "applicationDeadline": "March 1",
+      "coopAvailable": true,
+      "specialNotes": "Non-direct entry program. Students complete Qualifying Year before selecting Engineering specialization."
+    }
+  },
+  {
+    "id": "uofa-elementary-teacher",
+    "name": "Bachelor of Education",
+    "institution": "University of Alberta",
+    "institutionId": "uofa",
+    "description": "Teaching is a calling, and being an elementary teacher is truly a special career. This degree prapares you to facilitate the learning of all children from Kindergarden to Grade 6 within our diverse and multicultural society.",
+    "credentials": "Bachelor of Education in Elementary Education",
+    "duration": "4 years",
+    "tuition": {
+      "domestic": 7150,
+      "international": 35907,
+      "note": "per year residence in Off-Campus, does not include textbooks and supplies"
+    },
+    "prerequisites": {
+      "domestic": [
+        "High School diploma",
+        "English Language Arts 30-1",
+        "Fine Arts",
+        "Humanities",
+        "Languags other than English",
+        "Foods Adv (CTS-5Cr)",
+        "Forestry Adv (CTS-5Cr)",
+        "CTS-Cosmetology Adv-5Credit",
+        "Agriculture Adv(CTS-5Cr)",
+        "Wildlife Adv (CTS-5Cr)",
+        "Physical Education",
+        "Math/Sciences"
+      ],
+      "international": [
+        "High School diploma or international equivalent (12 years education)",
+        "English(Literature & Composition)",
+        "Fine Arts",
+        "Humanities",
+        "Languages other than English",
+        "Physical Education",
+        "Math/Sciences",
+        "English proficiency: IELTS 5.5(no band below 5.0) or TOEFL(iBT) 53 (no band score less than 14 )",
+        "Credential evaluation may be required"
+      ]
+    },
+    "url": "https://www.ualberta.ca/en/undergraduate-programs/bachelor-of-education-in-elementary-education-combined-degree.html",
+    "careerPaths": [
+      "Elementary School Teacher",
+      "Child and Youth Care Worker",
+      "Corporate Trainer",
+      "English as a Second Language Teacher",
+      "Human Resources Professional",
+      "Post Secondary Advisor",
+      "Teacher",
+      "Tutor",
+      "Volunteer Coordinator"
+    ],
+    "skills": [
+      "Lesson Planning",
+      "Classroom Management",
+      "Curriculum Development",
+      "Student Assessment",
+      "Communication",
+      "Differentiated Instruction",
+      "Educational Technology"
+    ],
+    "nocCodes": [
+      "41220"
+    ],
+    "additionalInfo": {
+      "startDates": [
+        "September 1"
+      ],
+      "deliveryMode": "On-Campus",
+      "applicationDeadline": "March 1"
+    }
+  },
+  {
+    "id": "uofa-civil-engineering",
+    "name": "Bachelor of Science in Civil Engineering",
+    "institution": "University of Alberta",
+    "institutionId": "uofa",
+    "description": "Civil Engineers play a key role in our cities and our society by planning, building, and maintaining infrastructure needed to survive diverse climates, extreme weather, and the needs of an aging population.",
+    "credentials": "Bachelor of Science in Civil Engineering",
+    "duration": "4 years",
+    "tuition": {
+      "domestic": 9467,
+      "international": 49952,
+      "note": "per year residence in Off-Campus, does not include textbooks and supplies"
+    },
+    "prerequisites": {
+      "directEntry": null,
+      "qualifyingYear": {
+        "description": "All Engineering students must complete a common Qualifying Year curriculum before selecting their specialization",
+        "requirements": {
+          "domestic": [
+            "High School diploma",
+            "English Languages Arts 30-1",
+            "Mathematics 30-1",
+            "Mathematics 31",
+            "Chemistry 30",
+            "Physics 30"
+          ],
+          "international": [
+            "High School diploma or international equivalent (12 years education)",
+            "English(Literature & Composition)",
+            "Mathematics",
+            "Fine Arts",
+            "Humanities",
+            "Languags other than English",
+            "Math/Sciences",
+            "English proficiency: IELTS 5.5(no band below 5.0) or TOEFL(iBT) 53 (no band score less than 14 )",
+            "Credential evaluation may be required"
+          ]
+        },
+        "url": "https://www.ualberta.ca/en/undergraduate-programs/bachelor-of-science-in-engineering-qualifying-year.html",
+        "transferStudents": {
+          "description": "Students wit post-seconadary coursework considered based on GPA and transfer credits",
+          "url": "https://www.ualberta.ca/en/engineering/admissions-programs/undergraduate/admissions/transfer-options/from-engineering-transfer-program.html"
+        }
+      }
+    },
+    "url": "https://www.ualberta.ca/en/undergraduate-programs/bachelor-of-science-in-civil-engineering-civil-engineering.html",
+    "careerPaths": [
+      "Architect",
+      "Bridge Engineer",
+      "Civil Engineer",
+      "Construction Engineer",
+      "Consultant",
+      "Field Engineer",
+      "Geotechnical Engineer",
+      "Municipal Engineer",
+      "Structural Engineer",
+      "Surveying Engineer",
+      "Traffic Engineer",
+      "Transportation Engineer",
+      "Tunneling Engineer"
+    ],
+    "skills": [
+      "Engineering Design",
+      "Problem Solving",
+      "Technical Analysis",
+      "CAD Software",
+      "Project Management",
+      "Mathematical Modeling",
+      "Teamwork"
+    ],
+    "nocCodes": [
+      "21300"
+    ],
+    "additionalInfo": {
+      "startDates": [
+        "September 1"
+      ],
+      "deliveryMode": "On-Campus",
+      "applicationDeadline": "March 1",
+      "coopAvailable": true,
+      "specialNotes": "Non-direct entry program. Students complete Qualifying Year before selecting Engineering specialization."
+    }
+  },
+  {
+    "id": "uofa-human-resources-manager",
+    "name": "Bachelor of Commerce Human Resources Management",
+    "institution": "University of Alberta",
+    "institutionId": "uofa",
+    "description": "Focuses on managing organizational talent, covering employee relations, recruitment, and strategic HR planning.",
+    "credentials": "Bachelor of Commerce Human Resources Management ",
+    "duration": "4 years",
+    "tuition": {
+      "domestic": 10466,
+      "international": 46546,
+      "note": "per year residence in Off-Campus, does not include textbooks and supplies, graduate can pursue Certified Human Resources Professional(CHRP) designation."
+    },
+    "prerequisites": {
+      "domestic": [
+        "High School diploma",
+        "English Language Arts 30-1",
+        "Mathematics 30-1",
+        "Fine Arts",
+        "Humanities",
+        "Languags other than English",
+        "Math/Sciences"
+      ],
+      "international": [
+        "High School diploma or international equivalent (12 years education)",
+        "English(Literature & Composition)",
+        "Mathematics",
+        "Fine Arts",
+        "Humanities",
+        "Languages other than English",
+        "Math/Sciences",
+        "English proficiency: IELTS 5.5(no band below 5.0) or TOEFL(iBT) 53 (no band score less than 14 )",
+        "Credential evaluation may be required"
+      ]
+    },
+    "url": "https://www.ualberta.ca/en/undergraduate-programs/bachelor-of-commerce-human-resources-management.html",
+    "careerPaths": [
+      "Accountant",
+      "Auditor",
+      "Benefit Specialist",
+      "Business Analyst",
+      "Financial Analyst",
+      "HR Information System Specialist",
+      "Human Resource Advisor",
+      "Human Resource Specialist",
+      "Labour Relations Specialist",
+      "Manager of Volunteer Resources",
+      "Occupational Analyst",
+      "Training and Development Manager"
+    ],
+    "skills": [
+      "Financial Analysis",
+      "Business Strategy",
+      "Project Management",
+      "Communication",
+      "Data Analysis",
+      "Leadership"
+    ],
+    "nocCodes": [
+      "10011"
+    ],
+    "additionalInfo": {
+      "startDates": [
+        "September 1"
+      ],
+      "deliveryMode": "On-Campus",
+      "applicationDeadline": "March 1"
+    }
+  },
+  {
+    "id": "uofa-mechanical-engineering",
+    "name": "Bachelor of Science in Mechanical Engineering",
+    "institution": "University of Alberta",
+    "institutionId": "uofa",
+    "description": "Mechanical engineers create, rethink, and redesign the machines and mechanical systems we depend on.",
+    "credentials": "Bachelor of Science in Mechanical Engineering",
+    "duration": "4 years",
+    "tuition": {
+      "domestic": 9467,
+      "international": 49952,
+      "note": "per year residence in Off-Campus, does not include textbooks and supplies"
+    },
+    "prerequisites": {
+      "directEntry": null,
+      "qualifyingYear": {
+        "description": "All Engineering students must complete a common Qualifying Year curriculum before selecting their specialization",
+        "requirements": {
+          "domestic": [
+            "High School diploma",
+            "English Languages Arts 30-1",
+            "Mathematics 30-1",
+            "Mathematics 31",
+            "Chemistry 30",
+            "Physics 30"
+          ],
+          "international": [
+            "High School diploma or international equivalent (12 years education)",
+            "English(Literature & Composition)",
+            "Mathematics",
+            "Fine Arts",
+            "Humanities",
+            "Languags other than English",
+            "Math/Sciences",
+            "English proficiency: IELTS 5.5(no band below 5.0) or TOEFL(iBT) 53 (no band score less than 14 )",
+            "Credential evaluation may be required"
+          ]
+        },
+        "url": "https://www.ualberta.ca/en/undergraduate-programs/bachelor-of-science-in-engineering-qualifying-year.html",
+        "transferStudents": {
+          "description": "Students wit post-seconadary coursework considered based on GPA and transfer credits",
+          "url": "https://www.ualberta.ca/en/engineering/admissions-programs/undergraduate/admissions/transfer-options/from-engineering-transfer-program.html"
+        }
+      }
+    },
+    "url": "https://www.ualberta.ca/en/undergraduate-programs/bachelor-of-science-in-mechanical-engineering-mechanical-engineering.html",
+    "careerPaths": [
+      "Aerospace Engineer",
+      "Automotive Engineer",
+      "Building Systems Engineer",
+      "Field Engineer",
+      "HVAC Engineer",
+      "Manufacturing Engineer",
+      "Mechanical Engineer",
+      "Project Engineer",
+      "Reliability Engineer",
+      "Robotics Engineer",
+      "Validation Engineer",
+      "R&D Engineer"
+    ],
+    "skills": [
+      "Engineering Design",
+      "Problem Solving",
+      "Technical Analysis",
+      "CAD Software",
+      "Project Management",
+      "Mathematical Modeling",
+      "Teamwork"
+    ],
+    "nocCodes": [
+      "21301"
+    ],
+    "additionalInfo": {
+      "startDates": [
+        "September 1"
+      ],
+      "deliveryMode": "On-Campus",
+      "applicationDeadline": "March 1",
+      "coopAvailable": true,
+      "specialNotes": "Non-direct entry program. Students complete Qualifying Year before selecting Engineering specialization."
+    }
+  },
+  {
+    "id": "uofa-financial-analyst",
+    "name": "Bachelor of Commerce (Finance Major)",
+    "institution": "University of Alberta",
+    "institutionId": "uofa",
+    "description": "Our program provides you with a solid information for a variety of business careers, including banking, investments and portfolio management, mergers and acquisitions, corporate finance, international finance, securities trading, and financial markets.",
+    "credentials": "Bachelor of Commerce Finance ",
+    "duration": "4 years",
+    "tuition": {
+      "domestic": 10466,
+      "international": 46546,
+      "note": "per year residence in Off-Campus, does not include textbooks and supplies, graduate can pursue Certified Human Resources Professional(CHRP) designation."
+    },
+    "prerequisites": {
+      "domestic": [
+        "High School diploma",
+        "English Language Arts 30-1",
+        "Mathematics 30-1",
+        "Fine Arts",
+        "Humanities",
+        "Languags other than English",
+        "Math/Sciences"
+      ],
+      "international": [
+        "High School diploma or international equivalent (12 years education)",
+        "English(Literature & Composition)",
+        "Mathematics",
+        "Fine Arts",
+        "Humanities",
+        "Languages other than English",
+        "Math/Sciences",
+        "English proficiency: IELTS 5.5(no band below 5.0) or TOEFL(iBT) 53 (no band score less than 14 )",
+        "Credential evaluation may be required"
+      ]
+    },
+    "url": "https://www.ualberta.ca/en/undergraduate-programs/bachelor-of-commerce-human-resources-management.html",
+    "careerPaths": [
+      "Accountant",
+      "Auditor",
+      "Broker",
+      "Business Market Analyst",
+      "Business Valuators",
+      "Credit / Loans Manager",
+      "Financial Analyst",
+      "Financial Services Manager",
+      "Investment Analyst",
+      "Risk Analyst"
+    ],
+    "skills": [
+      "Financial Analysis",
+      "Business Strategy",
+      "Project Management",
+      "Communication",
+      "Data Analysis",
+      "Leadership"
+    ],
+    "nocCodes": [
+      "11101"
+    ],
+    "additionalInfo": {
+      "startDates": [
+        "September 1"
+      ],
+      "deliveryMode": "On-Campus",
+      "applicationDeadline": "March 1"
+    }
+  },
+  {
+    "id": "uofa-pharmacy-pharmd",
+    "name": "Doctor of Pharmacy",
+    "institution": "University of Alberta",
+    "institutionId": "uofa",
+    "description": "Four-year professional program preparing students to become licensed pharmacists. Includes coursework in pharmaceutical sciences, patient care, and extensive practice experiences in clinical settings. Graduates are eligible to write the Pharmacist Evaluating Exam (PEBC) for licensure.",
+    "credentials": "Doctor of Pharmacy (PharmD)",
+    "duration": "4 years (after prerequisite courses)",
+    "tuition": {
+      "domestic": 7200,
+      "international": 37000,
+      "note": "per year (verify exact amounts on tuition page)"
+    },
+    "prerequisites": {
+      "note": "Non-direct entry program. Requires 60 units (2 years) of university coursework before admission.",
+      "domestic": [
+        "60 units of university-level coursework including:",
+        "General Chemistry (6 units)",
+        "Organic Chemistry (6 units)",
+        "Human Physiology (6 units)",
+        "English/Writing Studies (6 units)",
+        "Cell Biology (3 units)",
+        "Biochemistry (3 units)",
+        "Mathematics - Algebra or Calculus (3 units)",
+        "Statistics (3 units)",
+        "Microbiology (3 units)",
+        "Additional university courses (21 units)",
+        "Minimum GPA requirement (typically 3.0+)",
+        "Letter of Intent",
+        "Pharmacist Consultation Form",
+        "Web-based interview"
+      ],
+      "international": [
+        "60 units of university-level coursework (same courses as domestic)",
+        "English language proficiency: IELTS 7.0 (no band below 6.5) OR TOEFL iBT 100",
+        "Spoken Language Proficiency assessment may be required",
+        "All coursework must be from recognized post-secondary institutions",
+        "Credential evaluation required",
+        "Letter of Intent",
+        "Pharmacist Consultation Form",
+        "Web-based interview"
+      ]
+    },
+    "url": "https://www.ualberta.ca/en/undergraduate-programs/doctor-of-pharmacy-pharmacy-entry-to-practice.html",
+    "careerPaths": [
+      "Community Pharmacist",
+      "Hospital Pharmacist",
+      "Clinical Pharmacist",
+      "Pharmaceutical Researcher",
+      "Pharmacy Manager"
+    ],
+    "skills": [
+      "Pharmacology",
+      "Drug Therapy Management",
+      "Patient Counseling",
+      "Pharmaceutical Care",
+      "Medication Safety",
+      "Clinical Assessment",
+      "Healthcare Communication"
+    ],
+    "nocCodes": [
+      "31120"
+    ],
+    "additionalInfo": {
+      "startDates": [
+        "September"
+      ],
+      "deliveryMode": "On-campus",
+      "applicationDeadline": "Check Faculty of Pharmacy website",
+      "specialNotes": "Non-direct entry. Requires 2 years of prerequisite university courses before applying to PharmD program. Graduates eligible for PEBC licensure exam."
+    }
+  },
+  {
+    "id": "ucalgary-nursing-year1",
+    "name": "Nursing (year 1)",
+    "institution": "University of Calgary",
+    "institutionId": "ucalgary",
+    "route": "High School / Direct Entry",
+    "admissionLogic": "Lottery-based (Fall 2026). Applicants with an 82% average in required courses are entered into a randomized selection pool.",
+    "description": "The standard entry for high school students. A 3.25 to 3.5-year condensed program that includes foundational university studies in Year 1 before starting core clinical nursing in Year 2.",
+    "credentials": "Bachelor of Science in Nursing (BScN)",
+    "duration": "3.25 - 3.5 years",
+    "tuition": {
+      "domestic": 7775,
+      "international": 30780,
+      "note": "Per year estimate for 2026. Does not include textbooks or N-95 mask fit testing."
+    },
+    "prerequisites": {
+      "domestic": [
+        "English Language Arts 30-1",
+        "Biology 30",
+        "Chemistry 30",
+        "Mathematics 30-1 or 30-2",
+        "One approved 5-credit subject",
+        "Competitive Lottery Threshold: 82.0%"
+      ],
+      "international": [
+        "High School diploma equivalent",
+        "English, Biology, Chemistry, Mathematics",
+        "English proficiency: IELTS 7.0 (no band below 7.0) or TOEFL 92",
+        "Competitive Lottery Threshold equivalent: 82.0%"
+      ]
+    },
+    "url": "https://www.ucalgary.ca/future-students/undergraduate/explore-programs/nursing-year-one",
+    "careerPaths": [
+      "Registered Nurse (RN)",
+      "Mental Health Nurse",
+      "Community Health Nurse"
+    ],
+    "skills": [
+      "Patient Care",
+      "Clinical Assessment",
+      "Indigenous Health Studies",
+      "Communication"
+    ],
+    "nocCodes": [
+      "31301"
+    ],
+    "additionalInfo": {
+      "startDates": [
+        "September"
+      ],
+      "deliveryMode": "On-Campus (Calgary)",
+      "applicationDeadline": "March 1"
+    }
+  },
+  {
+    "id": "ucalgary-nursing-year2",
+    "name": "Nursing (year 2)",
+    "institution": "University of Calgary",
+    "institutionId": "ucalgary",
+    "route": "University Transfer / Post-Diploma",
+    "admissionLogic": "Lottery-based (Fall 2026). Applicants with a 3.00 GPA in required transfer courses are entered into a randomized selection pool.",
+    "description": "An advanced entry route for students who have completed 30+ units of specific university-level prerequisites. Students bypass the foundational Year 1 and start directly in Year 2 clinicals.",
+    "credentials": "Bachelor of Science in Nursing (BScN)",
+    "duration": "2.25 - 2.5 years",
+    "tuition": {
+      "domestic": 8100,
+      "international": 30780,
+      "note": "Per year estimate for 2026. Adjusted for higher clinical course density."
+    },
+    "prerequisites": {
+      "domestic": [
+        "30 units of transferable coursework",
+        "Anatomy & Physiology (6 units)",
+        "Statistics (3 units)",
+        "Philosophy / Arts / Humanities (3 units)",
+        "Introduction to Nursing (3 units)",
+        "Competitive Lottery Threshold: 3.00 GPA"
+      ],
+      "international": [
+        "Equivalent post-secondary coursework",
+        "WES/IQAS Credential Evaluation",
+        "English proficiency: IELTS 7.0 (no band below 7.0)",
+        "Competitive Lottery Threshold: 3.00 GPA"
+      ]
+    },
+    "url": "https://www.ucalgary.ca/future-students/undergraduate/explore-programs/nursing-year-two",
+    "careerPaths": [
+      "Acute Care Nurse",
+      "Nursing Leadership",
+      "Clinical Educator"
+    ],
+    "skills": [
+      "Advanced Clinical Practice",
+      "Pharmacology",
+      "Nursing Ethics",
+      "Pathophysiology"
+    ],
+    "nocCodes": [
+      "31301"
+    ],
+    "additionalInfo": {
+      "startDates": [
+        "September"
+      ],
+      "deliveryMode": "On-Campus (Calgary)",
+      "applicationDeadline": "March 1"
+    }
+  },
+  {
+    "id": "ucalgary-nursing-medhat",
+    "name": "Nursing (Medicine Hat)",
+    "institution": "University of Calgary (Medicine Hat College Collaborative)",
+    "institutionId": "ucalgary-mhc",
+    "route": "Collaborative Site",
+    "admissionLogic": "Competitive Admission (Non-Lottery). Students apply to Medicine Hat College (MHC) for Year 1 & 2, then transfer to UCalgary status for Year 3 & 4 while staying in Medicine Hat.",
+    "description": "A partnership program allowing students to earn a full University of Calgary BScN degree while completing all four years at the Medicine Hat College campus.",
+    "credentials": "Bachelor of Science in Nursing (BScN)",
+    "duration": "4 years",
+    "tuition": {
+      "domestic": 6500,
+      "international": 25000,
+      "note": "Tuition follows MHC rates for years 1-2 and UCalgary rates for years 3-4. Generally lower cost of living."
+    },
+    "prerequisites": {
+      "domestic": [
+        "English Language Arts 30-1",
+        "Biology 30",
+        "Chemistry 30",
+        "Mathematics 30-1 or 30-2",
+        "Competitive Average: Usually 85%+"
+      ],
+      "international": [
+        "Standard international requirements for MHC/UCalgary partnership",
+        "English Proficiency required"
+      ]
+    },
+    "url": "https://www.ucalgary.ca/future-students/undergraduate/explore-programs/nursing-medicine-hat",
+    "careerPaths": [
+      "Rural Health Nurse",
+      "Travel Nurse",
+      "Community Health Nurse"
+    ],
+    "skills": [
+      "Rural Nursing Practice",
+      "Primary Care",
+      "Clinical Assessment"
+    ],
+    "nocCodes": [
+      "31301"
+    ],
+    "additionalInfo": {
+      "startDates": [
+        "September"
+      ],
+      "deliveryMode": "On-Campus (Medicine Hat)",
+      "applicationDeadline": "Check MHC website for specific local dates"
+    }
+  },
+  {
+    "id": "ucalgary-bsc-seng",
+    "name": "Bachelor of Science in Software Engineering",
+    "institution": "University of Calgary",
+    "institutionId": "ucalgary",
+    "description": "A professional engineering degree focusing on the design, development, and maintenance of large-scale software systems. Part of the Schulich School of Engineering, this program emphasizes engineering principles, reliability, and security.",
+    "credentials": "Bachelor of Science (BSc) in Engineering",
+    "duration": "4 years",
+    "tuition": {
+      "domestic": 8530,
+      "international": 38734,
+      "note": "Per year; based on 2026 Board of Governors approved rates including Schulich-specific fees."
+    },
+    "prerequisites": {
+      "note": "Admission is competitive based on five required 30-level subjects.",
+      "domestic": [
+        "English Language Arts 30-1",
+        "Mathematics 30-1",
+        "Mathematics 31 (Calculus)",
+        "Chemistry 30",
+        "Physics 30"
+      ],
+      "international": [
+        "Senior secondary equivalent of English, Calculus, Chemistry, and Physics",
+        "English proficiency: IELTS 6.5 (no band below 6.0) OR TOEFL iBT 86",
+        "Competitive GPA (varies annually)"
+      ]
+    },
+    "url": "https://schulich.ucalgary.ca/future-students/undergraduate/programs/software-engineering",
+    "careerPaths": [
+      "Software Engineer",
+      "Systems Architect",
+      "Embedded Systems Designer",
+      "Software Design Project Manager",
+      "Cloud Architect"
+    ],
+    "skills": [
+      "Software Architecture",
+      "Real-time Systems",
+      "Engineering Design",
+      "Testing and Quality Assurance",
+      "Embedded Software",
+      "Project Management"
+    ],
+    "nocCodes": [
+      "21231",
+      "21232"
+    ],
+    "additionalInfo": {
+      "startDates": [
+        "September"
+      ],
+      "deliveryMode": "On-campus",
+      "applicationDeadline": "March 1 (Fall intake)",
+      "coopAvailable": true,
+      "programCredits": "120+ credits",
+      "totalProgramLength": "4-5 years (with optional 12-16 month internship)",
+      "specialNotes": "Accredited engineering program leading to P.Eng designation. Includes a mandatory common first year.",
+      "pathwayPrograms": "Transfer students from SAIT may be eligible for individual course credit or admission to the Energy Engineering transfer program.",
+      "transferCreditsAvailable": true,
+      "transferNote": "Check Transfer Alberta for course-by-course mappings. Minimum grade of C- required for transfer credit."
+    }
+  },
+  {
+    "id": "ucalgary-bsc-cs-seng",
+    "name": "BSc in Computer Science (Software Engineering Concentration)",
+    "institution": "University of Calgary",
+    "institutionId": "ucalgary",
+    "description": "A Faculty of Science degree focused on the scientific and mathematical foundations of computing with a specialized concentration in software development processes, algorithms, and human-computer interaction.",
+    "credentials": "Bachelor of Science (BSc)",
+    "duration": "4 years",
+    "tuition": {
+      "domestic": 7976,
+      "international": 29598,
+      "note": "Per year; estimated based on standard 2026 Faculty of Science rates."
+    },
+    "prerequisites": {
+      "note": "Admission is competitive; Physics 30 is highly recommended for specific course prerequisites.",
+      "domestic": [
+        "English Language Arts 30-1",
+        "Mathematics 30-1 (70% minimum grade required)",
+        "Two of: Biology 30, Chemistry 30, Physics 30, Math 31, or CTS Computing Science (Advanced)",
+        "One approved option at the 30-level"
+      ],
+      "international": [
+        "High school diploma with senior-level English and Math",
+        "English proficiency: IELTS 6.5 (no band below 6.0) OR TOEFL iBT 86",
+        "Credential evaluation usually required"
+      ]
+    },
+    "url": "https://science.ucalgary.ca/computer-science/undergraduate/programs/software-engineering",
+    "careerPaths": [
+      "Full-Stack Developer",
+      "Application Architect",
+      "Systems Analyst",
+      "Back-end Engineer",
+      "Mobile Development Lead"
+    ],
+    "skills": [
+      "Algorithms and Data Structures",
+      "Object-Oriented Programming",
+      "Human-Computer Interaction",
+      "Database Systems",
+      "Web Development"
+    ],
+    "nocCodes": [
+      "21232",
+      "21234",
+      "21230"
+    ],
+    "additionalInfo": {
+      "startDates": [
+        "September"
+      ],
+      "deliveryMode": "On-campus",
+      "applicationDeadline": "March 1 (Fall intake)",
+      "coopAvailable": true,
+      "programCredits": "120 credits",
+      "totalProgramLength": "4 years",
+      "specialNotes": "Features the Science Internship Program (8-16 months). More flexibility for electives compared to Engineering.",
+      "pathwayPrograms": "UCalgary will move to block transfer for polytechnic diplomas starting in late 2026 (Fall 2027 intake).",
+      "transferCreditsAvailable": true,
+      "transferNote": "Specific mappings for SAIT CPSC/MATH courses available via Transfer Alberta. Max 60 units of transfer credit allowed."
+    }
+  },
+  {
+    "id": "ucalgary-cert-const-mgmt",
+    "name": "Certificate in Professional Management specializing in Construction Management",
+    "institution": "University of Calgary",
+    "institutionId": "ucalgary",
+    "description": "A 300-hour program developing competencies to effectively manage construction projects. Focuses on legal, regulatory, and technical aspects while building skills in business, cost estimation, and interpersonal relations.",
+    "credentials": "Certificate",
+    "duration": "2-3 years (part-time) or 1 year (intensive)",
+    "tuition": {
+      "domestic": 6122,
+      "international": 27950,
+      "note": "Domestic includes $105 admission fee; International reflects the IPP full-time stream bundle."
+    },
+    "prerequisites": {
+      "note": "No degree or diploma required for domestic admission; open to anyone 18+.",
+      "domestic": [
+        "18 years of age or older",
+        "Grade 12 diploma (recommended)",
+        "Relevant work experience (recommended)"
+      ],
+      "international": [
+        "Post-secondary degree or diploma (minimum 2 years)",
+        "English proficiency: IELTS 6.5 or TOEFL iBT 86",
+        "Registration in the International Professional Program (IPP) stream"
+      ]
+    },
+    "url": "https://conted.ucalgary.ca/public/category/courseCategoryCertificateProfile.do?method=load&certificateId=1706219",
+    "careerPaths": [
+      "Residential Construction Site Manager",
+      "Construction Project Coordinator",
+      "Estimator",
+      "Construction Business Manager"
+    ],
+    "skills": [
+      "Construction Contract Law",
+      "Human Behaviour in Organizations",
+      "Construction Costing",
+      "Project Performance Domains",
+      "Conflict Management"
+    ],
+    "nocCodes": [
+      "70010",
+      "22303"
+    ],
+    "additionalInfo": {
+      "startDates": [
+        "September",
+        "January",
+        "May"
+      ],
+      "deliveryMode": "Online and In-person options",
+      "applicationDeadline": "Rolling basis",
+      "coopAvailable": false,
+      "programCredits": "300 hours of instruction",
+      "totalProgramLength": "Flexible based on courses per term",
+      "specialNotes": "Ideal for tradespeople moving into management. Students can take individual courses before formal admission.",
+      "pathwayPrograms": "Credits can transfer toward a Diploma in Professional Management.",
+      "transferCreditsAvailable": true,
+      "transferNote": "Up to 100 hours of advanced standing may be granted for previous relevant post-secondary courses."
+    }
+  },
+  {
+    "id": "ucalgary-bcomm-obhr",
+    "name": "Bachelor of Commerce - Organizational Behaviour and Human Resources",
+    "institution": "University of Calgary",
+    "institutionId": "ucalgary",
+    "description": "A 4-year professional degree within the Haskayne School of Business. This program is the primary academic route for senior HR leadership and is fully integrated with ApplyAlberta for transcript automation.",
+    "credentials": "Bachelor of Commerce (BComm)",
+    "duration": "4 years",
+    "tuition": {
+      "domestic": 8345,
+      "international": 31134,
+      "note": "Per year; 2026 undergraduate rates."
+    },
+    "prerequisites": {
+      "note": "Transfer students require 18 units of 'Pre-Commerce' courses (English, Calc, Stats, Econ) with a C- minimum for entry.",
+      "domestic": [
+        "English 30-1",
+        "Math 30-1",
+        "Competitive GPA (usually 3.0+)"
+      ],
+      "international": [
+        "IELTS 6.5 (no band below 6.0)"
+      ]
+    },
+    "url": "https://www.ucalgary.ca/future-students/undergraduate/explore-programs/organizational-behaviour-human-resources",
+    "careerPaths": [
+      "HR Manager",
+      "Labour Relations Director",
+      "Talent Strategist"
+    ],
+    "skills": [
+      "Strategic HR",
+      "Workforce Planning",
+      "Organizational Psychology"
+    ],
+    "nocCodes": [
+      "11200",
+      "10011"
+    ],
+    "additionalInfo": {
+      "startDates": [
+        "September"
+      ],
+      "deliveryMode": "On-campus",
+      "coopAvailable": true,
+      "transferCreditsAvailable": true,
+      "transferNote": "Max 60 units (20 courses) allowed. ApplyAlberta handles all transcript requests from AB partner institutions automatically.",
+      "pathwayPrograms": "Standard 2+2 pathway for Business Administration diploma holders from any Alberta Transfer System institution."
+    }
+  },
+  {
+    "id": "ucalgary-conted-hr-diploma",
+    "name": "Human Resource Generalist Diploma",
+    "institution": "University of Calgary",
+    "institutionId": "ucalgary",
+    "description": "A 275-hour professional diploma through Continuing Education. This is the 2026 replacement for the legacy HR certificate, specifically aligned with the CPHR Alberta competency framework.",
+    "credentials": "Diploma (Professional)",
+    "duration": "1-3 years (Flexible)",
+    "tuition": {
+      "domestic": 6245,
+      "international": 27950,
+      "note": "Total program cost for domestic; International includes the IPP stream bundle."
+    },
+    "prerequisites": {
+      "note": "Open entry; degree/diploma not required for domestic admission.",
+      "domestic": [
+        "18 years of age or older"
+      ],
+      "international": [
+        "2-year post-secondary diploma",
+        "IELTS 6.5"
+      ]
+    },
+    "url": "https://conted.ucalgary.ca/public/category/courseCategoryCertificateProfile.do?method=load&certificateId=84382743",
+    "careerPaths": [
+      "HR Coordinator",
+      "Recruiter",
+      "Payroll Specialist"
+    ],
+    "skills": [
+      "Employment Law",
+      "Talent Management",
+      "EDI & Accessibility"
+    ],
+    "nocCodes": [
+      "11200"
+    ],
+    "additionalInfo": {
+      "startDates": [
+        "September",
+        "January",
+        "May"
+      ],
+      "deliveryMode": "Online",
+      "transferCreditsAvailable": true,
+      "transferNote": "Up to 90 hours of 'Advanced Standing' can be granted for equivalent courses from other Alberta institutions."
+    }
+  },
+  {
+    "id": "ucalgary-bsc-civil-eng",
+    "name": "Bachelor of Science in Civil Engineering",
+    "institution": "University of Calgary",
+    "institutionId": "ucalgary",
+    "description": "Accredited engineering degree focusing on infrastructure, structures, and environment. Accepts diploma holders from any Alberta Engineering Technology program.",
+    "credentials": "Bachelor of Science (BSc)",
+    "duration": "4 years",
+    "tuition": {
+      "domestic": 8530,
+      "international": 38734
+    },
+    "prerequisites": {
+      "note": "Diploma holders require a competitive GPA (typically 3.0+) for admission into 2nd year.",
+      "domestic": [
+        "English 30-1",
+        "Math 30-1",
+        "Math 31",
+        "Chemistry 30",
+        "Physics 30"
+      ],
+      "international": [
+        "IELTS 6.5 (minimum 6.0 in each band)",
+        "Senior English",
+        "Mathematics",
+        "Calculus",
+        "Chemistry",
+        "Physics"
+      ],
+      "competetiveAverage": "90%-93% (2026 benchmark)",
+      "countryEquivalents": [
+        {
+          "country": "Philippines",
+          "system": "K-12 Program",
+          "requirement": "Senior High School Diploma (STEM strand). Must present high grades in Pre-Calculus, Calculus, and Physics."
+        },
+        {
+          "country": "Nigeria",
+          "system": "WASSCE (WAEC) / NECO",
+          "requirement": "Senior School Certificate. Requires 'B' grades or higher in Further Mathematics, Physics, and Chemistry for competitive entry."
+        },
+        {
+          "country": "China",
+          "system": "Gaokao / Senior High",
+          "requirement": "Senior High School Graduation Diploma + competitive Gaokao scores in the Science stream."
+        }
+      ]
+    },
+    "url": "https://www.ucalgary.ca/future-students/undergraduate/explore-programs/civil-engineering",
+    "careerPaths": [
+      "Structural Engineer",
+      "Project Manager",
+      "Transportation Engineer"
+    ],
+    "skills": [
+      "Structural Analysis",
+      "Geotechnical Design",
+      "Sustainability"
+    ],
+    "nocCodes": [
+      "21300"
+    ],
+    "additionalInfo": {
+      "startDates": [
+        "September"
+      ],
+      "deliveryMode": "On-campus",
+      "coopAvailable": true,
+      "transferCreditsAvailable": true,
+      "transferNote": "Sept 1, 2026 update: UCalgary now primarily grants block transfer credit (up to 30 units) for completed Alberta Engineering Technology diplomas."
+    }
+  },
+  {
+    "id": "ucalgary-bsc-mechanical-eng",
+    "name": "Bachelor of Science in Mechanical Engineering",
+    "institution": "University of Calgary",
+    "institutionId": "ucalgary",
+    "description": "Design and manufacturing of mechanical systems. Includes paths for Alberta polytechnic graduates via ApplyAlberta.",
+    "credentials": "Bachelor of Science (BSc)",
+    "duration": "4 years",
+    "tuition": {
+      "domestic": 8530,
+      "international": 38734
+    },
+    "prerequisites": {
+      "note": "Requires completion of at least 8 specific 1st-year engineering courses for direct major entry.",
+      "domestic": [
+        "English 30-1",
+        "Math 30-1",
+        "Math 31",
+        "Chemistry 30",
+        "Physics 30"
+      ],
+      "international": [
+        "IELTS 6.5 (minimum 6.0 in each band)",
+        "Senior English",
+        "Mathematics",
+        "Calculus",
+        "Chemistry",
+        "Physics"
+      ],
+      "competetiveAverage": "90%-93% (2026 benchmark)",
+      "countryEquivalents": [
+        {
+          "country": "Philippines",
+          "system": "K-12 Program",
+          "requirement": "Senior High School Diploma (STEM strand). Must present high grades in Pre-Calculus, Calculus, and Physics."
+        },
+        {
+          "country": "Nigeria",
+          "system": "WASSCE (WAEC) / NECO",
+          "requirement": "Senior School Certificate. Requires 'B' grades or higher in Further Mathematics, Physics, and Chemistry for competitive entry."
+        },
+        {
+          "country": "China",
+          "system": "Gaokao / Senior High",
+          "requirement": "Senior High School Graduation Diploma + competitive Gaokao scores in the Science stream."
+        }
+      ]
+    },
+    "url": "https://www.ucalgary.ca/future-students/undergraduate/explore-programs/mechanical-engineering",
+    "careerPaths": [
+      "Manufacturing Engineer",
+      "Robotics Designer",
+      "Aerospace Specialist"
+    ],
+    "skills": [
+      "Thermodynamics",
+      "CAD/CAM",
+      "Materials Science"
+    ],
+    "nocCodes": [
+      "21320"
+    ],
+    "additionalInfo": {
+      "startDates": [
+        "September"
+      ],
+      "deliveryMode": "On-campus",
+      "coopAvailable": true,
+      "transferCreditsAvailable": true,
+      "transferNote": "Eligible for block transfer if transferring from an accredited Alberta Mechanical Engineering Technology diploma."
+    }
+  },
+  {
+    "id": "ucalgary-bsc-electrical-eng",
+    "name": "Bachelor of Science in Electrical Engineering",
+    "institution": "University of Calgary",
+    "institutionId": "ucalgary",
+    "description": "Study of power systems, electronics, and digital circuits. Direct transfer pathways exist for Alberta Electrical Engineering Tech grads.",
+    "credentials": "Bachelor of Science (BSc)",
+    "duration": "4 years",
+    "tuition": {
+      "domestic": 8530,
+      "international": 38734
+    },
+    "prerequisites": {
+      "note": "English Language Proficiency must be met. Transfer GPA is calculated on the most recent 30 units of study.",
+      "domestic": [
+        "English 30-1",
+        "Math 30-1",
+        "Math 31",
+        "Chemistry 30",
+        "Physics 30"
+      ],
+      "international": [
+        "IELTS 6.5 (minimum 6.0 in each band)",
+        "Senior English",
+        "Mathematics",
+        "Calculus",
+        "Chemistry",
+        "Physics"
+      ],
+      "competetiveAverage": "90%-93% (2026 benchmark)",
+      "countryEquivalents": [
+        {
+          "country": "Philippines",
+          "system": "K-12 Program",
+          "requirement": "Senior High School Diploma (STEM strand). Must present high grades in Pre-Calculus, Calculus, and Physics."
+        },
+        {
+          "country": "Nigeria",
+          "system": "WASSCE (WAEC) / NECO",
+          "requirement": "Senior School Certificate. Requires 'B' grades or higher in Further Mathematics, Physics, and Chemistry for competitive entry."
+        },
+        {
+          "country": "China",
+          "system": "Gaokao / Senior High",
+          "requirement": "Senior High School Graduation Diploma + competitive Gaokao scores in the Science stream."
+        }
+      ]
+    },
+    "url": "https://www.ucalgary.ca/future-students/undergraduate/explore-programs/electrical-engineering",
+    "careerPaths": [
+      "Power Systems Engineer",
+      "Electronics Designer",
+      "Control Systems Lead"
+    ],
+    "skills": [
+      "Circuit Design",
+      "Signal Processing",
+      "Power Electronics"
+    ],
+    "nocCodes": [
+      "21310"
+    ],
+    "additionalInfo": {
+      "startDates": [
+        "September"
+      ],
+      "deliveryMode": "On-campus",
+      "coopAvailable": true,
+      "transferCreditsAvailable": true,
+      "transferNote": "Transcript retrieval via ApplyAlberta is automatic for students from member institutions."
+    }
+  },
+  {
+    "id": "ucalgary-bcomm-finance",
+    "name": "Bachelor of Commerce in Finance",
+    "institution": "University of Calgary",
+    "institutionId": "ucalgary",
+    "description": "A competitive business degree within the Haskayne School of Business focusing on corporate finance and investments. Uses the ApplyAlberta system for seamless transcript transfer from any Alberta college.",
+    "credentials": "Bachelor of Commerce (BComm)",
+    "duration": "4 years",
+    "tuition": {
+      "domestic": 8345,
+      "international": 31134,
+      "note": "Per year; estimated 2026 rates."
+    },
+    "prerequisites": {
+      "note": "Transfer students must complete 6 specific 'Pre-Commerce' courses at an Alberta institution to be eligible for Year 2 or 3 entry.",
+      "domestic": [
+        "Junior English (3 units)",
+        "Calculus (3 units)",
+        "Statistics (6 units)",
+        "Microeconomics & Macroeconomics (6 units)"
+      ],
+      "international": [
+        "IELTS 6.5",
+        "Equivalent Pre-Commerce coursework"
+      ]
+    },
+    "url": "https://haskayne.ucalgary.ca/future-students/bcomm/concentrations/finance",
+    "careerPaths": [
+      "Financial Analyst",
+      "Investment Banker",
+      "Risk Manager"
+    ],
+    "skills": [
+      "Financial Modeling",
+      "Valuation",
+      "CFA Prep"
+    ],
+    "nocCodes": [
+      "11101"
+    ],
+    "additionalInfo": {
+      "startDates": [
+        "September"
+      ],
+      "deliveryMode": "On-campus",
+      "coopAvailable": true,
+      "transferCreditsAvailable": true,
+      "transferNote": "Max 60 units (20 courses) allowed. ApplyAlberta automatically requests transcripts from participating AB institutions.",
+      "pathwayPrograms": "Accepts graduates from any accredited Alberta Business Administration diploma (e.g., SAIT, NAIT, Bow Valley, RDP)."
+    }
+  },
+  {
+    "id": "ucalgary-bed-elementary",
+    "name": "Bachelor of Education (Elementary Route)",
+    "institution": "University of Calgary",
+    "institutionId": "ucalgary",
+    "description": "Professional teacher training for K-6. High-demand program that uses the Alberta Transfer System to evaluate non-education electives from colleges across the province.",
+    "credentials": "Bachelor of Education (BEd)",
+    "duration": "4 years",
+    "tuition": {
+      "domestic": 7444,
+      "international": 28500
+    },
+    "prerequisites": {
+      "note": "Education major courses (EDUC) must be taken at UCalgary; they do not transfer from other colleges.",
+      "domestic": [
+        "English 30-1",
+        "Math 30-1/30-2",
+        "Social Studies 30-1",
+        "Science 30"
+      ],
+      "international": [
+        "IELTS 8.0 (No band below 7.0 for Education)",
+        "English Literature",
+        "Mathematics",
+        "Social Studies",
+        "Science"
+      ],
+      "competitiveAverage": "80% - 85% (Varies by 'Teachable Subject' area)",
+      "countryEquivalents": [
+        {
+          "country": "Philippines",
+          "system": "K-12 (STEM/ABM/HUMSS)",
+          "requirement": "Must present senior-level English Literature (not just Language) and high marks in Science/Social Science strands."
+        },
+        {
+          "country": "Nigeria",
+          "system": "WASSCE (WAEC)",
+          "requirement": "Requires 'B' grades in 5 subjects, specifically including 'Literature-in-English'."
+        },
+        {
+          "country": "UK / British System",
+          "system": "GCE A-Levels",
+          "requirement": "2 A-Levels and 3 GCSEs. At least one A-Level must be in a 'Teachable' subject (English, History, Math, or Science)."
+        }
+      ]
+    },
+    "url": "https://werklund.ucalgary.ca/undergraduate-programs/future-students/pathways-and-admissions/four-year-campus-bachelor-education",
+    "careerPaths": [
+      "Elementary Teacher",
+      "Educational Consultant"
+    ],
+    "skills": [
+      "Pedagogy",
+      "Inclusive Education",
+      "Literacy Instruction"
+    ],
+    "nocCodes": [
+      "41221"
+    ],
+    "additionalInfo": {
+      "startDates": [
+        "September"
+      ],
+      "deliveryMode": "On-campus",
+      "specialNotes": "As of 2026, UCalgary uses 'Block Transfer' for non-education credits (up to 30-60 units).",
+      "transferNote": "Transfer credit only applies to non-Education classes (options/electives).",
+      "pathwayPrograms": "Open to transfer students from all Alberta Transfer System (ATS) member institutions."
+    }
+  },
+  {
+    "id": "lethpoly-dip-civil-eng",
+    "name": "Civil Engineering Technology",
+    "institution": "Lethbridge Polytechnic",
+    "institutionId": "lethpoly",
+    "description": "2-year accredited diploma specializing in infrastructure, structural design, and geomatics. Nationally recognized by Technology Accreditation Canada (TAC).",
+    "credentials": "Diploma",
+    "duration": "2 years",
+    "tuition": {
+      "domestic": 6448,
+      "international": 17200
+    },
+    "prerequisites": {
+      "note": "Accepts Math 30-2 stream. Competitive admission is not used; first-qualified applicants are accepted until full.",
+      "domestic": [
+        "English 30-1 or 30-2",
+        "Math 30-1 (Min 50%) or Math 30-2 (Min 60%)",
+        "Physics 20 or Science 30"
+      ],
+      "international": [
+        "IELTS 6.0 (no band below 6.0)",
+        "Senior English",
+        "Mathematics",
+        "Physics"
+      ],
+      "competetiveAverage": "Non-competitive (Open admission)",
+      "countryEquivalents": [
+        {
+          "country": "Philippines",
+          "system": "K-12 STEM",
+          "requirement": "K-12 Diploma with strong marks in Pre-Calculus and Physics."
+        }
+      ]
+    },
+    "url": "https://lethpolytech.ca/programs-and-courses/civil-engineering-technology",
+    "careerPaths": [
+      "Civil Technologist",
+      "Municipal Designer",
+      "Surveyor"
+    ],
+    "skills": [
+      "AutoCAD",
+      "Structural Analysis",
+      "Geomatics"
+    ],
+    "nocCodes": [
+      "22231"
+    ],
+    "additionalInfo": {
+      "startDates": [
+        "September"
+      ],
+      "deliveryMode": "On-campus",
+      "coopAvailable": true,
+      "transferCreditsAvailable": true,
+      "transferNote": "Eligible for 60 credits toward Athabasca University's Post-Diploma BSc."
+    }
+  },
+  {
+    "id": "lethpoly-cert-pre-elec",
+    "name": "Pre-Electrician",
+    "institution": "Lethbridge Polytechnic",
+    "institutionId": "lethpoly",
+    "description": "A 15-week certificate that provides the first year of the Alberta Apprenticeship curriculum. Prepares students to write the First Period Electrician exam.",
+    "credentials": "Certificate",
+    "duration": "15 weeks",
+    "tuition": {
+      "domestic": 6780,
+      "international": null
+    },
+    "prerequisites": {
+      "note": "Requires physical stamina and manual dexterity. High school diploma is the baseline.",
+      "domestic": [
+        "English 20-2",
+        "Math 20-3",
+        "Science 10"
+      ],
+      "international": [
+        "Not Available for International Students"
+      ],
+      "competetiveAverage": "Non-competitive (Waitlisting common)",
+      "countryEquivalents": []
+    },
+    "url": "https://lethpolytech.ca/programs-and-courses/pre-electrician-certificate",
+    "careerPaths": [
+      "Apprentice Electrician",
+      "Maintenance Technician"
+    ],
+    "skills": [
+      "Electrical Theory",
+      "Blueprint Reading",
+      "Safety Codes"
+    ],
+    "nocCodes": [
+      "72200"
+    ],
+    "additionalInfo": {
+      "startDates": [
+        "September",
+        "February"
+      ],
+      "deliveryMode": "On-campus",
+      "coopAvailable": false,
+      "transferCreditsAvailable": true,
+      "transferNote": "Graduates earn credit for the first year of technical training in the Electrician trade."
+    }
+  },
+  {
+    "id": "lethpoly-bn-nursing",
+    "name": "Bachelor of Nursing (NESA)",
+    "institution": "Lethbridge Polytechnic",
+    "institutionId": "lethpoly",
+    "description": "A collaborative 4-year degree with the University of Lethbridge. The first two years are completed at the Polytechnic campus.",
+    "credentials": "Degree",
+    "duration": "4 years",
+    "tuition": {
+      "domestic": 6500,
+      "international": 18500,
+      "note": "Years 1-2 rates; Years 3-4 paid to UofL."
+    },
+    "prerequisites": {
+      "note": "Admission is highly competitive and granted by the University of Lethbridge.",
+      "domestic": [
+        "English 30-1 (Min 60%)",
+        "Biology 30",
+        "Chemistry 30",
+        "Math 30-1 or 30-2"
+      ],
+      "international": [
+        "IELTS 7.0 (with high speaking sub-scores)",
+        "Senior Biology",
+        "Senior Chemistry",
+        "Senior Mathematics"
+      ],
+      "competetiveAverage": "85% - 92% (Approximate 2026 range)",
+      "countryEquivalents": [
+        {
+          "country": "Philippines",
+          "system": "K-12 STEM",
+          "requirement": "Senior High Diploma with high marks in Biology and Chemistry."
+        }
+      ]
+    },
+    "url": "https://lethpolytech.ca/programs-and-courses/bachelor-of-nursing",
+    "careerPaths": [
+      "Registered Nurse (RN)",
+      "Public Health Nurse",
+      "Acute Care Nurse"
+    ],
+    "skills": [
+      "Clinical Assessment",
+      "Patient Care",
+      "Pharmacology"
+    ],
+    "nocCodes": [
+      "31301"
+    ],
+    "additionalInfo": {
+      "startDates": [
+        "September"
+      ],
+      "deliveryMode": "On-campus",
+      "coopAvailable": false,
+      "transferCreditsAvailable": true,
+      "transferNote": "Seamless transition to UofL for years 3 and 4."
+    }
+  },
+  {
+    "id": "lethpoly-dip-cit",
+    "name": "Computer Information Technology",
+    "institution": "Lethbridge Polytechnic",
+    "institutionId": "lethpoly",
+    "description": "Focuses on software development, programming, and system analysis. Prepares students for the modern IT workforce.",
+    "credentials": "Diploma",
+    "duration": "2 years",
+    "tuition": {
+      "domestic": 5094,
+      "international": 17000
+    },
+    "prerequisites": {
+      "note": "Requires strong analytical thinking. PGWP eligible for international students.",
+      "domestic": [
+        "English 30-1 or 30-2",
+        "Math 30-2 (or higher)"
+      ],
+      "international": [
+        "IELTS 6.0",
+        "Senior Mathematics"
+      ],
+      "competetiveAverage": "Non-competitive (Open admission)",
+      "countryEquivalents": [
+        {
+          "country": "Nigeria",
+          "system": "WASSCE",
+          "requirement": "C6 or better in Mathematics."
+        }
+      ]
+    },
+    "url": "https://lethpolytech.ca/programs-and-courses/computer-information-technology",
+    "careerPaths": [
+      "Software Developer",
+      "Web Programmer",
+      "Systems Analyst"
+    ],
+    "skills": [
+      "Python/Java",
+      "Database Management",
+      "Agile Methodology"
+    ],
+    "nocCodes": [
+      "21222",
+      "21232"
+    ],
+    "additionalInfo": {
+      "startDates": [
+        "September"
+      ],
+      "deliveryMode": "Blended",
+      "coopAvailable": true,
+      "transferCreditsAvailable": true,
+      "transferNote": "CIPS accredited. Transfers to UofL Post-Diploma BSc in Computer Science."
+    }
+  },
+  {
+    "id": "lethpoly-dip-bus-acc",
+    "name": "Business Administration - Accounting",
+    "institution": "Lethbridge Polytechnic",
+    "institutionId": "lethpoly",
+    "description": "Two-year experiential diploma. Provides a foundation for the CPA designation. Focuses on financial reporting, taxation, and auditing.",
+    "credentials": "Diploma",
+    "duration": "2 years",
+    "tuition": {
+      "domestic": 7203,
+      "international": 17500
+    },
+    "prerequisites": {
+      "note": "English Language Proficiency must be met. Math 30-2 is the minimum requirement.",
+      "domestic": [
+        "English 30-1 or 30-2",
+        "Math 30-1 or 30-2"
+      ],
+      "international": [
+        "IELTS 6.0 (minimum 6.0 in each band)",
+        "Senior English",
+        "Mathematics"
+      ],
+      "competetiveAverage": "Non-competitive (Open admission)",
+      "countryEquivalents": [
+        {
+          "country": "Philippines",
+          "system": "K-12 ABM Strand",
+          "requirement": "Senior High School Diploma with high marks in Business Math or Fundamentals of Accountancy."
+        }
+      ]
+    },
+    "url": "https://lethpolytech.ca/programs-and-courses/business-administration-accounting",
+    "careerPaths": [
+      "Junior Accountant",
+      "Accounts Payable Clerk",
+      "Tax Preparer"
+    ],
+    "skills": [
+      "Financial Accounting",
+      "Taxation",
+      "Critical Thinking"
+    ],
+    "nocCodes": [
+      "12101",
+      "14200"
+    ],
+    "additionalInfo": {
+      "startDates": [
+        "September",
+        "January"
+      ],
+      "deliveryMode": "Blended",
+      "coopAvailable": true,
+      "transferCreditsAvailable": true,
+      "transferNote": "Eligible for 60 credits toward Athabasca University's Post-Diploma BComm or B.Mgt at UofL."
+    }
+  },
+  {
+    "id": "lethpoly-dip-bus-mgmt-hr",
+    "name": "Business Administration - Management (HR Focus)",
+    "institution": "Lethbridge Polytechnic",
+    "institutionId": "lethpoly",
+    "description": "Specialized management stream focusing on recruitment, leadership, and organizational behavior. Prepares students for CPHR pathways.",
+    "credentials": "Diploma",
+    "duration": "2 years",
+    "tuition": {
+      "domestic": 7203,
+      "international": 17500
+    },
+    "prerequisites": {
+      "note": "Includes an elective practicum component for real-world HR experience.",
+      "domestic": [
+        "English 30-1 or 30-2",
+        "Math 30-1 or 30-2"
+      ],
+      "international": [
+        "IELTS 6.0",
+        "Senior English",
+        "Mathematics"
+      ],
+      "competetiveAverage": "Non-competitive (First-qualified, first-admitted)",
+      "countryEquivalents": [
+        {
+          "country": "Nigeria",
+          "system": "WASSCE",
+          "requirement": "C6 or better in English and Mathematics."
+        }
+      ]
+    },
+    "url": "https://lethpolytech.ca/programs-and-courses/business-administration-management",
+    "careerPaths": [
+      "HR Coordinator",
+      "Recruiter",
+      "Office Manager"
+    ],
+    "skills": [
+      "Conflict Resolution",
+      "Recruitment Strategy",
+      "Leadership"
+    ],
+    "nocCodes": [
+      "12101",
+      "11200"
+    ],
+    "additionalInfo": {
+      "startDates": [
+        "September",
+        "January"
+      ],
+      "deliveryMode": "On-campus",
+      "coopAvailable": true,
+      "transferCreditsAvailable": true,
+      "transferNote": "Graduates can ladder into Athabasca's Post-Diploma Bachelor of Human Resources and Labour Relations."
+    }
+  },
+  {
+    "id": "lethpoly-ut-elementary-ed",
+    "name": "University Transfer - Elementary Education",
+    "institution": "Lethbridge Polytechnic",
+    "institutionId": "lethpoly",
+    "description": "A 2-year university transfer pathway. Students complete their foundational 'breadth' courses in Lethbridge before transferring to a University for their B.Ed degree.",
+    "credentials": "University Transfer (leads to B.Ed)",
+    "duration": "2 years",
+    "tuition": {
+      "domestic": 6500,
+      "international": 18000
+    },
+    "prerequisites": {
+      "note": "Transfer to University faculties of Education requires a high competitive GPA (typically 3.0+).",
+      "domestic": [
+        "English 30-1",
+        "Math 30-1 or 30-2",
+        "Social Studies 30-1",
+        "One 30-level Science (Biology, Chemistry, or Physics)"
+      ],
+      "international": [
+        "IELTS 7.0 (Strict band requirements for Education)",
+        "Senior English Literature",
+        "Senior Mathematics",
+        "Senior Social Science",
+        "Senior Science"
+      ],
+      "competetiveAverage": "75% - 80% (Admission to UT); 3.0+ GPA (For eventual University transfer)",
+      "countryEquivalents": [
+        {
+          "country": "India",
+          "system": "Standard XII",
+          "requirement": "Must include English Literature and core science/social subjects with 75% average."
+        }
+      ]
+    },
+    "url": "https://lethpolytech.ca/departments/admissions/entrance-requirements/transfers",
+    "careerPaths": [
+      "Elementary School Teacher",
+      "Educational Consultant"
+    ],
+    "skills": [
+      "Child Development Theory",
+      "Instructional Design",
+      "Public Speaking"
+    ],
+    "nocCodes": [
+      "41221"
+    ],
+    "additionalInfo": {
+      "startDates": [
+        "September"
+      ],
+      "deliveryMode": "On-campus",
+      "coopAvailable": false,
+      "transferCreditsAvailable": true,
+      "transferNote": "Designed specifically for the 2+2 pathway into the University of Lethbridge or University of Alberta Faculty of Education."
+    }
+  },
+  {
+    "id": "lethpoly-cert-health-sci",
+    "name": "General Arts and Science - Health Sciences",
+    "institution": "Lethbridge Polytechnic",
+    "institutionId": "lethpoly",
+    "description": "A 1-year foundational certificate. It provides the specific Biology, Chemistry, and Math prerequisites needed to transfer into professional Pharmacy or Pharmacy Technician programs.",
+    "credentials": "Certificate",
+    "duration": "1 year",
+    "tuition": {
+      "domestic": 5420,
+      "international": 16800
+    },
+    "prerequisites": {
+      "note": "Used as a 'ranking' or 'upgrade' year for students who don't yet meet Pharmacy degree entry requirements.",
+      "domestic": [
+        "English 30-1 or 30-2",
+        "Biology 30",
+        "Chemistry 30",
+        "Math 30-1 or 30-2"
+      ],
+      "international": [
+        "IELTS 6.0 (no band below 6.0)",
+        "Senior English",
+        "Senior Biology",
+        "Senior Chemistry"
+      ],
+      "competetiveAverage": "Non-competitive (Open admission)",
+      "countryEquivalents": [
+        {
+          "country": "Philippines",
+          "system": "K-12 STEM",
+          "requirement": "Senior High Diploma with Physics, Chemistry, and Biology credits."
+        }
+      ]
+    },
+    "url": "https://lethpolytech.ca/programs-and-courses/general-arts-and-science-health-sciences-certificate",
+    "careerPaths": [
+      "Pharmacy Student (Transfer)",
+      "Lab Assistant",
+      "Medical Office Clerk"
+    ],
+    "skills": [
+      "Anatomy and Physiology",
+      "Foundational Chemistry",
+      "Medical Terminology"
+    ],
+    "nocCodes": [
+      "33109"
+    ],
+    "additionalInfo": {
+      "startDates": [
+        "September"
+      ],
+      "deliveryMode": "On-campus",
+      "coopAvailable": false,
+      "transferCreditsAvailable": true,
+      "transferNote": "Courses are designed for block transfer into Health Science degrees or as prerequisites for the U of A PharmD program."
+    }
+  }
+]
