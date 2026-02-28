@@ -3,7 +3,7 @@ import { mutation, query } from "./_generated/server";
 import { v } from "convex/values";
 
 // Create a new student profile
-export const createProfile = mutation({
+export const createStudent = mutation({
   args: {
     name: v.string(),
     currentEducation: v.string(),

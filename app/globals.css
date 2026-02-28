@@ -23,4 +23,46 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden; /* ← ADD: Prevent horizontal scroll */
+}
+
+/* ========== MOBILE RESPONSIVE FIXES ========== */
+
+/* Prevent iOS zoom on input focus */
+input,
+select,
+textarea {
+  font-size: 16px !important;
+}
+
+/* Touch-friendly tap targets */
+button,
+a {
+  min-height: 44px;
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 768px) {
+  /* Reduce padding on small screens */
+  .p-8 {
+    padding: 1rem !important;
+  }
+
+  .p-6 {
+    padding: 1rem !important;
+  }
+
+  /* Ensure buttons stack properly */
+  .flex-col.sm\:flex-row {
+    flex-direction: column !important;
+  }
+}
+
+/* Fix for iOS Safari input zoom */
+@supports (-webkit-touch-callout: none) {
+  input,
+  textarea,
+  select {
+    font-size: 16px !important;
+  }
 }

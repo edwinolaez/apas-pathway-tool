@@ -6,6 +6,8 @@ import { api } from "@/convex/_generated/api";
 import { useSearchParams } from "next/navigation";
 import { useState } from "react";
 import { Id } from "@/convex/_generated/dataModel";
+import LabourMarketCard from '../components/LabourMarketCard';
+import ExportPDFButton from '../components/ExportPDFButton';
 
 function RecommendationsContent() {
   const searchParams = useSearchParams();
@@ -249,9 +251,9 @@ function RecommendationsContent() {
         {recommendations && !isLoading && (
           <div className="space-y-6">
             <div className="bg-gradient-to-r from-green-50 to-emerald-50 border-2 border-green-200 rounded-xl p-6 shadow-lg">
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-3 flex-wrap">
                 <div className="text-4xl">✨</div>
-                <div>
+                <div className="flex-1">
                   <h2 className="text-2xl font-bold text-green-900">
                     Found {recommendations.recommendations.length} Perfect Matches!
                   </h2>
@@ -263,7 +265,7 @@ function RecommendationsContent() {
                     setHasAutoTriggered(false);
                     setLoadingProgress(0);
                   }}
-                  className="ml-auto text-green-600 hover:text-green-800 font-semibold text-sm border-2 border-green-300 px-4 py-2 rounded-lg hover:bg-green-100 transition-all"
+                  className="text-green-600 hover:text-green-800 font-semibold text-sm border-2 border-green-300 px-4 py-2 rounded-lg hover:bg-green-100 transition-all"
                 >
                   🔄 New Analysis
                 </button>
@@ -370,7 +372,7 @@ function RecommendationsContent() {
                     </div>
 
                     {/* Prerequisites */}
-                    <div className="bg-purple-50 p-4 rounded-lg border border-purple-100">
+                    <div className="mb-4 bg-purple-50 p-4 rounded-lg border border-purple-100">
                       <h4 className="font-semibold text-purple-900 mb-2 flex items-center gap-2">
                         <span>📋</span> What You'll Need
                       </h4>
@@ -383,13 +385,27 @@ function RecommendationsContent() {
                         ))}
                       </ul>
                     </div>
+
+                    {/* Labour Market Data */}
+                    <LabourMarketCard programName={rec.programName} />
+
                   </div>
                 );
               }
             )}
 
-            {/* Actions */}
+            {/* Actions - WITH EXPORT PDF BUTTON */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8 pb-8">
+              <ExportPDFButton
+                student={{
+                  name: student.name,
+                  currentEducation: student.currentEducation,
+                  careerGoal: student.careerGoal,
+                  mathScore: student.mathScore,
+                  interests: student.interests
+                }}
+                recommendations={recommendations.recommendations}
+              />
               <a
                 href="/profile"
                 className="bg-blue-600 text-white px-8 py-4 rounded-xl hover:bg-blue-700 transition-all font-semibold text-center shadow-lg hover:shadow-xl"
