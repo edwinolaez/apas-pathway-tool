@@ -46,7 +46,7 @@ export default function Header() {
   );
 
   return (
-    <header className="w-full py-4 px-6 md:px-12 lg:px-20 flex items-center justify-between bg-white border-b border-border/40 shadow-lg">
+    <header className="sticky top-0 z-50 w-full py-4 px-6 md:px-12 lg:px-20 flex items-center justify-between bg-white border-b border-border/40 shadow-lg">
       <div className="flex items-center gap-1">
         <Link href="/">
           <Image

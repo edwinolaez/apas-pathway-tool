@@ -127,7 +127,7 @@ export default function Home() {
                 src: `/partners/${name.toLowerCase().replace(/\s/g, "-")}.png`,
               }))} />
               <Link
-                href="/recommendations"
+                href="https://prod.applyalberta.ca/institutions/"
                 className="mt-5 inline-flex items-center rounded-full border-2 border-foreground px-4 py-2 text-sm font-bold bg-background text-primary hover:bg-foreground hover:text-white transition-colors"
               >
                 Browse our partner institutions

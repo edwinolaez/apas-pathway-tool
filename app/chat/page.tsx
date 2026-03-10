@@ -30,6 +30,7 @@ function ChatPageContent() {
   const { userId } = useAuth();
   const searchParams = useSearchParams();
   const queryStudentId = searchParams.get("studentId") as Id<"students"> | null;
+  const queryThreadId = searchParams.get("threadId");
 
   const getOrCreateThread = useAction(api.advisorAgent.getOrCreateAdvisorThread);
   const sendAdvisorMessage = useAction(api.advisorAgent.sendAdvisorMessage);
@@ -123,22 +124,41 @@ function ChatPageContent() {
   }, [resolvedStudentId]);
 
   useEffect(() => {
-    if (!student?._id || threadId || isBootstrapping) return;
+    if (!student?._id || isBootstrapping) return;
+
+    const shouldInitialize = !threadId || (queryThreadId && queryThreadId !== threadId);
+    if (!shouldInitialize) return;
 
     const initThread = async () => {
       setIsBootstrapping(true);
       try {
         const result = await getOrCreateThread({
           studentId: String(student._id),
+          threadRefId: queryThreadId ?? undefined,
         });
         setThreadId(String(result.threadId));
-        setMessages([
+
+        const hydratedMessages = (result.messages ?? []).map(
+          (m: { id: string; role: "user" | "assistant"; content: string; createdAt: number }) => ({
+            id: `${m.role}-${m.createdAt}-${m.id}`,
+            role: m.role,
+            content: m.content,
+          })
+        );
+
+        setMessages(hydratedMessages.length > 0 ? hydratedMessages : [
           {
             id: `assistant-welcome-${Date.now()}`,
             role: "assistant",
             content: result.message,
           },
         ]);
+
+        if (queryThreadId !== String(result.threadId)) {
+          const params = new URLSearchParams(searchParams.toString());
+          params.set("threadId", String(result.threadId));
+          router.replace(`/chat?${params.toString()}`);
+        }
       } catch (err) {
         console.error("Failed to initialize advisor thread", err);
         setMessages([
@@ -154,7 +174,15 @@ function ChatPageContent() {
     };
 
     void initThread();
-  }, [student?._id, threadId, isBootstrapping, getOrCreateThread]);
+  }, [
+    student?._id,
+    threadId,
+    queryThreadId,
+    isBootstrapping,
+    getOrCreateThread,
+    router,
+    searchParams,
+  ]);
 
   const fetchCardsForQuery = async (
     query: string,
@@ -204,6 +232,40 @@ function ChatPageContent() {
     }
   };
 
+  const handleNewChat = async () => {
+    if (!student?._id || isBootstrapping) return;
+
+    setIsBootstrapping(true);
+    try {
+      const result = await getOrCreateThread({
+        studentId: String(student._id),
+        forceNewThread: true,
+      });
+
+      const hydratedMessages = (result.messages ?? []).map(
+        (m: { id: string; role: "user" | "assistant"; content: string; createdAt: number }) => ({
+          id: `${m.role}-${m.createdAt}-${m.id}`,
+          role: m.role,
+          content: m.content,
+        })
+      );
+
+      setThreadId(String(result.threadId));
+      setMessages(hydratedMessages);
+      setSelectedPrograms([]);
+      setProgramCards([]);
+      setChatInput("");
+
+      const params = new URLSearchParams(searchParams.toString());
+      params.set("threadId", String(result.threadId));
+      router.replace(`/chat?${params.toString()}`);
+    } catch (err) {
+      console.error("Failed to create a new chat thread", err);
+    } finally {
+      setIsBootstrapping(false);
+    }
+  };
+
   const handleSendMessage = async () => {
     const message = chatInput.trim();
     if (!message || !student?._id) return;
@@ -221,9 +283,16 @@ function ChatPageContent() {
     try {
       let activeThreadId = threadId;
       if (!activeThreadId) {
-        const init = await getOrCreateThread({ studentId: String(student._id) });
+        const init = await getOrCreateThread({
+          studentId: String(student._id),
+          threadRefId: queryThreadId ?? undefined,
+        });
         activeThreadId = String(init.threadId);
         setThreadId(activeThreadId);
+
+        const params = new URLSearchParams(searchParams.toString());
+        params.set("threadId", activeThreadId);
+        router.replace(`/chat?${params.toString()}`);
       }
 
       const result = await sendAdvisorMessage({
@@ -314,18 +383,6 @@ function ChatPageContent() {
   return (
     <div className="min-h-screen bg-background p-4 md:p-8">
       <div className="max-w-5xl mx-auto">
-        {/* Greeting Section */}
-        <div className="bg-card rounded-xl shadow-lg p-6 mb-6 border border-border">
-          <h1 className="text-3xl font-bold text-foreground mb-2">
-            Welcome, {student.name}! 👋
-          </h1>
-          <p className="text-muted-foreground">
-            Based on your interest in <span className="font-semibold text-accent">{student.interests[0]}</span> and 
-            your goal to become a <span className="font-semibold text-accent">{student.careerGoal}</span>, 
-            I&apos;m here to help you find the perfect program.
-          </p>
-        </div>
-
         {/* Action Buttons */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
           <button
@@ -347,6 +404,13 @@ function ChatPageContent() {
             className="rounded-full border-border border-2 px-6 py-4 text-sm font-bold text-foreground bg-card hover:bg-muted transition-colors shadow-lg hover:shadow-xl"
           >
             Edit Profile
+          </button>
+          <button
+            onClick={() => void handleNewChat()}
+            disabled={isBootstrapping || isReplying}
+            className="rounded-full border-accent border-2 px-6 py-4 text-sm font-bold text-accent bg-card hover:bg-muted transition-colors shadow-lg hover:shadow-xl disabled:opacity-50"
+          >
+            {isBootstrapping ? "Starting..." : "New Chat"}
           </button>
         </div>
 
@@ -440,23 +504,20 @@ function ChatPageContent() {
                             {program.institution}
                           </p>
                         </div>
-                        <div className="bg-accent text-white px-3 py-1 rounded-full text-sm font-bold">
-                          From RAG
-                        </div>
                       </div>
                       <p className="text-foreground mb-3">{program.description}</p>
                       <div className="flex flex-wrap gap-2">
                         <span className="bg-muted text-foreground px-3 py-1 rounded-full text-sm">
-                          📜 {program.credentials}
+                          {program.credentials}
                         </span>
                         <span className="bg-muted text-foreground px-3 py-1 rounded-full text-sm">
-                          ⏱️ {program.duration}
+                          {program.duration}
                         </span>
                         <span className="bg-muted text-foreground px-3 py-1 rounded-full text-sm">
-                          💰 {program.tuition}
+                          {program.tuition}
                         </span>
                         <span className="bg-muted text-foreground px-3 py-1 rounded-full text-sm">
-                          🖥️ {program.deliveryMode}
+                          {program.deliveryMode}
                         </span>
                       </div>
                     </div>
@@ -503,9 +564,9 @@ function ChatPageContent() {
         {selectedPrograms.length >= 2 && (
           <button
             onClick={handleCompare}
-            className="fixed bottom-24 right-8 rounded-full border-accent border-2 px-6 py-4 text-sm font-bold text-white bg-accent hover:bg-[#257a69] transition-all shadow-2xl hover:shadow-3xl animate-bounce"
+            className="fixed bottom-24 right-8 rounded-full border-accent border-2 px-6 py-4 text-sm font-bold text-white bg-accent hover:bg-[#257a69] transition-all shadow-2xl hover:shadow-3xl"
           >
-            🔍 Compare {selectedPrograms.length} Programs
+            Compare {selectedPrograms.length} Programs
           </button>
         )}
       </div>

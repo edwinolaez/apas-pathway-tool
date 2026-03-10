@@ -5,6 +5,7 @@ import ConvexClientProvider from "./ConvexClientProvider";
 import MultilingualVoiceAssistant from "./components/MultilingualVoiceAssistant";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import LayoutShell from "./components/LayoutShell";
 import { ClerkProvider } from "@clerk/nextjs";
 
 const inter = Inter({
@@ -33,13 +34,10 @@ export default function RootLayout({
       <html lang="en">
         <body className={`${inter.variable} antialiased`}>
           <ConvexClientProvider>
-            <div className="min-h-screen flex flex-col">
-              <Header />
-              <main className="flex-1">
-                {children}
-              </main>
-              <Footer />
-            </div>
+            <Header />
+            <LayoutShell footer={<Footer />}>
+              {children}
+            </LayoutShell>
             <MultilingualVoiceAssistant />
           </ConvexClientProvider>
         </body>

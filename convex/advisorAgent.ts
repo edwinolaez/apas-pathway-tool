@@ -1,11 +1,14 @@
-import { action } from "./_generated/server";
+import { action, mutation, query } from "./_generated/server";
 import { v } from "convex/values";
 import { api, components } from "./_generated/api";
 import { Agent, createTool, saveMessage } from "@convex-dev/agent";
 import { z } from "zod";
 import { RAG } from "@convex-dev/rag";
 import { openai } from "@ai-sdk/openai";
-import type { Id } from "./_generated/dataModel";
+import type { Doc, Id } from "./_generated/dataModel";
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const apiRef: any = api;
 
 type ProgramCard = {
   id: string;
@@ -254,17 +257,191 @@ Remember: Every student has different strengths and paths. Be encouraging while 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const advisorAgent: any = createAdvisorAgent();
 
+type PersistedChatMessage = {
+  id: string;
+  role: "user" | "assistant";
+  content: string;
+  createdAt: number;
+};
+
+export const getLatestAdvisorThread = query({
+  args: {
+    studentId: v.string(),
+  },
+  handler: async (ctx, args) => {
+    return await ctx.db
+      .query("advisorThreads")
+      .withIndex("by_student_updated", (q) => q.eq("studentId", args.studentId as Id<"students">))
+      .order("desc")
+      .first();
+  },
+});
+
+export const getAdvisorThreadById = query({
+  args: {
+    threadRefId: v.string(),
+  },
+  handler: async (ctx, args) => {
+    return await ctx.db.get(args.threadRefId as Id<"advisorThreads">);
+  },
+});
+
+export const listAdvisorThreads = query({
+  args: {
+    studentId: v.string(),
+  },
+  handler: async (ctx, args) => {
+    const threads = await ctx.db
+      .query("advisorThreads")
+      .withIndex("by_student_updated", (q) => q.eq("studentId", args.studentId as Id<"students">))
+      .order("desc")
+      .collect();
+
+    return threads.map((t) => ({
+      id: String(t._id),
+      title: t.title,
+      updatedAt: t.updatedAt,
+      lastMessageAt: t.lastMessageAt,
+      lastMessagePreview: t.lastMessagePreview ?? "",
+    }));
+  },
+});
+
+export const getAdvisorThreadMessages = query({
+  args: {
+    threadRefId: v.string(),
+    limit: v.optional(v.number()),
+  },
+  handler: async (ctx, args): Promise<PersistedChatMessage[]> => {
+    const max = Math.max(1, Math.min(args.limit ?? 50, 100));
+    const messages = await ctx.db
+      .query("advisorMessages")
+      .withIndex("by_thread_created", (q) =>
+        q.eq("threadRefId", args.threadRefId as Id<"advisorThreads">)
+      )
+      .order("desc")
+      .take(max);
+
+    return messages
+      .reverse()
+      .map((m) => ({
+        id: String(m._id),
+        role: m.role,
+        content: m.content,
+        createdAt: m.createdAt,
+      }));
+  },
+});
+
+export const createAdvisorThreadRecord = mutation({
+  args: {
+    studentId: v.string(),
+    agentThreadId: v.string(),
+    title: v.string(),
+    welcomeMessage: v.string(),
+  },
+  handler: async (ctx, args) => {
+    const now = Date.now();
+    const threadId = await ctx.db.insert("advisorThreads", {
+      studentId: args.studentId as Id<"students">,
+      agentThreadId: args.agentThreadId,
+      title: args.title,
+      lastMessagePreview: args.welcomeMessage.slice(0, 160),
+      createdAt: now,
+      updatedAt: now,
+      lastMessageAt: now,
+    });
+
+    await ctx.db.insert("advisorMessages", {
+      threadRefId: threadId,
+      role: "assistant",
+      content: args.welcomeMessage,
+      createdAt: now,
+    });
+
+    return String(threadId);
+  },
+});
+
+export const appendAdvisorMessageRecord = mutation({
+  args: {
+    threadRefId: v.string(),
+    role: v.union(v.literal("user"), v.literal("assistant")),
+    content: v.string(),
+  },
+  handler: async (ctx, args) => {
+    const now = Date.now();
+    await ctx.db.insert("advisorMessages", {
+      threadRefId: args.threadRefId as Id<"advisorThreads">,
+      role: args.role,
+      content: args.content,
+      createdAt: now,
+    });
+
+    const thread = await ctx.db.get(args.threadRefId as Id<"advisorThreads">);
+    if (thread) {
+      await ctx.db.patch(thread._id, {
+        updatedAt: now,
+        lastMessageAt: now,
+        lastMessagePreview: args.content.slice(0, 160),
+      });
+    }
+
+    return true;
+  },
+});
+
 /**
  * Get or create a thread for a student advisor conversation
  */
 export const getOrCreateAdvisorThread = action({
   args: {
     studentId: v.string(),
+    threadRefId: v.optional(v.string()),
+    forceNewThread: v.optional(v.boolean()),
   },
-  handler: async (ctx, args): Promise<{ threadId: string; message: string }> => {
+  handler: async (
+    ctx,
+    args
+  ): Promise<{ threadId: string; message: string; messages: PersistedChatMessage[]; isNewThread: boolean }> => {
+    let persistedThread: Doc<"advisorThreads"> | null = null;
+
+    if (args.threadRefId) {
+      const threadById = await ctx.runQuery(apiRef.advisorThreads.getById, {
+        threadRefId: args.threadRefId,
+      });
+      if (threadById && String(threadById.studentId) === args.studentId) {
+        persistedThread = threadById;
+      }
+    }
+
+    if (!persistedThread && !args.forceNewThread) {
+      persistedThread = await ctx.runQuery(apiRef.advisorThreads.getLatestByStudent, {
+        studentId: args.studentId,
+      });
+    }
+
+    if (persistedThread) {
+      const messages = await ctx.runQuery(apiRef.advisorThreads.getMessages, {
+        threadRefId: String(persistedThread._id),
+        limit: 50,
+      });
+
+      return {
+        threadId: String(persistedThread._id),
+        message: messages[0]?.content ?? "Welcome back!",
+        messages,
+        isNewThread: false,
+      };
+    }
+
     const thread = await advisorAgent.createThread(ctx, {
       userId: args.studentId,
     });
+    const agentThreadId = String(
+      (thread as { threadId?: string; id?: string }).threadId ??
+        (thread as { id?: string }).id
+    );
 
     // Fetch student profile to provide context in welcome message
     const student = await ctx.runQuery(api.students.getProfile, {
@@ -272,16 +449,35 @@ export const getOrCreateAdvisorThread = action({
     });
 
     let welcomeMessage = "Hello! I'm your post-secondary education advisor.";
-    
     if (student) {
       welcomeMessage = `Hello ${student.name}! I can see from your profile that you're interested in ${student.careerGoal} and have interests in ${student.interests.slice(0, 2).join(" and ")}. I'm here to help you find programs that match your goals. How can I assist you today?`;
     } else {
       welcomeMessage = "Hello! I'm your post-secondary education advisor. I'm here to help you find programs that match your goals and interests. What kind of programs are you interested in exploring?";
     }
 
+    const title = student?.careerGoal
+      ? `${student.careerGoal} Planning`
+      : "New Chat";
+
+    const threadRefId = await ctx.runMutation(apiRef.advisorThreads.createThread, {
+      studentId: args.studentId,
+      agentThreadId,
+      title,
+      welcomeMessage,
+    });
+
     return {
-      threadId: String((thread as { threadId?: string; id?: string }).threadId ?? (thread as { id?: string }).id),
+      threadId: threadRefId,
       message: welcomeMessage,
+      messages: [
+        {
+          id: `welcome-${Date.now()}`,
+          role: "assistant",
+          content: welcomeMessage,
+          createdAt: Date.now(),
+        },
+      ],
+      isNewThread: true,
     };
   },
 });
@@ -295,21 +491,54 @@ export const sendAdvisorMessage = action({
     message: v.string(),
     studentId: v.string(),
   },
-  handler: async (ctx, args) => {
+  handler: async (
+    ctx,
+    args
+  ): Promise<{ response: string; threadId: string }> => {
+    const persistedThread: Doc<"advisorThreads"> | null = await ctx.runQuery(
+      apiRef.advisorThreads.getById,
+      {
+      threadRefId: args.threadId,
+      }
+    );
+    if (!persistedThread) {
+      throw new Error("Thread not found. Please start a new conversation.");
+    }
+
+    await ctx.runMutation(apiRef.advisorThreads.appendMessage, {
+      threadRefId: args.threadId,
+      role: "user",
+      content: args.message,
+    });
+
     // Prepend student ID context to the message so the agent knows which profile to access
     const enrichedPrompt = `[Student ID: ${args.studentId}]\n${args.message}`;
     
     const { messageId } = await saveMessage(ctx, components.agent, {
-      threadId: args.threadId,
+      threadId: persistedThread.agentThreadId,
       prompt: enrichedPrompt,
     });
 
     // Use promptMessageId flow to continue a persisted thread safely.
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const result = await advisorAgent.generateText(ctx, { threadId: args.threadId }, { promptMessageId: messageId } as any);
+    const result: { text?: string } = await advisorAgent.generateText(
+      ctx,
+      { threadId: persistedThread.agentThreadId },
+      { promptMessageId: messageId }
+    );
+
+    const safeResponse: string =
+      typeof result.text === "string" && result.text.trim().length > 0
+        ? result.text
+        : "I understood your message and saved it. Could you clarify what specific programs you want to compare?";
+
+    await ctx.runMutation(apiRef.advisorThreads.appendMessage, {
+      threadRefId: args.threadId,
+      role: "assistant",
+      content: safeResponse,
+    });
 
     return {
-      response: result.text,
+      response: safeResponse,
       threadId: args.threadId,
     };
   },
@@ -373,7 +602,7 @@ export const searchProgramCards = action({
       return { cards: [], totalMatches: 0 };
     }
 
-    const programs = await ctx.runQuery(api.queries.getProgramsByIds, {
+    const programs: Doc<"programs">[] = await ctx.runQuery(api.queries.getProgramsByIds, {
       programIds,
     });
 
@@ -381,7 +610,7 @@ export const searchProgramCards = action({
       `[searchProgramCards] dbPrograms=${programs.length} requestedIds=${programIds.length}`
     );
 
-    let resolvedPrograms = programs;
+    let resolvedPrograms: Doc<"programs">[] = programs;
     if (resolvedPrograms.length === 0 && rawResults.length > 0) {
       // Fallback for legacy/mismatched RAG entries: resolve by program name found in chunk text.
       const extractedNames = rawResults
@@ -402,9 +631,11 @@ export const searchProgramCards = action({
         .filter((name) => name.length > 0);
 
       if (extractedNames.length > 0) {
-        const allPrograms = await ctx.runQuery(api.queries.getAllPrograms);
+        const allPrograms: Doc<"programs">[] = await ctx.runQuery(api.queries.getAllPrograms);
         const nameSet = new Set(extractedNames.map((n) => n.toLowerCase()));
-        resolvedPrograms = allPrograms.filter((p) => nameSet.has(p.name.toLowerCase()));
+        resolvedPrograms = allPrograms.filter((p: Doc<"programs">) =>
+          nameSet.has(p.name.toLowerCase())
+        );
 
         console.log(
           `[searchProgramCards] fallbackByName extractedNames=${extractedNames.length} fallbackPrograms=${resolvedPrograms.length}`
@@ -414,7 +645,7 @@ export const searchProgramCards = action({
 
     if (resolvedPrograms.length === 0) {
       // Final fallback: token-match query terms against all programs.
-      const allPrograms = await ctx.runQuery(api.queries.getAllPrograms);
+      const allPrograms: Doc<"programs">[] = await ctx.runQuery(api.queries.getAllPrograms);
       const queryTokens = args.query
         .toLowerCase()
         .replace(/[^a-z0-9\s]/g, " ")
@@ -438,8 +669,8 @@ export const searchProgramCards = action({
             ].includes(t)
         );
 
-      const scored = allPrograms
-        .map((p) => {
+      const scoredPrograms: Doc<"programs">[] = allPrograms
+        .map((p: Doc<"programs">) => {
           const haystack = `${p.name} ${p.institution} ${p.credentials} ${p.description ?? ""}`.toLowerCase();
           let score = 0;
           for (const token of queryTokens) {
@@ -447,11 +678,14 @@ export const searchProgramCards = action({
           }
           return { program: p, score };
         })
-        .filter((entry) => entry.score > 0)
-        .sort((a, b) => b.score - a.score)
-        .map((entry) => entry.program);
+        .filter((entry: { program: Doc<"programs">; score: number }) => entry.score > 0)
+        .sort(
+          (a: { program: Doc<"programs">; score: number }, b: { program: Doc<"programs">; score: number }) =>
+            b.score - a.score
+        )
+        .map((entry: { program: Doc<"programs">; score: number }) => entry.program);
 
-      resolvedPrograms = scored.length > 0 ? scored : allPrograms;
+      resolvedPrograms = scoredPrograms.length > 0 ? scoredPrograms : allPrograms;
       console.log(
         `[searchProgramCards] fallbackByTokens queryTokens=${queryTokens.length} fallbackPrograms=${resolvedPrograms.length}`
       );
@@ -460,7 +694,7 @@ export const searchProgramCards = action({
     // Filter by budget if maxTuition is provided
     if (args.maxTuition !== undefined && args.maxTuition > 0) {
       const beforeFiltering = resolvedPrograms.length;
-      resolvedPrograms = resolvedPrograms.filter((program) => {
+      resolvedPrograms = resolvedPrograms.filter((program: Doc<"programs">) => {
         // Try domesticTuitionValue first (numeric field)
         if (program.domesticTuitionValue !== undefined) {
           return program.domesticTuitionValue <= args.maxTuition!;
@@ -489,7 +723,9 @@ export const searchProgramCards = action({
       );
     }
 
-    const byId = new Map(resolvedPrograms.map((p) => [p.id, p]));
+    const byId = new Map<string, Doc<"programs">>(
+      resolvedPrograms.map((p: Doc<"programs">) => [p.id, p])
+    );
     const cards: ProgramCard[] = [];
 
     for (const id of programIds) {

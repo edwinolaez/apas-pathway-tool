@@ -9,6 +9,7 @@
  */
 
 import type * as advisorAgent from "../advisorAgent.js";
+import type * as advisorThreads from "../advisorThreads.js";
 import type * as prerequisiteChecker from "../prerequisiteChecker.js";
 import type * as programIngestion from "../programIngestion.js";
 import type * as programs from "../programs.js";
@@ -26,6 +27,7 @@ import type {
 
 declare const fullApi: ApiFromModules<{
   advisorAgent: typeof advisorAgent;
+  advisorThreads: typeof advisorThreads;
   prerequisiteChecker: typeof prerequisiteChecker;
   programIngestion: typeof programIngestion;
   programs: typeof programs;

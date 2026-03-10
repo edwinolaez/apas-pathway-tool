@@ -170,6 +170,25 @@ export default defineSchema({
     mathScore: v.number(),
   }).index("by_clerkId", ["clerkId"]),
 
+  advisorThreads: defineTable({
+    studentId: v.id("students"),
+    agentThreadId: v.string(),
+    title: v.string(),
+    lastMessagePreview: v.optional(v.string()),
+    createdAt: v.number(),
+    updatedAt: v.number(),
+    lastMessageAt: v.number(),
+  })
+    .index("by_student_updated", ["studentId", "updatedAt"]),
+
+  advisorMessages: defineTable({
+    threadRefId: v.id("advisorThreads"),
+    role: v.union(v.literal("user"), v.literal("assistant")),
+    content: v.string(),
+    createdAt: v.number(),
+  })
+    .index("by_thread_created", ["threadRefId", "createdAt"]),
+
   // Users table (synced from Clerk)
   users: defineTable({
     clerkId: v.string(),
