@@ -162,12 +162,13 @@ export default defineSchema({
   }).index("by_noc", ["nocCode"]),
 
   students: defineTable({
+    clerkId: v.optional(v.string()),
     name: v.string(),
     currentEducation: v.string(),
     careerGoal: v.string(),
     interests: v.array(v.string()), // This can hold "Emerging Tech", "Anime", etc.
     mathScore: v.number(),
-  }),
+  }).index("by_clerkId", ["clerkId"]),
 
   // Users table (synced from Clerk)
   users: defineTable({

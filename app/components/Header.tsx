@@ -2,11 +2,48 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { useEffect, useMemo, useState } from "react";
+import { useSearchParams } from "next/navigation";
+import { useQuery } from "convex/react";
+import { api } from "@/convex/_generated/api";
 import { UserButton, useAuth } from "@clerk/nextjs";
 import ProtectedButton from "./ProtectedButton";
 
 export default function Header() {
-  const { isSignedIn } = useAuth();
+  const { isSignedIn, userId } = useAuth();
+  const searchParams = useSearchParams();
+  const [studentId, setStudentId] = useState<string | null>(null);
+  const linkedStudent = useQuery(
+    api.students.getStudentByClerkId,
+    userId ? { clerkId: userId } : "skip",
+  );
+
+  useEffect(() => {
+    const urlStudentId = searchParams.get("studentId");
+    if (urlStudentId) {
+      setStudentId(urlStudentId);
+      localStorage.setItem("pathrStudentId", urlStudentId);
+      return;
+    }
+
+    const savedStudentId = localStorage.getItem("pathrStudentId");
+    if (savedStudentId) {
+      setStudentId(savedStudentId);
+    }
+  }, [searchParams]);
+
+  useEffect(() => {
+    if (linkedStudent?._id) {
+      const id = String(linkedStudent._id);
+      setStudentId(id);
+      localStorage.setItem("pathrStudentId", id);
+    }
+  }, [linkedStudent?._id]);
+
+  const chatHref = useMemo(
+    () => (studentId ? `/chat?studentId=${studentId}` : "/profile"),
+    [studentId],
+  );
 
   return (
     <header className="w-full py-4 px-6 md:px-12 lg:px-20 flex items-center justify-between bg-white border-b border-border/40 shadow-lg">
@@ -33,6 +70,12 @@ export default function Header() {
           className="inline-flex items-center rounded-full px-4 py-2 text-sm text-primary font-bold hover:text-foreground transition-colors"
         >
           Eligibility
+        </Link>
+        <Link
+          href={chatHref}
+          className="inline-flex items-center rounded-full px-4 py-2 text-sm text-primary font-bold hover:text-foreground transition-colors"
+        >
+          Chat
         </Link>
         
         {isSignedIn ? (

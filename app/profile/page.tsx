@@ -1,41 +1,81 @@
 "use client";
 
 import { useState } from "react";
-import { useMutation } from "convex/react";
+import { useMutation, useQuery } from "convex/react";
 import { api } from "@/convex/_generated/api";
 import { useRouter } from "next/navigation";
-import VoiceInput from '../components/VoiceInput';
+import { useAuth } from "@clerk/nextjs";
+import Link from "next/link";
+import { Doc } from "@/convex/_generated/dataModel";
+import VoiceInput from "../components/VoiceInput";
+
+const interestOptions = [
+  "Technology",
+  "Healthcare",
+  "Business",
+  "Engineering",
+  "Arts & Design",
+  "Education",
+  "Sciences",
+  "Trades",
+  "Social Services",
+  "Law & Justice",
+];
 
 export default function ProfilePage() {
-  const router = useRouter();
-  const createStudent = useMutation(api.students.createStudent);
+  const { userId } = useAuth();
+  const existingProfile = useQuery(
+    api.students.getStudentByClerkId,
+    userId ? { clerkId: userId } : "skip",
+  );
 
-  const [name, setName] = useState("");
-  const [currentEducation, setCurrentEducation] = useState("");
-  const [careerGoal, setCareerGoal] = useState("");
-  const [interests, setInterests] = useState<string[]>([]);
-  const [mathScore, setMathScore] = useState("");
+  if (!userId || existingProfile === undefined) {
+    return (
+      <div className="min-h-screen bg-background flex items-center justify-center">
+        <div className="text-center">
+          <div className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-primary border-r-transparent mb-4"></div>
+          <p className="text-muted-foreground">Loading your profile...</p>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <ProfileForm
+      key={existingProfile?._id ?? "new"}
+      userId={userId}
+      existingProfile={existingProfile ?? null}
+    />
+  );
+}
+
+function ProfileForm({
+  userId,
+  existingProfile,
+}: {
+  userId: string;
+  existingProfile: Doc<"students"> | null;
+}) {
+  const router = useRouter();
+  const upsertStudent = useMutation(api.students.upsertStudentByClerkId);
+
+  const [name, setName] = useState(existingProfile?.name ?? "");
+  const [currentEducation, setCurrentEducation] = useState(
+    existingProfile?.currentEducation ?? "",
+  );
+  const [careerGoal, setCareerGoal] = useState(existingProfile?.careerGoal ?? "");
+  const [interests, setInterests] = useState<string[]>(existingProfile?.interests ?? []);
+  const [mathScore, setMathScore] = useState(
+    existingProfile ? String(existingProfile.mathScore) : "",
+  );
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState("");
 
-  const interestOptions = [
-    "Technology",
-    "Healthcare",
-    "Business",
-    "Engineering",
-    "Arts & Design",
-    "Education",
-    "Sciences",
-    "Trades",
-    "Social Services",
-    "Law & Justice"
-  ];
-
   const handleInterestToggle = (interest: string) => {
-    setInterests(prev =>
+    setInterests((prev) =>
       prev.includes(interest)
-        ? prev.filter(i => i !== interest)
-        : [...prev, interest]
+        ? prev.filter((i) => i !== interest)
+        : [...prev, interest],
     );
   };
 
@@ -44,32 +84,37 @@ export default function ProfilePage() {
     setError("");
     setIsSubmitting(true);
 
+    // Validation
+    if (
+      !name ||
+      !currentEducation ||
+      !careerGoal ||
+      interests.length === 0 ||
+      !mathScore
+    ) {
+      setError("Please fill in all fields");
+      setIsSubmitting(false);
+      return;
+    }
+
+    const mathScoreNum = parseInt(mathScore);
+    if (isNaN(mathScoreNum) || mathScoreNum < 0 || mathScoreNum > 100) {
+      setError("Math score must be between 0 and 100");
+      setIsSubmitting(false);
+      return;
+    }
+
     try {
-      // Validation
-      if (!name || !currentEducation || !careerGoal || interests.length === 0 || !mathScore) {
-        setError("Please fill in all fields");
-        setIsSubmitting(false);
-        return;
-      }
-
-      const mathScoreNum = parseInt(mathScore);
-      if (isNaN(mathScoreNum) || mathScoreNum < 0 || mathScoreNum > 100) {
-        setError("Math score must be between 0 and 100");
-        setIsSubmitting(false);
-        return;
-      }
-
-      // Create student profile
-      const studentId = await createStudent({
+      const studentId = await upsertStudent({
+        clerkId: userId,
         name,
         currentEducation,
         careerGoal,
         interests,
         mathScore: mathScoreNum,
       });
-
-      // Redirect to recommendations page
-      router.push(`/recommendations?studentId=${studentId}`);
+      localStorage.setItem("pathrStudentId", String(studentId));
+      router.push(`/chat?studentId=${studentId}`);
     } catch (err) {
       console.error("Error creating profile:", err);
       setError("Failed to create profile. Please try again.");
@@ -78,52 +123,92 @@ export default function ProfilePage() {
   };
 
   return (
-    <div className="min-h-screen p-4 md:p-8 bg-gradient-to-br from-blue-50 to-indigo-100">
-      <div className="max-w-3xl mx-auto">
+    <div className="relative min-h-screen bg-muted flex items-center justify-center overflow-hidden px-4 py-12">
+      {/* Decorative SVGs */}
+      <svg
+        className="absolute -top-15 -left-15 w-72 h-72 text-primary/10"
+        viewBox="0 0 200 200"
+        fill="currentColor"
+      >
+        <circle cx="100" cy="100" r="100" />
+      </svg>
+      <svg
+        className="absolute -bottom-10 -right-10 w-64 h-64 text-accent/15"
+        viewBox="0 0 200 200"
+        fill="currentColor"
+      >
+        <polygon points="100,0 200,200 0,200" />
+      </svg>
+      <svg
+        className="absolute top-20 right-10 w-24 h-24 text-secondary/40"
+        viewBox="0 0 100 100"
+        fill="currentColor"
+      >
+        <rect x="10" y="10" width="80" height="80" rx="16" />
+      </svg>
+      <svg
+        className="absolute bottom-24 left-12 w-20 h-20 text-primary/8"
+        viewBox="0 0 100 100"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="4"
+      >
+        <circle cx="50" cy="50" r="40" />
+        <line x1="50" y1="10" x2="50" y2="90" />
+        <line x1="10" y1="50" x2="90" y2="50" />
+      </svg>
+      <svg
+        className="absolute top-1/3 -left-5 w-16 h-16 text-accent/20"
+        viewBox="0 0 100 100"
+        fill="currentColor"
+      >
+        <polygon points="50,5 95,97 5,97" />
+      </svg>
+      <svg
+        className="absolute top-10 left-1/3 w-10 h-10 text-ring/15"
+        viewBox="0 0 50 50"
+        fill="currentColor"
+      >
+        <path d="M25 0 L31 19 L50 19 L35 31 L40 50 L25 38 L10 50 L15 31 L0 19 L19 19 Z" />
+      </svg>
+
+      {/* Form Card */}
+      <div className="relative z-10 w-full max-w-md bg-card rounded-2xl shadow-xl border border-border p-8">
         {/* Header */}
-        <div className="bg-white rounded-xl shadow-lg p-6 mb-8 border border-gray-100">
-          <div className="flex items-center gap-3 mb-2">
-            <div className="text-4xl">🎓</div>
-            <h1 className="text-3xl font-bold text-gray-900">Create Your Profile</h1>
-          </div>
-          <p className="text-gray-600">
-            Tell us about yourself to get personalized program recommendations
+        <div className="text-center mb-6">
+          <h1 className="text-2xl font-bold text-foreground">
+            {existingProfile ? "Update Your Profile" : "Create Your Profile"}
+          </h1>
+          <p className="text-sm text-muted-foreground mt-1">
+            Tell us about yourself for personalized recommendations
           </p>
-          
-          {/* Voice Feature Indicator */}
-          <div className="mt-4 bg-blue-50 border-2 border-blue-200 rounded-lg p-3 flex items-center gap-2">
-            <span className="text-2xl">🎤</span>
-            <div className="flex-1">
-              <p className="text-sm font-semibold text-blue-900">Voice Input Available!</p>
-              <p className="text-xs text-blue-700">Click the microphone buttons to speak your answers</p>
-            </div>
-          </div>
         </div>
 
         {/* Error Message */}
         {error && (
-          <div className="bg-red-50 border-2 border-red-200 rounded-xl p-4 mb-6 shadow-lg">
-            <div className="flex items-center gap-2">
-              <span className="text-2xl">⚠️</span>
-              <p className="text-red-800 font-semibold">{error}</p>
-            </div>
+          <div className="mb-4 rounded-lg bg-destructive/10 border border-destructive/30 px-4 py-2 text-sm text-destructive flex items-center gap-2">
+            <span>⚠️</span>
+            <span>{error}</span>
           </div>
         )}
 
-        {/* Form */}
-        <form onSubmit={handleSubmit} className="bg-white rounded-xl shadow-lg p-8 border border-gray-100">
-          {/* Name Field with Voice */}
-          <div className="mb-6">
-            <label className="block text-gray-700 font-semibold mb-2">
-              Full Name *
+        <form onSubmit={handleSubmit} className="space-y-4">
+          {/* Name with Voice */}
+          <div>
+            <label
+              htmlFor="name"
+              className="block text-sm font-medium text-foreground mb-1.5"
+            >
+              Full Name
             </label>
             <div className="flex items-center gap-2">
               <input
                 type="text"
+                id="name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="flex-1 px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none text-base"
                 placeholder="e.g., John Smith"
+                className="flex-1 px-4 py-2 border border-border rounded-full bg-background focus:outline-none focus:ring-2 focus:ring-primary/50 text-foreground"
                 required
               />
               <VoiceInput
@@ -134,38 +219,69 @@ export default function ProfilePage() {
           </div>
 
           {/* Current Education */}
-          <div className="mb-6">
-            <label className="block text-gray-700 font-semibold mb-2">
-              Current Education Level *
-            </label>
-            <select
-              value={currentEducation}
-              onChange={(e) => setCurrentEducation(e.target.value)}
-              className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none text-base"
-              required
+          <div className="relative">
+            <label
+              htmlFor="education"
+              className="block text-sm font-medium text-foreground mb-1.5"
             >
-              <option value="">Select your education level</option>
-              <option value="High School">High School</option>
-              <option value="High School Graduate">High School Graduate</option>
-              <option value="Some College/University">Some College/University</option>
-              <option value="College Diploma">College Diploma</option>
-              <option value="University Degree">University Degree</option>
-              <option value="Other">Other</option>
-            </select>
+              Education Level
+            </label>
+            <div className="relative">
+              <select
+                id="education"
+                value={currentEducation}
+                onChange={(e) => setCurrentEducation(e.target.value)}
+                className="w-full appearance-none px-4 py-2.5 border border-border rounded-full bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors cursor-pointer"
+                required
+              >
+                <option value="">Select your education level</option>
+                <option value="High School">High School</option>
+                <option value="High School Graduate">
+                  High School Graduate
+                </option>
+                <option value="Some College/University">
+                  Some College/University
+                </option>
+                <option value="College Diploma">College Diploma</option>
+                <option value="University Degree">University Degree</option>
+                <option value="Other">Other</option>
+              </select>
+              {/* Custom chevron */}
+              <div className="absolute inset-y-0 right-4 flex items-center pointer-events-none">
+                <svg
+                  className="w-4 h-4 text-muted-foreground"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </div>
+            </div>
           </div>
 
           {/* Career Goal with Voice */}
-          <div className="mb-6">
-            <label className="block text-gray-700 font-semibold mb-2">
-              Career Goal *
+          <div>
+            <label
+              htmlFor="goal"
+              className="block text-sm font-medium text-foreground mb-1.5"
+            >
+              Career Goal
             </label>
             <div className="flex items-center gap-2">
               <input
                 type="text"
+                id="goal"
                 value={careerGoal}
                 onChange={(e) => setCareerGoal(e.target.value)}
-                className="flex-1 px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none text-base"
-                placeholder="e.g., Software Developer, Nurse, Business Manager"
+                placeholder="e.g., Software Developer"
+                className="flex-1 px-4 py-2 border border-border rounded-full bg-background focus:outline-none focus:ring-2 focus:ring-primary/50 text-foreground"
                 required
               />
               <VoiceInput
@@ -173,121 +289,94 @@ export default function ProfilePage() {
                 onTranscript={(text) => setCareerGoal(text)}
               />
             </div>
-            <p className="text-sm text-gray-500 mt-1">
-              💡 Try using the microphone to speak your career goal!
-            </p>
           </div>
 
           {/* Interests */}
-          <div className="mb-6">
-            <label className="block text-gray-700 font-semibold mb-2">
-              Areas of Interest * (Select all that apply)
+          <div>
+            <label className="block text-sm font-medium text-foreground mb-1.5">
+              Areas of Interest
             </label>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+            <div className="flex flex-wrap gap-2">
               {interestOptions.map((interest) => (
                 <button
                   key={interest}
                   type="button"
                   onClick={() => handleInterestToggle(interest)}
-                  className={`px-4 py-3 rounded-lg border-2 font-medium transition-all text-sm ${
+                  className={`px-3 py-1.5 rounded-full border text-xs font-medium transition-all ${
                     interests.includes(interest)
-                      ? "bg-blue-500 text-white border-blue-600"
-                      : "bg-white text-gray-700 border-gray-300 hover:border-blue-400"
+                      ? "bg-primary text-primary-foreground border-primary"
+                      : "bg-card text-foreground border-border hover:border-primary/40"
                   }`}
                 >
-                  {interests.includes(interest) && "✓ "}
+                  {/* {interests.includes(interest) && "✓ "} */}
                   {interest}
                 </button>
               ))}
             </div>
-            <p className="text-sm text-gray-500 mt-2">
+            <p className="text-xs text-muted-foreground mt-1">
               Selected: {interests.length > 0 ? interests.join(", ") : "None"}
             </p>
           </div>
 
           {/* Math Score */}
-          <div className="mb-8">
-            <label className="block text-gray-700 font-semibold mb-2">
-              Math Score (%) *
+          <div>
+            <label
+              htmlFor="math"
+              className="block text-sm font-medium text-foreground mb-1.5"
+            >
+              Math Score (%)
             </label>
             <input
               type="number"
+              id="math"
               value={mathScore}
               onChange={(e) => setMathScore(e.target.value)}
-              className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none text-base"
               placeholder="e.g., 85"
-              min="0"
-              max="100"
+              min={0}
+              max={100}
+              className="w-full px-4 py-2 border border-border rounded-full bg-background focus:outline-none focus:ring-2 focus:ring-primary/50 text-foreground"
               required
             />
-            <p className="text-sm text-gray-500 mt-1">
-              Enter your most recent math grade (0-100)
+            <p className="text-xs text-muted-foreground mt-1">
+              Enter your most recent math grade (0–100)
             </p>
           </div>
 
-          {/* Submit Button */}
-          <div className="flex flex-col sm:flex-row gap-4">
+          {/* Actions */}
+          <div className="flex flex-col gap-3 pt-2">
             <button
               type="submit"
               disabled={isSubmitting}
-              className="flex-1 bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-8 py-4 rounded-xl hover:from-blue-700 hover:to-indigo-700 transition-all font-semibold shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full rounded-full bg-primary text-md font-bold text-primary-foreground px-6 py-3 border border-primary hover:bg-[#342158] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {isSubmitting ? (
                 <span className="flex items-center justify-center gap-2">
-                  <div className="inline-block h-5 w-5 animate-spin rounded-full border-2 border-solid border-white border-r-transparent"></div>
-                  Creating Profile...
+                  <svg
+                    className="animate-spin h-4 w-4"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  >
+                    <circle cx="12" cy="12" r="10" className="opacity-25" />
+                    <path d="M4 12a8 8 0 018-8" className="opacity-75" />
+                  </svg>
+                  Creating Profile…
                 </span>
               ) : (
-                <span>🚀 Get My Recommendations</span>
+                existingProfile ? "Save & Go to Chat" : "Get My Recommendations"
               )}
             </button>
-            <a
-              href="/"
-              className="bg-gray-200 text-gray-700 px-8 py-4 rounded-xl hover:bg-gray-300 transition-all font-semibold text-center shadow-lg hover:shadow-xl"
-            >
-              ← Back to Home
-            </a>
-          </div>
-
-          {/* Voice Feature Notice */}
-          <div className="mt-6 bg-green-50 border border-green-200 rounded-lg p-4">
-            <div className="flex items-start gap-2">
-              <span className="text-xl">💡</span>
-              <div>
-                <p className="text-sm font-semibold text-green-900">Quick Tip!</p>
-                <p className="text-xs text-green-700">
-                  Click the blue microphone buttons (🎤) next to Name and Career Goal to use voice input. 
-                  You can also use the floating globe button (🌍) at the bottom-right to get help in multiple languages!
-                </p>
-              </div>
-            </div>
+            <Link href="/" className="w-full">
+              <button
+                type="button"
+                className="w-full rounded-full bg-card text-foreground border border-border px-6 py-3 font-medium hover:bg-muted transition-colors"
+              >
+                ← Back to Home
+              </button>
+            </Link>
           </div>
         </form>
-
-        {/* Info Cards */}
-        <div className="grid md:grid-cols-3 gap-4 mt-8">
-          <div className="bg-white rounded-lg shadow p-4 border border-gray-100">
-            <div className="text-3xl mb-2">🎯</div>
-            <h3 className="font-bold text-gray-900 mb-1">AI-Powered</h3>
-            <p className="text-sm text-gray-600">
-              Claude AI analyzes your profile against 53 programs
-            </p>
-          </div>
-          <div className="bg-white rounded-lg shadow p-4 border border-gray-100">
-            <div className="text-3xl mb-2">⚡</div>
-            <h3 className="font-bold text-gray-900 mb-1">Fast Results</h3>
-            <p className="text-sm text-gray-600">
-              Get personalized recommendations in seconds
-            </p>
-          </div>
-          <div className="bg-white rounded-lg shadow p-4 border border-gray-100">
-            <div className="text-3xl mb-2">🎤</div>
-            <h3 className="font-bold text-gray-900 mb-1">Voice Enabled</h3>
-            <p className="text-sm text-gray-600">
-              Speak your answers in multiple languages
-            </p>
-          </div>
-        </div>
       </div>
     </div>
   );

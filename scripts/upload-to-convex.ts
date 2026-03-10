@@ -1,10 +1,12 @@
 import { ConvexClient } from "convex/browser";
 import * as fs from "fs";
+import * as path from "path";
 import { api } from "../convex/_generated/api";
 import * as dotenv from "dotenv";
 
-// This pulls your URL from the .env.local file I saw in your screenshot
-dotenv.config({ path: "../.env.local" });
+// Load env from workspace root first, then parent folder fallback.
+dotenv.config({ path: path.resolve(process.cwd(), ".env.local") });
+dotenv.config({ path: path.resolve(process.cwd(), "../.env.local") });
 
 const convexUrl = process.env.NEXT_PUBLIC_CONVEX_URL;
 
@@ -31,7 +33,7 @@ async function main() {
     await client.mutation(api.programs.uploadPrograms, { programs: data });
 
     // Stage 2: create embeddings/chunks and mark programs as ingested
-    const result = await client.action(api.ragIngestion.ingestAllPrograms, {
+    const result = await client.action(api.programIngestion.ingestProgramsToRAG, {
       batchSize: 20,
     });
 

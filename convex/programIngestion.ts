@@ -27,10 +27,11 @@ export const ingestProgramsToRAG = action({
     });
 
     try {
-      // Fetch all programs from database
-      const programs = await ctx.runQuery(api.queries.getAllPrograms);
+      // Fetch all programs from database and only ingest pending rows
+      const allPrograms = await ctx.runQuery(api.programs.getAllPrograms);
+      const programs = allPrograms.filter((p) => !p.isIngested);
 
-      console.log(`Starting ingestion of ${programs.length} programs...`);
+      console.log(`Starting ingestion of ${programs.length} pending programs...`);
 
       let ingested = 0;
 
@@ -67,6 +68,11 @@ export const ingestProgramsToRAG = action({
                     program.additionalInfo?.deliveryMode || "unknown",
                 },
               ],
+            });
+
+            await ctx.runMutation(api.programs.markProgramIngested, {
+              programId: program.id,
+              ingested: true,
             });
 
             ingested += 1;
