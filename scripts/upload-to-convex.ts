@@ -6,7 +6,13 @@ import * as dotenv from "dotenv";
 // This pulls your URL from the .env.local file I saw in your screenshot
 dotenv.config({ path: "../.env.local" });
 
-const client = new ConvexClient("https://marvelous-stingray-639.convex.cloud");
+const convexUrl = process.env.NEXT_PUBLIC_CONVEX_URL;
+
+if (!convexUrl) {
+  throw new Error("NEXT_PUBLIC_CONVEX_URL is missing in .env.local");
+}
+
+const client = new ConvexClient(convexUrl);
 
 async function main() {
   // Points to the data folder shown in your explorer
@@ -18,12 +24,19 @@ async function main() {
   }
 
   const data = JSON.parse(fs.readFileSync(dataPath, "utf-8"));
-  console.log(`🚀 Sending ${data.length} programs to marvelous-stingray-639...`);
+  console.log(`🚀 Sending ${data.length} programs to ${convexUrl}...`);
 
   try {
-    // This calls the upload function in your convex/programs.ts file
+    // Stage 1: upsert raw programs with semantic metadata
     await client.mutation(api.programs.uploadPrograms, { programs: data });
-    console.log("✅ Success! Check the 'Data' tab in your Convex dashboard.");
+
+    // Stage 2: create embeddings/chunks and mark programs as ingested
+    const result = await client.action(api.ragIngestion.ingestAllPrograms, {
+      batchSize: 20,
+    });
+
+    console.log("✅ Success! Programs uploaded and ingested.");
+    console.log(result);
   } catch (error) {
     console.error("❌ Upload failed:", error);
   }

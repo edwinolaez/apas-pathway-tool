@@ -4,6 +4,10 @@ import { v } from "convex/values";
 import { api } from "./_generated/api";
 import { Doc } from "./_generated/dataModel";
 
+function getEnv(name: string): string | undefined {
+  return (globalThis as { process?: { env?: Record<string, string | undefined> } }).process?.env?.[name];
+}
+
 interface StudentProfile {
   name: string;
   currentEducation: string;
@@ -39,11 +43,11 @@ export const getRecommendations = action({
     console.log("=== STARTING RECOMMENDATIONS ===");
     
     // Check API key
-    const apiKey = process.env.ANTHROPIC_API_KEY;
+    const apiKey = getEnv("OPENAI_API_KEY");
     console.log("API Key exists:", !!apiKey);
     
     if (!apiKey) {
-      throw new Error("ANTHROPIC_API_KEY is not set in Convex environment variables");
+      throw new Error("OPENAI_API_KEY is not set in Convex environment variables");
     }
 
     // 1. Get student profile
@@ -58,9 +62,9 @@ export const getRecommendations = action({
 
     console.log("Student:", student.name);
 
-    // 2. Get ALL programs (not just samples!)
-    console.log("Fetching ALL programs...");
+    // 2. Use the full program list (RAG retrieval moved to @convex-dev/rag workflows)
     const allPrograms: Doc<"programs">[] = await ctx.runQuery(api.queries.getAllPrograms);
+
     console.log("Programs loaded:", allPrograms.length);
 
     // Format programs for AI - include key details
@@ -82,16 +86,21 @@ export const getRecommendations = action({
       deliveryMode: p.additionalInfo?.deliveryMode || null,
     }));
 
-    // 3. Call Claude API
-    console.log("Calling Claude API with", programsForAI.length, "programs...");
+    // 3. Call OpenAI chat completions API
+    console.log("Calling OpenAI API with", programsForAI.length, "programs...");
     
     const requestBody = {
-      model: "claude-sonnet-4-20250514",
-      max_tokens: 4000,
+      model: "gpt-4o",
+      temperature: 0.2,
       messages: [
         {
+          role: "system",
+          content:
+            "You are an expert Alberta post-secondary education advisor. Return only valid JSON.",
+        },
+        {
           role: "user",
-          content: `You are an expert Alberta post-secondary education advisor. Analyze this student profile and recommend the top 10 best-fit programs from ALL ${programsForAI.length} available options.
+          content: `You are an expert Alberta post-secondary education advisor. Analyze this student profile and recommend the top 10 best-fit programs from a semantically-retrieved shortlist of ${programsForAI.length} options.
 
 STUDENT PROFILE:
 - Name: ${student.name}
@@ -100,7 +109,7 @@ STUDENT PROFILE:
 - Interests: ${student.interests.join(", ")}
 - Math Score: ${student.mathScore}%
 
-AVAILABLE PROGRAMS (${programsForAI.length} total):
+AVAILABLE PROGRAM CANDIDATES (${programsForAI.length} total):
 ${JSON.stringify(programsForAI, null, 2)}
 
 ANALYSIS CRITERIA:
@@ -126,7 +135,7 @@ RESPONSE FORMAT (JSON only, no other text):
 }
 
 IMPORTANT:
-- Return exactly 10 recommendations
+- Return exactly 10 recommendations (or fewer only if fewer than 10 candidates exist)
 - Sort by match score (highest first)
 - Be specific and detailed in reasoning
 - Use actual data from the programs (tuition, employment rates, salaries)
@@ -138,18 +147,17 @@ IMPORTANT:
 
     let response;
     try {
-      response = await fetch("https://api.anthropic.com/v1/messages", {
+      response = await fetch("https://api.openai.com/v1/chat/completions", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "x-api-key": apiKey,
-          "anthropic-version": "2023-06-01",
+          Authorization: `Bearer ${apiKey}`,
         },
         body: JSON.stringify(requestBody),
       });
     } catch (fetchError) {
       console.error("Fetch error:", fetchError);
-      throw new Error(`Failed to fetch from Anthropic API: ${fetchError}`);
+      throw new Error(`Failed to fetch from OpenAI API: ${fetchError}`);
     }
 
     console.log("Response status:", response.status);
@@ -169,19 +177,19 @@ IMPORTANT:
     }
 
     // Check if response has expected structure
-    if (!data.content || !Array.isArray(data.content) || data.content.length === 0) {
+    if (!data.choices || !Array.isArray(data.choices) || data.choices.length === 0) {
       console.error("Invalid response structure. Full data:", data);
       throw new Error(`Invalid API response structure. Got: ${JSON.stringify(data)}`);
     }
 
-    // Parse Claude's response
-    const content = data.content[0].text;
+    // Parse model response
+    const content = data.choices[0]?.message?.content;
     
     if (!content) {
       throw new Error("No content in API response");
     }
 
-    console.log("Claude response received, parsing...");
+    console.log("OpenAI response received, parsing...");
     
     // Extract JSON from response (Claude might include ```json wrapper)
     let jsonStr = content;

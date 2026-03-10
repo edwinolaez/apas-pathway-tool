@@ -1,28 +1,46 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f6fdff;
+  --foreground: #0d2f4f;
+  --card: #ffffff;
+  --card-foreground: #0d2f4f;
+  --primary: #6241a0;
+  --primary-foreground: #ffffff; 
+  --secondary: #bdd8ed;
+  --secondary-foreground: #c1e4ff;
+  --muted: #edf4f9;
+  --muted-foreground: #6a8498;
+  --accent: #2e9f87;
+  --accent-foreground: #ffffff;
+  --border: #d4e1eb;
+  --hero-bg: #eaf2f7;
+  --navy: #042949;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+  --color-hero-bg: var(--hero-bg);
+  --color-navy: var(--navy);
+  --font-sans: var(--font-inter);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Inter', sans-serif;
   overflow-x: hidden; /* ← ADD: Prevent horizontal scroll */
 }
 

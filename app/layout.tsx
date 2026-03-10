@@ -1,23 +1,26 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import ConvexClientProvider from "./ConvexClientProvider";
 import MultilingualVoiceAssistant from "./components/MultilingualVoiceAssistant";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import { ClerkProvider } from "@clerk/nextjs";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
-  title: "APAS - Alberta Post-Secondary Advisory System",
+  title: "Pathr",
   description: "AI-powered program recommendations for Alberta students",
-  viewport: "width=device-width, initial-scale=1, maximum-scale=5", // ← ADD THIS LINE
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
 };
 
 export default function RootLayout({
@@ -26,14 +29,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-     <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        {/* We wrap the children here so every page can access the database */}
-        <ConvexClientProvider>
-          {children}
-        <MultilingualVoiceAssistant />  
-        </ConvexClientProvider>
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="en">
+        <body className={`${inter.variable} antialiased`}>
+          <ConvexClientProvider>
+            <div className="min-h-screen flex flex-col">
+              <Header />
+              <main className="flex-1">
+                {children}
+              </main>
+              <Footer />
+            </div>
+            <MultilingualVoiceAssistant />
+          </ConvexClientProvider>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }

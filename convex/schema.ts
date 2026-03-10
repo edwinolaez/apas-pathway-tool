@@ -21,6 +21,23 @@ export default defineSchema({
     description: v.string(),
     credentials: v.string(),
     duration: v.string(),
+    isIngested: v.optional(v.boolean()),
+    ingestedAt: v.optional(v.number()),
+    updatedAt: v.optional(v.number()),
+    contentHash: v.optional(v.string()),
+
+    // Normalized metadata for semantic filters
+    credentialNormalized: v.optional(v.string()),
+    durationMonths: v.optional(v.number()),
+    durationBucket: v.optional(v.string()),
+    deliveryModes: v.optional(v.array(v.string())),
+    startTerms: v.optional(v.array(v.string())),
+    coopAvailable: v.optional(v.boolean()),
+    domesticTuitionValue: v.optional(v.number()),
+    internationalTuitionValue: v.optional(v.number()),
+    domesticTuitionBand: v.optional(v.string()),
+    internationalTuitionBand: v.optional(v.string()),
+    namespaceTags: v.optional(v.array(v.string())),
     
     // Tuition (can have 2 or 3 fields)
     tuition: v.object({
@@ -121,6 +138,9 @@ export default defineSchema({
     .index("by_programId", ["id"])
     .index("by_institution", ["institutionId"])
     .index("by_credentials", ["credentials"])
+    .index("by_ingested", ["isIngested"])
+    .index("by_credential_normalized", ["credentialNormalized"])
+    .index("by_duration_bucket", ["durationBucket"])
     .searchIndex("search_programs", {
       searchField: "name",
       filterFields: ["institutionId", "credentials"],
@@ -148,4 +168,17 @@ export default defineSchema({
     interests: v.array(v.string()), // This can hold "Emerging Tech", "Anime", etc.
     mathScore: v.number(),
   }),
+
+  // Users table (synced from Clerk)
+  users: defineTable({
+    clerkId: v.string(),
+    email: v.string(),
+    firstName: v.optional(v.string()),
+    lastName: v.optional(v.string()),
+    imageUrl: v.optional(v.string()),
+    createdAt: v.number(),
+    lastSeen: v.number(),
+  })
+    .index("by_clerk_id", ["clerkId"])
+    .index("by_email", ["email"]),
 });

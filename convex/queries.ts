@@ -3,6 +3,7 @@
 
 import { query } from "./_generated/server";
 import { v } from "convex/values";
+import { Doc } from "./_generated/dataModel";
 
 // Get all programs (returns full list for AI recommendations)
 export const getAllPrograms = query({
@@ -82,6 +83,21 @@ export const getProgramById = query({
   },
 });
 
+export const getProgramsByIds = query({
+  args: { programIds: v.array(v.string()) },
+  handler: async (ctx, args) => {
+    const out: Doc<"programs">[] = [];
+    for (const programId of args.programIds) {
+      const program = await ctx.db
+        .query("programs")
+        .withIndex("by_programId", (q) => q.eq("id", programId))
+        .first();
+      if (program) out.push(program);
+    }
+    return out;
+  },
+});
+
 // Get statistics
 export const getStatistics = query({
   handler: async (ctx) => {
@@ -108,5 +124,34 @@ export const getStatistics = query({
         .reduce((sum, p) => sum + (p.tuition.domestic as number), 0) / 
         programs.filter(p => typeof p.tuition.domestic === 'number').length,
     };
+  },
+});
+
+export const getIngestionStatus = query({
+  handler: async (ctx) => {
+    const programs = await ctx.db.query("programs").collect();
+
+    const ingestedPrograms = programs.filter((p) => p.isIngested).length;
+    return {
+      totalPrograms: programs.length,
+      ingestedPrograms,
+      pendingPrograms: programs.length - ingestedPrograms,
+      coverage: programs.length === 0 ? 0 : ingestedPrograms / programs.length,
+    };
+  },
+});
+
+export const getNamespaceDistribution = query({
+  handler: async (ctx) => {
+    const programs = await ctx.db.query("programs").collect();
+    const distribution: Record<string, number> = {};
+
+    for (const program of programs) {
+      for (const tag of program.namespaceTags ?? []) {
+        distribution[tag] = (distribution[tag] ?? 0) + 1;
+      }
+    }
+
+    return distribution;
   },
 });
