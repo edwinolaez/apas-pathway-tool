@@ -13,6 +13,7 @@ import type * as programs from "../programs.js";
 import type * as queries from "../queries.js";
 import type * as recommendations from "../recommendations.js";
 import type * as students from "../students.js";
+import type * as uploadPrograms from "../uploadPrograms.js";
 import type * as uplooadInstitutions from "../uplooadInstitutions.js";
 
 import type {
@@ -27,6 +28,7 @@ declare const fullApi: ApiFromModules<{
   queries: typeof queries;
   recommendations: typeof recommendations;
   students: typeof students;
+  uploadPrograms: typeof uploadPrograms;
   uplooadInstitutions: typeof uplooadInstitutions;
 }>;
 
