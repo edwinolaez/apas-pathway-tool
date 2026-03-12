@@ -1,14 +1,16 @@
+// convex/schema.ts - UPDATED WITH VECTOR INDEX
+
 import { defineSchema, defineTable } from "convex/server";
 import { v } from "convex/values";
 
 export default defineSchema({
   students: defineTable({
     name: v.string(),
-    email: v.optional(v.string()),     // ✅ Made optional (old data missing this)
+    email: v.optional(v.string()),
     currentEducation: v.string(),
     careerGoal: v.string(),
-    interests: v.union(v.string(), v.array(v.string())), // ✅ Accepts both string AND array
-    mathScore: v.optional(v.union(v.string(), v.number())), // ✅ Accepts string OR number
+    interests: v.union(v.string(), v.array(v.string())),
+    mathScore: v.optional(v.union(v.string(), v.number())),
   }).index("by_email", ["email"]),
 
   programs: defineTable({
@@ -27,9 +29,15 @@ export default defineSchema({
     skills: v.array(v.string()),
     nocCodes: v.array(v.string()),
     additionalInfo: v.any(),
+    embedding: v.optional(v.array(v.float64())), // ✅ NEW - Vector embeddings
   })
     .index("by_institution", ["institutionId"])
-    .index("by_program_id", ["id"]),
+    .index("by_program_id", ["id"])
+    .vectorIndex("by_embedding", {  // ✅ NEW - Vector search index
+      vectorField: "embedding",
+      dimensions: 1536,
+      filterFields: ["institutionId"],
+    }),
 
   institutions: defineTable({
     id: v.optional(v.string()),

@@ -1,54 +1,78 @@
-// convex/recommendations.ts
-import { action } from "./_generated/server";
 import { v } from "convex/values";
-import { api } from "./_generated/api";
-import { Doc } from "./_generated/dataModel";
+import { action, internalQuery } from "./_generated/server";
+import { internal } from "./_generated/api";
 
-interface StudentProfile {
-  name: string;
-  currentEducation: string;
-  careerGoal: string;
-  interests: string[];
-  mathScore: number;
+// Helper: Filter programs by education level
+function filterByEducationLevel(programs: any[], currentEducation: string) {
+  const educationLower = currentEducation.toLowerCase();
+  
+  // High school students - show entry-level programs
+  if (educationLower.includes('high school') || educationLower.includes('grade 12')) {
+    return programs.filter(p => 
+      p.credentials.toLowerCase().includes('diploma') ||
+      p.credentials.toLowerCase().includes('certificate') ||
+      p.credentials.toLowerCase().includes('associate')
+    );
+  }
+  
+  // College/Diploma students - show diploma and bachelor programs
+  if (educationLower.includes('college') || 
+      educationLower.includes('diploma') ||
+      educationLower.includes('certificate')) {
+    return programs.filter(p => 
+      p.credentials.toLowerCase().includes('diploma') ||
+      p.credentials.toLowerCase().includes('bachelor') ||
+      p.credentials.toLowerCase().includes('degree')
+    );
+  }
+  
+  // University/Degree students - show bachelor and advanced programs
+  if (educationLower.includes('bachelor') || 
+      educationLower.includes('university') ||
+      educationLower.includes('degree')) {
+    return programs.filter(p => 
+      p.credentials.toLowerCase().includes('bachelor') ||
+      p.credentials.toLowerCase().includes('master') ||
+      p.credentials.toLowerCase().includes('phd') ||
+      p.credentials.toLowerCase().includes('doctor')
+    );
+  }
+  
+  // Default: return all if no match
+  return programs;
 }
 
-interface Recommendation {
-  programId: string;
-  programName: string;
-  institution: string;
-  matchScore: number;
-  reasoning: string;
-  prerequisites: string[];
-  careerAlignment: string;
-}
-
-interface RecommendationResponse {
-  recommendations: Recommendation[];
-}
-
-// AI-powered program recommendations
-export const getRecommendations = action({
-  args: {
-    studentId: v.id("students"),
+// Internal query to get student
+export const getStudent = internalQuery({
+  args: { studentId: v.id("students") },
+  handler: async (ctx, args) => {
+    return await ctx.db.get(args.studentId);
   },
-  handler: async (ctx, args): Promise<{
-    student: StudentProfile;
-    recommendations: Recommendation[];
-    timestamp: number;
-  }> => {
+});
+
+// Internal query to get all programs
+export const getAllPrograms = internalQuery({
+  args: {},
+  handler: async (ctx) => {
+    return await ctx.db.query("programs").collect();
+  },
+});
+
+export const getRecommendations = action({
+  args: { studentId: v.id("students") },
+  handler: async (ctx, args) => {
     console.log("=== STARTING RECOMMENDATIONS ===");
-    
-    // Check API key
+
     const apiKey = process.env.ANTHROPIC_API_KEY;
     console.log("API Key exists:", !!apiKey);
-    
+
     if (!apiKey) {
-      throw new Error("ANTHROPIC_API_KEY is not set in Convex environment variables");
+      throw new Error("ANTHROPIC_API_KEY is not set");
     }
 
-    // 1. Get student profile
+    // Get student profile
     console.log("Fetching student profile...");
-    const student = await ctx.runQuery(api.students.getProfile, {
+    const student = await ctx.runQuery(internal.recommendations.getStudent, {
       studentId: args.studentId,
     });
 
@@ -58,164 +82,129 @@ export const getRecommendations = action({
 
     console.log("Student:", student.name);
 
-    // 2. Get ALL programs (not just samples!)
+    // Get all programs
     console.log("Fetching ALL programs...");
-    const allPrograms: Doc<"programs">[] = await ctx.runQuery(api.queries.getAllPrograms);
+    const allPrograms = await ctx.runQuery(internal.recommendations.getAllPrograms);
     console.log("Programs loaded:", allPrograms.length);
 
-    // Format programs for AI - include key details
-    const programsForAI = allPrograms.map((p: Doc<"programs">) => ({
-      id: p.id,
-      name: p.name,
-      institution: p.institution,
-      credentials: p.credentials,
-      duration: p.duration,
-      description: p.description,
-      careerPaths: p.careerPaths,
-      skills: p.skills,
-      tuitionDomestic: typeof p.tuition.domestic === 'number' 
-        ? `$${p.tuition.domestic}` 
-        : p.tuition.domestic,
-      prerequisites: p.prerequisites,
-      employmentRate: p.additionalInfo?.graduateEmploymentRate || null,
-      startingSalary: p.additionalInfo?.averageStartingSalary || null,
-      deliveryMode: p.additionalInfo?.deliveryMode || null,
-    }));
+    // PRE-FILTER by education level for speed
+    const filteredPrograms = filterByEducationLevel(allPrograms, student.currentEducation);
+    console.log(`🚀 Speed Optimization: Filtered from ${allPrograms.length} to ${filteredPrograms.length} programs`);
 
-    // 3. Call Claude API
-    console.log("Calling Claude API with", programsForAI.length, "programs...");
-    
-    const requestBody = {
-      model: "claude-sonnet-4-20250514",
-      max_tokens: 4000,
-      messages: [
-        {
-          role: "user",
-          content: `You are an expert Alberta post-secondary education advisor. Analyze this student profile and recommend the top 10 best-fit programs from ALL ${programsForAI.length} available options.
+    // Format filtered programs for Claude
+    const programsText = filteredPrograms
+      .map(
+        (p, i) => `
+${i + 1}. ${p.name} at ${p.institution}
+   Program ID: ${p.id}
+   Credentials: ${p.credentials}
+   Duration: ${p.duration}
+   Description: ${p.description}
+   Prerequisites: ${JSON.stringify(p.prerequisites)}
+   Career Paths: ${p.careerPaths.join(", ")}
+   Skills: ${p.skills.join(", ")}
+    `
+      )
+      .join("\n\n");
 
-STUDENT PROFILE:
+    // Create prompt
+    const prompt = `You are an expert educational advisor for Alberta, Canada post-secondary programs.
+
+Student Profile:
 - Name: ${student.name}
 - Current Education: ${student.currentEducation}
 - Career Goal: ${student.careerGoal}
-- Interests: ${student.interests.join(", ")}
+- Interests: ${Array.isArray(student.interests) ? student.interests.join(", ") : student.interests}
 - Math Score: ${student.mathScore}%
 
-AVAILABLE PROGRAMS (${programsForAI.length} total):
-${JSON.stringify(programsForAI, null, 2)}
+Available Programs (pre-filtered by education level):
+${programsText}
 
-ANALYSIS CRITERIA:
-1. Career Goal Alignment - Does this program lead to their stated career goal?
-2. Interest Match - Do the program's focus areas align with their interests?
-3. Prerequisites Feasibility - Can they realistically meet the requirements based on their current education and math score?
-4. Employment Outcomes - What are the job prospects and starting salaries?
-5. Program Quality - Consider delivery mode, institution reputation, and program structure
+Task: Recommend the TOP 10 programs that best match this student's profile. Consider:
+1. How well the program aligns with their career goal
+2. Whether they meet the prerequisites (especially math requirements)
+3. How the program matches their interests
+4. Career outcomes and job prospects
+5. The student's current education level (recommend appropriate next steps)
 
-RESPONSE FORMAT (JSON only, no other text):
+CRITICAL: You MUST use the exact "Program ID" values from the list above in your programId fields.
+
+Provide your response in this EXACT JSON format (no markdown, no backticks, just pure JSON):
 {
   "recommendations": [
     {
-      "programId": "exact-program-id-from-list",
-      "programName": "Exact Program Name",
-      "institution": "Institution Name",
+      "programId": "exact Program ID from the list above",
+      "programName": "exact program name",
+      "institution": "exact institution name",
       "matchScore": 95,
-      "reasoning": "2-3 sentences explaining why this is an excellent fit. Be specific about career alignment and interest match.",
-      "prerequisites": ["Specific prerequisite 1", "Specific prerequisite 2", "Specific prerequisite 3"],
-      "careerAlignment": "1-2 sentences explaining how this program directly leads to their career goal. Include job titles and salary info if available."
+      "reasoning": "Detailed explanation of why this is a great match for this specific student",
+      "careerAlignment": "How this program leads directly to their career goal of ${student.careerGoal}",
+      "prerequisites": ["Specific prerequisite 1", "Specific prerequisite 2"],
+      "prerequisiteMatch": "Assessment of whether student meets requirements based on their ${student.mathScore}% math score"
     }
-  ]
+  ],
+  "summary": "Overall summary of recommendations and suggested next steps for ${student.name}"
 }
 
-IMPORTANT:
-- Return exactly 10 recommendations
-- Sort by match score (highest first)
-- Be specific and detailed in reasoning
-- Use actual data from the programs (tuition, employment rates, salaries)
-- Match based on ALL criteria, not just keywords
-- Return ONLY valid JSON, no markdown formatting`,
-        },
-      ],
-    };
+Return ONLY valid JSON, nothing else. No markdown formatting, no code blocks, just the JSON object.`;
 
-    let response;
-    try {
-      response = await fetch("https://api.anthropic.com/v1/messages", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "x-api-key": apiKey,
-          "anthropic-version": "2023-06-01",
-        },
-        body: JSON.stringify(requestBody),
-      });
-    } catch (fetchError) {
-      console.error("Fetch error:", fetchError);
-      throw new Error(`Failed to fetch from Anthropic API: ${fetchError}`);
-    }
+    console.log(`Calling Claude API with ${filteredPrograms.length} programs...`);
+
+    // Call Claude API
+    const response = await fetch("https://api.anthropic.com/v1/messages", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "x-api-key": apiKey,
+        "anthropic-version": "2023-06-01",
+      },
+      body: JSON.stringify({
+        model: "claude-sonnet-4-20250514",
+        max_tokens: 4000,
+        messages: [
+          {
+            role: "user",
+            content: prompt,
+          },
+        ],
+      }),
+    });
 
     console.log("Response status:", response.status);
 
-    const responseText = await response.text();
-
     if (!response.ok) {
-      throw new Error(`API request failed (${response.status}): ${responseText}`);
+      const errorText = await response.text();
+      console.error("API Error:", errorText);
+      throw new Error(`Claude API error: ${response.status} - ${errorText}`);
     }
 
-    let data;
-    try {
-      data = JSON.parse(responseText);
-    } catch (parseError) {
-      console.error("Failed to parse response as JSON:", parseError);
-      throw new Error(`Failed to parse API response: ${parseError}`);
-    }
-
-    // Check if response has expected structure
-    if (!data.content || !Array.isArray(data.content) || data.content.length === 0) {
-      console.error("Invalid response structure. Full data:", data);
-      throw new Error(`Invalid API response structure. Got: ${JSON.stringify(data)}`);
-    }
-
-    // Parse Claude's response
-    const content = data.content[0].text;
-    
-    if (!content) {
-      throw new Error("No content in API response");
-    }
-
+    const data = await response.json();
     console.log("Claude response received, parsing...");
-    
-    // Extract JSON from response (Claude might include ```json wrapper)
-    let jsonStr = content;
-    if (content.includes("```json")) {
-      jsonStr = content.split("```json")[1].split("```")[0].trim();
-    } else if (content.includes("```")) {
-      jsonStr = content.split("```")[1].split("```")[0].trim();
-    }
 
-    let recommendations: RecommendationResponse;
+    // Extract text content
+    const responseText =
+      data.content[0].type === "text" ? data.content[0].text : "";
+
+    // Parse JSON response
+    let recommendations;
     try {
-      recommendations = JSON.parse(jsonStr);
+      // Remove markdown code blocks if present
+      const cleanedText = responseText
+        .replace(/```json\n?/g, "")
+        .replace(/```\n?/g, "")
+        .trim();
+
+      recommendations = JSON.parse(cleanedText);
+      console.log(
+        "Successfully got",
+        recommendations.recommendations.length,
+        "recommendations"
+      );
     } catch (parseError) {
-      console.error("Failed to parse JSON:", parseError);
-      console.error("Content was:", jsonStr);
-      throw new Error(`Failed to parse recommendations JSON: ${parseError}`);
+      console.error("Failed to parse response:", responseText);
+      throw new Error("Invalid JSON response from Claude");
     }
 
-    if (!recommendations.recommendations || !Array.isArray(recommendations.recommendations)) {
-      throw new Error(`Invalid recommendations structure. Got: ${JSON.stringify(recommendations)}`);
-    }
-
-    console.log("Successfully got", recommendations.recommendations.length, "recommendations");
-
-    return {
-      student: {
-        name: student.name,
-        currentEducation: student.currentEducation,
-        careerGoal: student.careerGoal,
-        interests: student.interests,
-        mathScore: student.mathScore,
-      },
-      recommendations: recommendations.recommendations,
-      timestamp: Date.now(),
-    };
+    return recommendations;
   },
 });

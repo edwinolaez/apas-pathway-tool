@@ -8,10 +8,12 @@
  * @module
  */
 
+import type * as embeddings from "../embeddings.js";
 import type * as prerequisiteChecker from "../prerequisiteChecker.js";
 import type * as programs from "../programs.js";
 import type * as queries from "../queries.js";
 import type * as recommendations from "../recommendations.js";
+import type * as search from "../search.js";
 import type * as students from "../students.js";
 import type * as uploadPrograms from "../uploadPrograms.js";
 import type * as uplooadInstitutions from "../uplooadInstitutions.js";
@@ -23,10 +25,12 @@ import type {
 } from "convex/server";
 
 declare const fullApi: ApiFromModules<{
+  embeddings: typeof embeddings;
   prerequisiteChecker: typeof prerequisiteChecker;
   programs: typeof programs;
   queries: typeof queries;
   recommendations: typeof recommendations;
+  search: typeof search;
   students: typeof students;
   uploadPrograms: typeof uploadPrograms;
   uplooadInstitutions: typeof uplooadInstitutions;
