@@ -1,292 +1,330 @@
 "use client";
 
-import { useState } from "react";
-import { useMutation } from "convex/react";
-import { api } from "@/convex/_generated/api";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import VoiceInput from '../components/VoiceInput';
+import { useMutation, useQuery } from "convex/react";
+import { api } from "../../convex/_generated/api";
+import VoiceInput from "../components/VoiceInput";
 
 export default function ProfilePage() {
   const router = useRouter();
-  const createStudent = useMutation(api.students.createStudent);
+  const createOrUpdateStudent = useMutation(api.students.createOrUpdateStudent);
 
-  const [name, setName] = useState("");
-  const [currentEducation, setCurrentEducation] = useState("");
-  const [careerGoal, setCareerGoal] = useState("");
-  const [interests, setInterests] = useState<string[]>([]);
-  const [mathScore, setMathScore] = useState("");
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    educationLevel: "",
+    currentGrade: "",
+    mathScore: "",
+    careerGoals: "",
+    interests: "",
+    workExperience: "",
+    preferredLocation: "",
+    studyMode: "",
+    financialAid: "",
+  });
+
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [error, setError] = useState("");
-
-  const interestOptions = [
-    "Technology",
-    "Healthcare",
-    "Business",
-    "Engineering",
-    "Arts & Design",
-    "Education",
-    "Sciences",
-    "Trades",
-    "Social Services",
-    "Law & Justice"
-  ];
-
-  const handleInterestToggle = (interest: string) => {
-    setInterests(prev =>
-      prev.includes(interest)
-        ? prev.filter(i => i !== interest)
-        : [...prev, interest]
-    );
-  };
+  const [showSuccess, setShowSuccess] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setError("");
     setIsSubmitting(true);
 
     try {
-      // Validation
-      if (!name || !currentEducation || !careerGoal || interests.length === 0 || !mathScore) {
-        setError("Please fill in all fields");
-        setIsSubmitting(false);
-        return;
-      }
-
-      const mathScoreNum = parseInt(mathScore);
-      if (isNaN(mathScoreNum) || mathScoreNum < 0 || mathScoreNum > 100) {
-        setError("Math score must be between 0 and 100");
-        setIsSubmitting(false);
-        return;
-      }
-
-      // Create student profile
-      const studentId = await createStudent({
-        name,
-        currentEducation,
-        careerGoal,
-        interests,
-        mathScore: mathScoreNum,
+      const studentId = await createOrUpdateStudent({
+        name: formData.name,
+        email: formData.email,
+        educationLevel: formData.educationLevel,
+        currentGrade: formData.currentGrade,
+        mathScore: formData.mathScore,
+        careerGoals: formData.careerGoals,
+        interests: formData.interests,
+        workExperience: formData.workExperience,
+        preferredLocation: formData.preferredLocation,
+        studyMode: formData.studyMode,
+        financialAid: formData.financialAid,
       });
 
-      // Redirect to recommendations page
-      router.push(`/recommendations?studentId=${studentId}`);
-    } catch (err) {
-      console.error("Error creating profile:", err);
-      setError("Failed to create profile. Please try again.");
+      setShowSuccess(true);
+      setTimeout(() => {
+        router.push(`/recommendations?studentId=${studentId}`);
+      }, 1500);
+    } catch (error) {
+      console.error("Error saving profile:", error);
+      alert("Failed to save profile. Please try again.");
+    } finally {
       setIsSubmitting(false);
     }
   };
 
+  const handleVoiceInput = (field: string, value: string) => {
+    setFormData((prev) => ({
+      ...prev,
+      [field]: value,
+    }));
+  };
+
   return (
-    <div className="min-h-screen p-4 md:p-8 bg-gradient-to-br from-blue-50 to-indigo-100">
-      <div className="max-w-3xl mx-auto">
+    <div className="min-h-screen bg-gray-50 py-12">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="bg-white rounded-xl shadow-lg p-6 mb-8 border border-gray-100">
-          <div className="flex items-center gap-3 mb-2">
-            <div className="text-4xl">🎓</div>
-            <h1 className="text-3xl font-bold text-gray-900">Create Your Profile</h1>
-          </div>
-          <p className="text-gray-600">
+        <div className="text-center mb-8">
+          <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
+            Create Your Profile
+          </h1>
+          <p className="text-lg text-gray-600">
             Tell us about yourself to get personalized program recommendations
           </p>
-          
-          {/* Voice Feature Indicator */}
-          <div className="mt-4 bg-blue-50 border-2 border-blue-200 rounded-lg p-3 flex items-center gap-2">
-            <span className="text-2xl">🎤</span>
-            <div className="flex-1">
-              <p className="text-sm font-semibold text-blue-900">Voice Input Available!</p>
-              <p className="text-xs text-blue-700">Click the microphone buttons to speak your answers</p>
-            </div>
-          </div>
         </div>
 
-        {/* Error Message */}
-        {error && (
-          <div className="bg-red-50 border-2 border-red-200 rounded-xl p-4 mb-6 shadow-lg">
-            <div className="flex items-center gap-2">
-              <span className="text-2xl">⚠️</span>
-              <p className="text-red-800 font-semibold">{error}</p>
+        {/* Success Message */}
+        {showSuccess && (
+          <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg">
+            <div className="flex items-center">
+              <svg className="w-5 h-5 text-green-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+              </svg>
+              <p className="text-green-800 font-medium">Profile saved! Redirecting to recommendations...</p>
             </div>
           </div>
         )}
 
         {/* Form */}
-        <form onSubmit={handleSubmit} className="bg-white rounded-xl shadow-lg p-8 border border-gray-100">
-          {/* Name Field with Voice */}
-          <div className="mb-6">
-            <label className="block text-gray-700 font-semibold mb-2">
-              Full Name *
-            </label>
-            <div className="flex items-center gap-2">
-              <input
-                type="text"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                className="flex-1 px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none text-base"
-                placeholder="e.g., John Smith"
-                required
-              />
-              <VoiceInput
-                fieldName="Name"
-                onTranscript={(text) => setName(text)}
-              />
+        <form onSubmit={handleSubmit} className="bg-white rounded-lg shadow-sm border border-gray-200">
+          <div className="p-6 space-y-6">
+            {/* Personal Information Section */}
+            <div>
+              <h2 className="text-xl font-semibold text-gray-900 mb-4 pb-2 border-b border-gray-200">
+                Personal Information
+              </h2>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Full Name <span className="text-red-500">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    required
+                    value={formData.name}
+                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                    placeholder="Enter your full name"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Email <span className="text-red-500">*</span>
+                  </label>
+                  <input
+                    type="email"
+                    required
+                    value={formData.email}
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                    placeholder="your.email@example.com"
+                  />
+                </div>
+              </div>
             </div>
-          </div>
 
-          {/* Current Education */}
-          <div className="mb-6">
-            <label className="block text-gray-700 font-semibold mb-2">
-              Current Education Level *
-            </label>
-            <select
-              value={currentEducation}
-              onChange={(e) => setCurrentEducation(e.target.value)}
-              className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none text-base"
-              required
-            >
-              <option value="">Select your education level</option>
-              <option value="High School">High School</option>
-              <option value="High School Graduate">High School Graduate</option>
-              <option value="Some College/University">Some College/University</option>
-              <option value="College Diploma">College Diploma</option>
-              <option value="University Degree">University Degree</option>
-              <option value="Other">Other</option>
-            </select>
-          </div>
-
-          {/* Career Goal with Voice */}
-          <div className="mb-6">
-            <label className="block text-gray-700 font-semibold mb-2">
-              Career Goal *
-            </label>
-            <div className="flex items-center gap-2">
-              <input
-                type="text"
-                value={careerGoal}
-                onChange={(e) => setCareerGoal(e.target.value)}
-                className="flex-1 px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none text-base"
-                placeholder="e.g., Software Developer, Nurse, Business Manager"
-                required
-              />
-              <VoiceInput
-                fieldName="Career Goal"
-                onTranscript={(text) => setCareerGoal(text)}
-              />
+            {/* Education Background Section */}
+            <div>
+              <h2 className="text-xl font-semibold text-gray-900 mb-4 pb-2 border-b border-gray-200">
+                Education Background
+              </h2>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Current Education Level <span className="text-red-500">*</span>
+                  </label>
+                  <select
+                    required
+                    value={formData.educationLevel}
+                    onChange={(e) => setFormData({ ...formData, educationLevel: e.target.value })}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  >
+                    <option value="">Select your education level</option>
+                    <option value="High School">High School (Grade 12 or equivalent)</option>
+                    <option value="Some College">Some College/University</option>
+                    <option value="College Diploma">College Diploma</option>
+                    <option value="Bachelor's Degree">Bachelor's Degree</option>
+                    <option value="Master's Degree">Master's Degree or Higher</option>
+                  </select>
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Current/Final Grade
+                  </label>
+                  <input
+                    type="text"
+                    value={formData.currentGrade}
+                    onChange={(e) => setFormData({ ...formData, currentGrade: e.target.value })}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                    placeholder="e.g., 85%, 3.5 GPA, B+"
+                  />
+                </div>
+              </div>
+              <div className="mt-6">
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Math Level/Score
+                </label>
+                <input
+                  type="text"
+                  value={formData.mathScore}
+                  onChange={(e) => setFormData({ ...formData, mathScore: e.target.value })}
+                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  placeholder="e.g., Math 30-1, Calculus, 85%"
+                />
+                <p className="mt-1 text-sm text-gray-500">
+                  Include course name and grade if available
+                </p>
+              </div>
             </div>
-            <p className="text-sm text-gray-500 mt-1">
-              💡 Try using the microphone to speak your career goal!
-            </p>
-          </div>
 
-          {/* Interests */}
-          <div className="mb-6">
-            <label className="block text-gray-700 font-semibold mb-2">
-              Areas of Interest * (Select all that apply)
-            </label>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-              {interestOptions.map((interest) => (
-                <button
-                  key={interest}
-                  type="button"
-                  onClick={() => handleInterestToggle(interest)}
-                  className={`px-4 py-3 rounded-lg border-2 font-medium transition-all text-sm ${
-                    interests.includes(interest)
-                      ? "bg-blue-500 text-white border-blue-600"
-                      : "bg-white text-gray-700 border-gray-300 hover:border-blue-400"
-                  }`}
+            {/* Career & Interests Section */}
+            <div>
+              <h2 className="text-xl font-semibold text-gray-900 mb-4 pb-2 border-b border-gray-200">
+                Career Goals & Interests
+              </h2>
+              <div className="space-y-6">
+                <div>
+                  <div className="flex items-center justify-between mb-2">
+                    <label className="block text-sm font-medium text-gray-700">
+                      Career Goals <span className="text-red-500">*</span>
+                    </label>
+                    <VoiceInput onTranscript={(text) => handleVoiceInput("careerGoals", text)} />
+                  </div>
+                  <textarea
+                    required
+                    value={formData.careerGoals}
+                    onChange={(e) => setFormData({ ...formData, careerGoals: e.target.value })}
+                    rows={4}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                    placeholder="What career are you interested in? What kind of work do you want to do?"
+                  />
+                </div>
+                <div>
+                  <div className="flex items-center justify-between mb-2">
+                    <label className="block text-sm font-medium text-gray-700">
+                      Interests & Hobbies <span className="text-red-500">*</span>
+                    </label>
+                    <VoiceInput onTranscript={(text) => handleVoiceInput("interests", text)} />
+                  </div>
+                  <textarea
+                    required
+                    value={formData.interests}
+                    onChange={(e) => setFormData({ ...formData, interests: e.target.value })}
+                    rows={4}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                    placeholder="What subjects or activities do you enjoy? What are you passionate about?"
+                  />
+                </div>
+                <div>
+                  <div className="flex items-center justify-between mb-2">
+                    <label className="block text-sm font-medium text-gray-700">
+                      Work Experience
+                    </label>
+                    <VoiceInput onTranscript={(text) => handleVoiceInput("workExperience", text)} />
+                  </div>
+                  <textarea
+                    value={formData.workExperience}
+                    onChange={(e) => setFormData({ ...formData, workExperience: e.target.value })}
+                    rows={3}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                    placeholder="Describe any relevant work experience, internships, or volunteer work"
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* Program Preferences Section */}
+            <div>
+              <h2 className="text-xl font-semibold text-gray-900 mb-4 pb-2 border-b border-gray-200">
+                Program Preferences
+              </h2>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Preferred Location
+                  </label>
+                  <select
+                    value={formData.preferredLocation}
+                    onChange={(e) => setFormData({ ...formData, preferredLocation: e.target.value })}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  >
+                    <option value="">No preference</option>
+                    <option value="Calgary">Calgary</option>
+                    <option value="Edmonton">Edmonton</option>
+                    <option value="Lethbridge">Lethbridge</option>
+                    <option value="Online">Online</option>
+                  </select>
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Study Mode
+                  </label>
+                  <select
+                    value={formData.studyMode}
+                    onChange={(e) => setFormData({ ...formData, studyMode: e.target.value })}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  >
+                    <option value="">No preference</option>
+                    <option value="Full-time">Full-time</option>
+                    <option value="Part-time">Part-time</option>
+                    <option value="Online">Online</option>
+                    <option value="Hybrid">Hybrid</option>
+                  </select>
+                </div>
+              </div>
+              <div className="mt-6">
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Financial Aid Interest
+                </label>
+                <select
+                  value={formData.financialAid}
+                  onChange={(e) => setFormData({ ...formData, financialAid: e.target.value })}
+                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 >
-                  {interests.includes(interest) && "✓ "}
-                  {interest}
-                </button>
-              ))}
+                  <option value="">Not sure</option>
+                  <option value="Yes">Yes, I need financial aid</option>
+                  <option value="Maybe">Maybe, I'd like to know my options</option>
+                  <option value="No">No, I don't need financial aid</option>
+                </select>
+              </div>
             </div>
-            <p className="text-sm text-gray-500 mt-2">
-              Selected: {interests.length > 0 ? interests.join(", ") : "None"}
-            </p>
-          </div>
-
-          {/* Math Score */}
-          <div className="mb-8">
-            <label className="block text-gray-700 font-semibold mb-2">
-              Math Score (%) *
-            </label>
-            <input
-              type="number"
-              value={mathScore}
-              onChange={(e) => setMathScore(e.target.value)}
-              className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none text-base"
-              placeholder="e.g., 85"
-              min="0"
-              max="100"
-              required
-            />
-            <p className="text-sm text-gray-500 mt-1">
-              Enter your most recent math grade (0-100)
-            </p>
           </div>
 
           {/* Submit Button */}
-          <div className="flex flex-col sm:flex-row gap-4">
-            <button
-              type="submit"
-              disabled={isSubmitting}
-              className="flex-1 bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-8 py-4 rounded-xl hover:from-blue-700 hover:to-indigo-700 transition-all font-semibold shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              {isSubmitting ? (
-                <span className="flex items-center justify-center gap-2">
-                  <div className="inline-block h-5 w-5 animate-spin rounded-full border-2 border-solid border-white border-r-transparent"></div>
-                  Creating Profile...
-                </span>
-              ) : (
-                <span>🚀 Get My Recommendations</span>
-              )}
-            </button>
-            <a
-              href="/"
-              className="bg-gray-200 text-gray-700 px-8 py-4 rounded-xl hover:bg-gray-300 transition-all font-semibold text-center shadow-lg hover:shadow-xl"
-            >
-              ← Back to Home
-            </a>
-          </div>
-
-          {/* Voice Feature Notice */}
-          <div className="mt-6 bg-green-50 border border-green-200 rounded-lg p-4">
-            <div className="flex items-start gap-2">
-              <span className="text-xl">💡</span>
-              <div>
-                <p className="text-sm font-semibold text-green-900">Quick Tip!</p>
-                <p className="text-xs text-green-700">
-                  Click the blue microphone buttons (🎤) next to Name and Career Goal to use voice input. 
-                  You can also use the floating globe button (🌍) at the bottom-right to get help in multiple languages!
-                </p>
-              </div>
+          <div className="px-6 py-4 bg-gray-50 border-t border-gray-200 rounded-b-lg">
+            <div className="flex items-center justify-between">
+              <p className="text-sm text-gray-600">
+                <span className="text-red-500">*</span> Required fields
+              </p>
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="px-8 py-3 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              >
+                {isSubmitting ? (
+                  <span className="flex items-center">
+                    <svg className="animate-spin -ml-1 mr-2 h-5 w-5 text-white" fill="none" viewBox="0 0 24 24">
+                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                    Saving...
+                  </span>
+                ) : (
+                  "Get Recommendations"
+                )}
+              </button>
             </div>
           </div>
         </form>
 
-        {/* Info Cards */}
-        <div className="grid md:grid-cols-3 gap-4 mt-8">
-          <div className="bg-white rounded-lg shadow p-4 border border-gray-100">
-            <div className="text-3xl mb-2">🎯</div>
-            <h3 className="font-bold text-gray-900 mb-1">AI-Powered</h3>
-            <p className="text-sm text-gray-600">
-              Claude AI analyzes your profile against 53 programs
-            </p>
-          </div>
-          <div className="bg-white rounded-lg shadow p-4 border border-gray-100">
-            <div className="text-3xl mb-2">⚡</div>
-            <h3 className="font-bold text-gray-900 mb-1">Fast Results</h3>
-            <p className="text-sm text-gray-600">
-              Get personalized recommendations in seconds
-            </p>
-          </div>
-          <div className="bg-white rounded-lg shadow p-4 border border-gray-100">
-            <div className="text-3xl mb-2">🎤</div>
-            <h3 className="font-bold text-gray-900 mb-1">Voice Enabled</h3>
-            <p className="text-sm text-gray-600">
-              Speak your answers in multiple languages
-            </p>
-          </div>
+        {/* Help Text */}
+        <div className="mt-6 text-center text-sm text-gray-500">
+          <p>Your information is secure and will only be used to provide program recommendations.</p>
         </div>
       </div>
     </div>

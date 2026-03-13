@@ -1,5 +1,3 @@
-// convex/embeddings.ts - Generate embeddings for programs
-
 import { action, internalMutation, internalQuery } from "./_generated/server";
 import { internal } from "./_generated/api";
 import { v } from "convex/values";
@@ -7,8 +5,8 @@ import { v } from "convex/values";
 // Generate embedding for a single program
 export const generateProgramEmbedding = action({
   args: { programId: v.id("programs") },
-  handler: async (ctx, args) => {
-    const program = await ctx.runQuery(internal.embeddings.getProgram, {
+  handler: async (ctx, args): Promise<any> => {
+    const program: any = await ctx.runQuery(internal.embeddings.getProgram, {
       programId: args.programId,
     });
 
@@ -60,7 +58,7 @@ Career Paths: ${program.careerPaths.join(", ")}
 
     return { success: true, programName: program.name };
   },
-});
+}) as any;
 
 // Internal query to get program
 export const getProgram = internalQuery({
@@ -86,27 +84,75 @@ export const updateProgramEmbedding = internalMutation({
 // Generate embeddings for ALL programs (run once)
 export const generateAllEmbeddings = action({
   args: {},
-  handler: async (ctx) => {
-    const programs = await ctx.runQuery(internal.embeddings.getAllPrograms);
+  handler: async (ctx): Promise<any> => {
+    const programs: any = await ctx.runQuery(internal.embeddings.getAllPrograms);
     
     console.log(`Generating embeddings for ${programs.length} programs...`);
     
     let success = 0;
     let failed = 0;
 
-    for (const program of programs) {
+    for (const programItem of programs) {
       try {
-        await ctx.runAction(internal.embeddings.generateProgramEmbedding, {
-          programId: program._id,
+        // Get full program details
+        const programData: any = await ctx.runQuery(internal.embeddings.getProgram, {
+          programId: programItem._id,
         });
+
+        if (!programData) {
+          throw new Error("Program not found");
+        }
+
+        // Create rich text representation for embedding
+        const text = `
+Program: ${programData.name}
+Institution: ${programData.institution}
+Credentials: ${programData.credentials}
+Description: ${programData.description}
+Duration: ${programData.duration}
+Skills: ${programData.skills.join(", ")}
+Career Paths: ${programData.careerPaths.join(", ")}
+        `.trim();
+
+        // Call OpenAI API
+        const apiKey = process.env.OPENAI_API_KEY;
+        if (!apiKey) {
+          throw new Error("OPENAI_API_KEY not set in environment variables");
+        }
+
+        const response = await fetch("https://api.openai.com/v1/embeddings", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${apiKey}`,
+          },
+          body: JSON.stringify({
+            model: "text-embedding-ada-002",
+            input: text,
+          }),
+        });
+
+        if (!response.ok) {
+          throw new Error(`OpenAI API error: ${response.statusText}`);
+        }
+
+        const data = await response.json();
+        const embedding = data.data[0].embedding;
+
+        // Store embedding
+        await ctx.runMutation(internal.embeddings.updateProgramEmbedding, {
+          programId: programItem._id,
+          embedding,
+        });
+
         success++;
-        console.log(`✓ [${success}/${programs.length}] ${program.name}`);
+        console.log(`✓ [${success}/${programs.length}] ${programData.name}`);
         
-        // Rate limiting: wait 100ms between requests
+        // Rate limiting: wait 2 seconds between requests (for free tier)
         await new Promise((resolve) => setTimeout(resolve, 2000));
       } catch (error) {
         failed++;
-        console.error(`✗ Failed: ${program.name}`, error);
+        console.error(`✗ Failed: ${programItem.name}`, error);
       }
     }
 
@@ -116,9 +162,9 @@ export const generateAllEmbeddings = action({
       failed,
     };
   },
-});
+}) as any;
 
-// Internal query to get all programs - FIXED!
+// Internal query to get all programs
 export const getAllPrograms = internalQuery({
   args: {},
   handler: async (ctx) => {

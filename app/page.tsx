@@ -1,92 +1,85 @@
+"use client";
 import Link from "next/link";
+import Image from "next/image";
 
-export default function Home() {
+export default function HomePage() {
+  const stats = [
+    { number: "106", label: "Programs Available" },
+    { number: "10", label: "Partner Institutions" },
+    { number: "10", label: "Personalized Matches" },
+    { number: "AI", label: "Powered" },
+  ];
+
+  const partners = [
+    { name: "University of Alberta", location: "Edmonton", logo: "/logos/ualberta.jpg" },
+    { name: "University of Calgary", location: "Calgary", logo: "/logos/ucalgary.jpg" },
+    { name: "University of Lethbridge", location: "Lethbridge", logo: "/logos/ulethbridge.jpg" },
+    { name: "Mount Royal University", location: "Calgary", logo: "/logos/mru.png" },
+    { name: "Athabasca University", location: "Online", logo: "/logos/athabascau.png" },
+    { name: "SAIT", location: "Calgary", logo: "/logos/sait.png" },
+    { name: "NAIT", location: "Edmonton", logo: "/logos/nait.png" },
+    { name: "Lethbridge Polytechnic", location: "Lethbridge", logo: "/logos/lethpoly.jpg" },
+    { name: "Bow Valley College", location: "Calgary", logo: "/logos/bowvalley.jpg" },
+    { name: "NorQuest College", location: "Edmonton", logo: "/logos/norquest.png" },
+  ];
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-8 bg-gradient-to-br from-blue-50 to-indigo-100">
-      <div className="max-w-4xl w-full">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <h1 className="text-5xl font-bold mb-4 text-gray-900">
-            APAS Program Matcher
-          </h1>
-          <p className="text-xl text-gray-600">
-            Find Your Perfect Alberta Post-Secondary Program
-          </p>
-        </div>
-
-        {/* Status Card */}
-        <div className="bg-white rounded-lg shadow-lg p-6 mb-8">
-          <div className="flex items-center justify-between">
-            <div>
-              <h2 className="text-lg font-semibold text-gray-900">System Status</h2>
-              <p className="text-gray-600">AI-Powered Recommendations Ready</p>
-            </div>
-            <div className="bg-green-100 text-green-800 px-4 py-2 rounded-full font-semibold">
-              ✓ Online
+    <div className="min-h-screen bg-white">
+      <section className="bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
+          <div className="text-center max-w-4xl mx-auto">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">Find Your Perfect Alberta Post-Secondary Program</h1>
+            <p className="text-xl md:text-2xl mb-8 text-blue-100 leading-relaxed">AI-powered recommendations to match you with the right program at the right institution</p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href="/profile" className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-blue-700 bg-white rounded-lg hover:bg-blue-50 transition-all shadow-lg">Get Started</Link>
+              <a href="#partners" className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-blue-800 bg-opacity-50 rounded-lg hover:bg-opacity-70 transition-all border-2 border-white border-opacity-30">Learn More</a>
             </div>
           </div>
         </div>
+      </section>
 
-        {/* Action Cards */}
-        <div className="grid md:grid-cols-2 gap-6 mb-8">
-          {/* Student Profile Card */}
-          <Link href="/profile">
-            <div className="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-all cursor-pointer border-2 border-transparent hover:border-blue-500">
-              <div className="text-4xl mb-4">👤</div>
-              <h3 className="text-2xl font-bold mb-2 text-gray-900">
-                Create Your Profile
-              </h3>
-              <p className="text-gray-600 mb-4">
-                Tell us about your academic background, interests, and career goals
-              </p>
-              <div className="flex items-center text-blue-600 font-semibold">
-                Get Started →
+      <section className="bg-white border-b border-gray-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {stats.map((stat, i) => (
+              <div key={i} className="text-center">
+                <div className="text-4xl md:text-5xl font-bold text-blue-600 mb-2">{stat.number}</div>
+                <div className="text-sm md:text-base text-gray-600 font-medium">{stat.label}</div>
               </div>
-            </div>
-          </Link>
-
-          {/* View Programs Card */}
-          <Link href="/test">
-            <div className="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-all cursor-pointer border-2 border-transparent hover:border-blue-500">
-              <div className="text-4xl mb-4">📚</div>
-              <h3 className="text-2xl font-bold mb-2 text-gray-900">
-                Browse Programs
-              </h3>
-              <p className="text-gray-600 mb-4">
-                Explore 53 programs from 5 Alberta institutions
-              </p>
-              <div className="flex items-center text-blue-600 font-semibold">
-                View All Programs →
-              </div>
-            </div>
-          </Link>
-        </div>
-
-        {/* Stats */}
-        <div className="bg-white rounded-lg shadow-lg p-6">
-          <h3 className="text-lg font-semibold mb-4 text-gray-900">Available Data</h3>
-          <div className="grid grid-cols-3 gap-4">
-            <div className="text-center">
-              <div className="text-3xl font-bold text-blue-600">53</div>
-              <div className="text-sm text-gray-600">Programs</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-blue-600">5</div>
-              <div className="text-sm text-gray-600">Institutions</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-blue-600">AI</div>
-              <div className="text-sm text-gray-600">Powered</div>
-            </div>
+            ))}
           </div>
         </div>
+      </section>
 
-        {/* Footer */}
-        <div className="text-center mt-8 text-gray-500 text-sm">
-          <p>Alberta Post-Secondary Pathway System v1.0</p>
-          <p className="mt-1">Powered by Claude AI</p>
+      <section id="partners" className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Partner Institutions</h2>
+            <p className="text-xl text-gray-600">10 trusted Alberta post-secondary institutions</p>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+            {partners.map((partner, i) => (
+              <div key={i} className="bg-white p-6 rounded-lg shadow-sm border border-gray-200 hover:shadow-lg transition-all">
+                <div className="flex flex-col items-center text-center">
+                  <div className="relative w-24 h-24 mb-3 flex items-center justify-center">
+                    <Image src={partner.logo} alt={partner.name} width={96} height={96} className="object-contain" />
+                  </div>
+                  <div className="text-sm font-semibold text-gray-800 mb-1">{partner.name}</div>
+                  <div className="text-xs text-gray-500">{partner.location}</div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
-    </main>
+      </section>
+
+      <section className="bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-20">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Find Your Perfect Program?</h2>
+          <p className="text-xl mb-8 text-blue-100">Start your journey today with AI-powered recommendations</p>
+          <Link href="/profile" className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-blue-700 bg-white rounded-lg hover:bg-blue-50 transition-all shadow-lg">Create Your Profile</Link>
+        </div>
+      </section>
+    </div>
   );
 }

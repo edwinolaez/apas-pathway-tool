@@ -1,5 +1,3 @@
-// convex/schema.ts - UPDATED WITH VECTOR INDEX
-
 import { defineSchema, defineTable } from "convex/server";
 import { v } from "convex/values";
 
@@ -11,7 +9,7 @@ export default defineSchema({
     careerGoal: v.string(),
     interests: v.union(v.string(), v.array(v.string())),
     mathScore: v.optional(v.union(v.string(), v.number())),
-  }).index("by_email", ["email"]),
+  }),
 
   programs: defineTable({
     id: v.string(),
@@ -29,11 +27,12 @@ export default defineSchema({
     skills: v.array(v.string()),
     nocCodes: v.array(v.string()),
     additionalInfo: v.any(),
-    embedding: v.optional(v.array(v.float64())), // ✅ NEW - Vector embeddings
+    embedding: v.optional(v.array(v.float64())),
   })
     .index("by_institution", ["institutionId"])
     .index("by_program_id", ["id"])
-    .vectorIndex("by_embedding", {  // ✅ NEW - Vector search index
+    .index("by_credentials", ["credentials"])
+    .vectorIndex("by_embedding", {
       vectorField: "embedding",
       dimensions: 1536,
       filterFields: ["institutionId"],
@@ -48,21 +47,23 @@ export default defineSchema({
     location: v.string(),
     website: v.string(),
     description: v.optional(v.string()),
-  }).index("by_institution_id", ["id"]),
+  })
+    .index("by_institution_id", ["id"])
+    .index("by_slug", ["slug"]),
 
   recommendations: defineTable({
     studentId: v.id("students"),
-    programIds: v.array(v.id("programs")),
+    programIds: v.array(v.string()),
     reasoning: v.string(),
     createdAt: v.number(),
-  }).index("by_student", ["studentId"]),
+  }),
 
   occupations: defineTable({
     title: v.string(),
     nocCode: v.string(),
     description: v.string(),
     outlook: v.string(),
-    medianSalary: v.optional(v.number()),
-    requiredEducation: v.array(v.string()),
-  }).index("by_noc", ["nocCode"]),
+    medianSalary: v.optional(v.string()),
+    requiredEducation: v.string(),
+  }),
 });

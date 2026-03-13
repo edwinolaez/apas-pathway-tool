@@ -1,8 +1,7 @@
-// convex/search.ts - Semantic search for programs
-
 import { action, internalMutation } from "./_generated/server";
 import { internal } from "./_generated/api";
 import { v } from "convex/values";
+import { Id } from "./_generated/dataModel";
 
 // Perform semantic search for programs based on student profile
 export const semanticProgramSearch = action({
@@ -12,7 +11,7 @@ export const semanticProgramSearch = action({
     interests: v.string(),
     limit: v.optional(v.number()),
   },
-  handler: async (ctx, args) => {
+  handler: async (ctx, args): Promise<any[]> => {
     // Create search query from student profile
     const searchQuery = `
 Education: ${args.currentEducation}
@@ -53,7 +52,7 @@ Interests: ${args.interests}
 
     // Get full program details
     const programs = await Promise.all(
-      results.map(async (result) => {
+      results.map(async (result): Promise<any> => {
         const program = await ctx.runMutation(internal.search.getProgramInternal, {
           programId: result._id,
         });
@@ -68,7 +67,7 @@ Interests: ${args.interests}
   },
 });
 
-// Internal mutation to fetch program - FIXED!
+// Internal mutation to fetch program
 export const getProgramInternal = internalMutation({
   args: { programId: v.id("programs") },
   handler: async (ctx, args) => {
