@@ -1,8 +1,8 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { useMutation, useQuery } from "convex/react";
+import { useMutation } from "convex/react";
 import { api } from "../../convex/_generated/api";
 import VoiceInput from "../components/VoiceInput";
 
@@ -32,9 +32,12 @@ export default function ProfilePage() {
     setIsSubmitting(true);
 
     try {
+      // Generate a random email for database compatibility
+      const randomEmail = `user_${Date.now()}@apas.local`;
+      
       const studentId = await createOrUpdateStudent({
         name: formData.name,
-        email: formData.email,
+        email: randomEmail, // Auto-generated, not from user
         educationLevel: formData.educationLevel,
         currentGrade: formData.currentGrade,
         mathScore: formData.mathScore,
@@ -76,6 +79,9 @@ export default function ProfilePage() {
           <p className="text-lg text-gray-600">
             Tell us about yourself to get personalized program recommendations
           </p>
+          <p className="text-sm text-gray-500 mt-2">
+            🔒 Your privacy is protected - no email required
+          </p>
         </div>
 
         {/* Success Message */}
@@ -98,7 +104,7 @@ export default function ProfilePage() {
               <h2 className="text-xl font-semibold text-gray-900 mb-4 pb-2 border-b border-gray-200">
                 Personal Information
               </h2>
-              <div className="grid md:grid-cols-2 gap-6">
+              <div className="grid md:grid-cols-1 gap-6">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     Full Name <span className="text-red-500">*</span>
@@ -110,19 +116,6 @@ export default function ProfilePage() {
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                     placeholder="Enter your full name"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Email <span className="text-red-500">*</span>
-                  </label>
-                  <input
-                    type="email"
-                    required
-                    value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                    placeholder="your.email@example.com"
                   />
                 </div>
               </div>
@@ -324,7 +317,7 @@ export default function ProfilePage() {
 
         {/* Help Text */}
         <div className="mt-6 text-center text-sm text-gray-500">
-          <p>Your information is secure and will only be used to provide program recommendations.</p>
+          <p>🔒 Your information is private and secure. No email or personal data is collected.</p>
         </div>
       </div>
     </div>

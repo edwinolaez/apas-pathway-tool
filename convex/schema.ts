@@ -6,9 +6,14 @@ export default defineSchema({
     name: v.string(),
     email: v.optional(v.string()),
     currentEducation: v.string(),
+    currentGrade: v.optional(v.string()),
+    mathScore: v.optional(v.union(v.string(), v.number())),
     careerGoal: v.string(),
     interests: v.union(v.string(), v.array(v.string())),
-    mathScore: v.optional(v.union(v.string(), v.number())),
+    workExperience: v.optional(v.string()),
+    preferredLocation: v.optional(v.string()),
+    studyMode: v.optional(v.string()),
+    financialAid: v.optional(v.string()),
   }),
 
   programs: defineTable({
