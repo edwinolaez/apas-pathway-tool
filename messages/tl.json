@@ -1,0 +1,251 @@
+{
+  "nav": {
+    "home": "Home",
+    "profile": "Gumawa ng Profile",
+    "compare": "Ikumpara",
+    "recommendations": "Mga Rekomendasyon",
+    "getStarted": "Magsimula"
+  },
+  "home": {
+    "hero": {
+      "title": "Hanapin ang Iyong Perpektong Post-Secondary Program sa Alberta",
+      "subtitle": "Mga rekomendasyon na pinapagana ng AI upang itugma ka sa tamang programa sa tamang institusyon",
+      "getStarted": "Magsimula",
+      "learnMore": "Matuto Pa"
+    },
+    "stats": {
+      "programs": "Mga Available na Programa",
+      "institutions": "Mga Partner na Institusyon",
+      "matches": "Mga Personalized na Tugma",
+      "powered": "Pinapagana"
+    },
+    "features": {
+      "title": "Mga Makapangyarihang Feature para Gabayan ang Iyong Paglalakbay",
+      "subtitle": "Lahat ng kailangan mo upang gumawa ng informed decision tungkol sa iyong post-secondary education",
+      "aiMatching": {
+        "title": "AI-Powered na Pagtugma",
+        "description": "Sinusuri ng advanced AI ang iyong profile upang magrekomenda ng mga programa na tumutugma sa iyong mga layunin at kwalipikasyon."
+      },
+      "instantResults": {
+        "title": "Instant na Resulta",
+        "description": "Kunin ang iyong personalized na mga rekomendasyon ng programa sa loob ng 60 segundo na may detalyadong insights sa pagtugma."
+      },
+      "prerequisiteChecking": {
+        "title": "Pagsuri ng Prerequisite",
+        "description": "Awtomatikong tingnan kung aling mga programa ang kwalipikado ka batay sa iyong kasalukuyang edukasyon at marka sa math."
+      },
+      "voiceInput": {
+        "title": "Suporta sa Voice Input",
+        "description": "Sabihin ang iyong mga sagot sa 8 na wika para sa mas madaling paggawa ng profile at accessibility."
+      },
+      "labourMarket": {
+        "title": "Datos ng Labour Market",
+        "description": "Tingnan ang mga range ng sahod at impormasyon ng job outlook para sa mga karera na nauugnay sa bawat programa."
+      },
+      "pdfExport": {
+        "title": "PDF Export",
+        "description": "I-download ang iyong mga rekomendasyon bilang propesyonal na PDF upang ibahagi sa mga tagapayo at pamilya."
+      }
+    },
+    "howItWorks": {
+      "title": "Paano Ito Gumagana",
+      "subtitle": "Kumuha ng personalized na mga rekomendasyon ng programa sa tatlong simpleng hakbang",
+      "step1": {
+        "title": "Gumawa ng Iyong Profile",
+        "description": "Ibahagi ang iyong educational background, mga layunin sa karera, mga interes, at kwalipikasyon sa isang simpleng form."
+      },
+      "step2": {
+        "title": "Pagsusuri ng AI",
+        "description": "Sinusuri ng aming AI ang 106 na programa sa 10 institusyon sa Alberta upang mahanap ang iyong pinakamahusay na mga tugma."
+      },
+      "step3": {
+        "title": "Suriin ang Mga Rekomendasyon",
+        "description": "Tumanggap ng 10 personalized na mga rekomendasyon ng programa na may detalyadong paliwanag at susunod na mga hakbang."
+      }
+    },
+    "partners": {
+      "title": "Mga Partner na Institusyon",
+      "subtitle": "10 pinagkakatiwalaang post-secondary na institusyon sa Alberta"
+    },
+    "finalCta": {
+      "title": "Handa Ka Na Bang Hanapin ang Iyong Perpektong Programa?",
+      "subtitle": "Simulan ang iyong paglalakbay ngayon gamit ang mga rekomendasyon na pinapagana ng AI na iniayon sa iyong mga layunin",
+      "button": "Gumawa ng Iyong Profile"
+    }
+  },
+  "profile": {
+    "title": "Gumawa ng Iyong Profile",
+    "subtitle": "Sabihin sa amin ang tungkol sa iyo upang makakuha ng personalized na mga rekomendasyon ng programa",
+    "privacy": "Protektado ang iyong privacy - walang kinakailangang email",
+    "sections": {
+      "personal": "Personal na Impormasyon",
+      "education": "Educational Background",
+      "careerInterests": "Mga Layunin sa Karera at Interes",
+      "preferences": "Mga Preference sa Programa"
+    },
+    "fields": {
+      "name": "Buong Pangalan",
+      "educationLevel": "Kasalukuyang Antas ng Edukasyon",
+      "currentGrade": "Kasalukuyang/Huling Marka",
+      "mathScore": "Antas/Marka sa Math",
+      "careerGoals": "Mga Layunin sa Karera",
+      "interests": "Mga Interes at Hilig",
+      "workExperience": "Karanasan sa Trabaho",
+      "preferredLocation": "Gustong Lokasyon",
+      "studyMode": "Mode ng Pag-aaral",
+      "financialAid": "Interes sa Financial Aid"
+    },
+    "placeholders": {
+      "name": "Ilagay ang iyong buong pangalan",
+      "grade": "hal., 85%, 3.5 GPA, B+",
+      "mathScore": "hal., Math 30-1, Calculus, 85%",
+      "careerGoals": "Anong karera ang interesado ka? Anong uri ng trabaho ang gusto mong gawin?",
+      "interests": "Anong mga paksa o aktibidad ang nae-enjoy mo? Saan ka passionate?",
+      "workExperience": "Ilarawan ang anumang nauugnay na karanasan sa trabaho, internship, o volunteer work"
+    },
+    "options": {
+      "educationLevel": {
+        "select": "Piliin ang iyong antas ng edukasyon",
+        "highSchool": "High School (Grade 12 o katumbas)",
+        "someCollege": "Ilang College/University",
+        "diploma": "College Diploma",
+        "bachelors": "Bachelor's Degree",
+        "masters": "Master's Degree o Mas Mataas"
+      },
+      "location": {
+        "noPreference": "Walang preference",
+        "calgary": "Calgary",
+        "edmonton": "Edmonton",
+        "lethbridge": "Lethbridge",
+        "online": "Online"
+      },
+      "studyMode": {
+        "noPreference": "Walang preference",
+        "fullTime": "Full-time",
+        "partTime": "Part-time",
+        "online": "Online",
+        "hybrid": "Hybrid"
+      },
+      "financialAid": {
+        "notSure": "Hindi sigurado",
+        "yes": "Oo, kailangan ko ng financial aid",
+        "maybe": "Siguro, gusto kong malaman ang aking mga opsyon",
+        "no": "Hindi, hindi ko kailangan ng financial aid"
+      }
+    },
+    "submit": "Kumuha ng Mga Rekomendasyon",
+    "submitting": "Nag-se-save...",
+    "required": "Kinakailangang mga field",
+    "success": "Na-save ang profile! Nire-redirect sa mga rekomendasyon...",
+    "privacyNote": "Ang iyong impormasyon ay pribado at secure. Walang email o personal na data na kinokolekta.",
+    "mathHint": "Isama ang pangalan ng kurso at marka kung available"
+  },
+  "compare": {
+    "title": "Ikumpara ang Mga Institusyon",
+    "subtitle": "Pumili ng hanggang 4 na institusyon upang ikumpara nang magkatabi",
+    "addInstitution": "Magdagdag ng Institusyon",
+    "categories": {
+      "type": "Uri ng Institusyon",
+      "programs": "Bilang ng mga Programa",
+      "tuition": "Range ng Tuition",
+      "students": "Populasyon ng mga Estudyante",
+      "acceptance": "Rate ng Pagtanggap",
+      "classSize": "Average na Laki ng Klase",
+      "campus": "Laki ng Campus",
+      "online": "Mga Online na Programa",
+      "coop": "Mga Co-op na Programa",
+      "international": "Mga International na Estudyante",
+      "housing": "On-Campus na Tirahan",
+      "highlights": "Mga Pangunahing Highlight",
+      "website": "Website"
+    },
+    "noSelection": "Walang Napiling Institusyon",
+    "noSelectionText": "Pumili ng mga institusyon sa itaas upang magsimulang magkumpara",
+    "backToHome": "Bumalik sa Home",
+    "remove": "Alisin",
+    "visitWebsite": "Bisitahin ang Website"
+  },
+  "footer": {
+    "partnerText": "Nakikipagtulungan sa mga nangungunang institusyon ng Alberta",
+    "about": {
+      "title": "Tungkol sa APAS",
+      "description": "Mga rekomendasyon ng programa na pinapagana ng AI upang tulungan ang mga estudyante ng Alberta na mahanap ang kanilang perpektong post-secondary path."
+    },
+    "quickLinks": {
+      "title": "Mga Mabilis na Link",
+      "home": "Home",
+      "profile": "Gumawa ng Profile",
+      "recommendations": "Kumuha ng Mga Rekomendasyon"
+    },
+    "resources": {
+      "title": "Mga Mapagkukunan",
+      "alberta": "Alberta.ca",
+      "applyAlberta": "ApplyAlberta",
+      "studentAid": "Student Aid Alberta"
+    },
+    "contact": {
+      "title": "Makipag-ugnayan",
+      "capstone": "Capstone Project 2026",
+      "demo": "Demo: Abril 17, 2026",
+      "powered": "Pinapagana ng Claude AI at Convex"
+    },
+    "copyright": "APAS - Alberta Post-Secondary Advisory System. Lahat ng karapatan ay nakalaan.",
+    "privacy": "Patakaran sa Privacy",
+    "terms": "Mga Tuntunin ng Serbisyo"
+  },
+  "common": {
+    "loading": "Nag-lo-load...",
+    "error": "Error",
+    "success": "Tagumpay",
+    "save": "I-save",
+    "cancel": "Kanselahin",
+    "close": "Isara",
+    "next": "Susunod",
+    "previous": "Nakaraan",
+    "select": "Pumili"
+  },
+  "recommendations": {
+    "noProfile": "Walang Nahanap na Profile ng Estudyante",
+    "noProfileText": "Mangyaring lumikha muna ng profile ng estudyante para makakuha ng mga personalisadong rekomendasyon.",
+    "createProfile": "Lumikha ng Profile",
+    "loadingProfile": "Nilo-load ang profile ng estudyante...",
+    "loading": "Naglo-load...",
+    "title": "Mga Rekomendasyon ng Programa para kay",
+    "education": "Edukasyon",
+    "careerGoal": "Layunin sa Karera",
+    "mathScore": "Marka sa Math",
+    "interests": "Mga Interes",
+    "qualifyFor": "Kwalipikado Ka Para Sa",
+    "upgradeNeeded": "Kailangan ng Pag-upgrade",
+    "notYetEligible": "Hindi Pa Kwalipikado",
+    "analyzing": "Sinusuri ng Claude AI ang Iyong Profile",
+    "analyzingSubtitle": "Sinusuri ang mga programa sa mga institusyon ng Alberta",
+    "complete": "Kumpleto",
+    "errorTitle": "May Naganap na Error",
+    "tryAgain": "Subukan Ulit",
+    "foundMatches": "Perpektong Tugma!",
+    "foundMatchesSubtitle": "Batay sa iyong mga layunin, interes, at kwalipikasyon",
+    "newAnalysis": "Bagong Pagsusuri",
+    "programsSelected": "mga programang napili",
+    "compareReady": "Handa nang ihambing nang magkatabi",
+    "comparePrograms": "Ihambing ang mga Programa",
+    "clear": "I-clear",
+    "youQualify": "Kwalipikado Ka!",
+    "youQualifyText": "Natutugunan mo ang lahat ng kinakailangan! Maaari kang mag-apply ngayon.",
+    "whyMissing": "Ano ang kulang:",
+    "whyProgram": "Bakit Ang Programang Ito?",
+    "careerAlignment": "Pagkakatugma sa Karera",
+    "whatYouNeed": "Ang Kakailanganin Mo",
+    "createNewProfile": "Lumikha ng Bagong Profile",
+    "backToHome": "Bumalik sa Home",
+    "compareTitle": "Ihambing ang mga Programa",
+    "category": "Kategorya",
+    "matchScore": "Marka ng Tugma",
+    "eligibility": "Kwalipikasyon",
+    "qualified": "Kwalipikado",
+    "prerequisites": "Mga Kinakailangan",
+    "clearSelection": "I-clear ang Seleksyon",
+    "closeComparison": "Isara ang Paghahambing",
+    "found": "Nahanap"
+  }
+}

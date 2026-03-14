@@ -1,0 +1,251 @@
+{
+  "nav": {
+    "home": "Startseite",
+    "profile": "Profil erstellen",
+    "compare": "Vergleichen",
+    "recommendations": "Empfehlungen",
+    "getStarted": "Loslegen"
+  },
+  "home": {
+    "hero": {
+      "title": "Finden Sie Ihr perfektes postsekundäres Programm in Alberta",
+      "subtitle": "KI-gestützte Empfehlungen, um Sie mit dem richtigen Programm an der richtigen Einrichtung zusammenzubringen",
+      "getStarted": "Loslegen",
+      "learnMore": "Mehr erfahren"
+    },
+    "stats": {
+      "programs": "Verfügbare Programme",
+      "institutions": "Partner-Institutionen",
+      "matches": "Personalisierte Übereinstimmungen",
+      "powered": "Angetrieben"
+    },
+    "features": {
+      "title": "Leistungsstarke Funktionen zur Begleitung Ihrer Reise",
+      "subtitle": "Alles, was Sie brauchen, um eine fundierte Entscheidung über Ihre postsekundäre Ausbildung zu treffen",
+      "aiMatching": {
+        "title": "KI-gestütztes Matching",
+        "description": "Fortgeschrittene KI analysiert Ihr Profil, um Programme zu empfehlen, die Ihren Zielen und Qualifikationen entsprechen."
+      },
+      "instantResults": {
+        "title": "Sofortige Ergebnisse",
+        "description": "Erhalten Sie Ihre personalisierten Programmempfehlungen in weniger als 60 Sekunden mit detaillierten Matching-Einblicken."
+      },
+      "prerequisiteChecking": {
+        "title": "Voraussetzungsprüfung",
+        "description": "Sehen Sie automatisch, für welche Programme Sie sich basierend auf Ihrer aktuellen Ausbildung und Mathematiknoten qualifizieren."
+      },
+      "voiceInput": {
+        "title": "Spracheingabe-Unterstützung",
+        "description": "Sprechen Sie Ihre Antworten in 8 Sprachen für einfachere Profilerstellung und Barrierefreiheit."
+      },
+      "labourMarket": {
+        "title": "Arbeitsmarktdaten",
+        "description": "Sehen Sie Gehaltsspannen und Informationen zu Berufsaussichten für Karrieren im Zusammenhang mit jedem Programm."
+      },
+      "pdfExport": {
+        "title": "PDF-Export",
+        "description": "Laden Sie Ihre Empfehlungen als professionelles PDF herunter, um sie mit Beratern und Familie zu teilen."
+      }
+    },
+    "howItWorks": {
+      "title": "So funktioniert es",
+      "subtitle": "Erhalten Sie personalisierte Programmempfehlungen in drei einfachen Schritten",
+      "step1": {
+        "title": "Erstellen Sie Ihr Profil",
+        "description": "Teilen Sie Ihren Bildungshintergrund, Berufsziele, Interessen und Qualifikationen in einem einfachen Formular."
+      },
+      "step2": {
+        "title": "KI-Analyse",
+        "description": "Unsere KI überprüft 106 Programme an 10 Institutionen in Alberta, um Ihre besten Übereinstimmungen zu finden."
+      },
+      "step3": {
+        "title": "Empfehlungen überprüfen",
+        "description": "Erhalten Sie 10 personalisierte Programmempfehlungen mit detaillierten Erklärungen und nächsten Schritten."
+      }
+    },
+    "partners": {
+      "title": "Partner-Institutionen",
+      "subtitle": "10 vertrauenswürdige postsekundäre Institutionen in Alberta"
+    },
+    "finalCta": {
+      "title": "Bereit, Ihr perfektes Programm zu finden?",
+      "subtitle": "Beginnen Sie noch heute Ihre Reise mit KI-gestützten Empfehlungen, die auf Ihre Ziele zugeschnitten sind",
+      "button": "Erstellen Sie Ihr Profil"
+    }
+  },
+  "profile": {
+    "title": "Erstellen Sie Ihr Profil",
+    "subtitle": "Erzählen Sie uns von sich, um personalisierte Programmempfehlungen zu erhalten",
+    "privacy": "Ihre Privatsphäre ist geschützt - keine E-Mail erforderlich",
+    "sections": {
+      "personal": "Persönliche Informationen",
+      "education": "Bildungshintergrund",
+      "careerInterests": "Berufsziele und Interessen",
+      "preferences": "Programmpräferenzen"
+    },
+    "fields": {
+      "name": "Vollständiger Name",
+      "educationLevel": "Aktuelles Bildungsniveau",
+      "currentGrade": "Aktuelle/Endnote",
+      "mathScore": "Mathematikniveau/-note",
+      "careerGoals": "Berufsziele",
+      "interests": "Interessen und Hobbys",
+      "workExperience": "Berufserfahrung",
+      "preferredLocation": "Bevorzugter Standort",
+      "studyMode": "Studienmodus",
+      "financialAid": "Interesse an finanzieller Unterstützung"
+    },
+    "placeholders": {
+      "name": "Geben Sie Ihren vollständigen Namen ein",
+      "grade": "z.B. 85%, 3.5 GPA, B+",
+      "mathScore": "z.B. Math 30-1, Calculus, 85%",
+      "careerGoals": "An welcher Karriere sind Sie interessiert? Welche Art von Arbeit möchten Sie machen?",
+      "interests": "Welche Fächer oder Aktivitäten genießen Sie? Wofür sind Sie leidenschaftlich?",
+      "workExperience": "Beschreiben Sie relevante Berufserfahrung, Praktika oder ehrenamtliche Arbeit"
+    },
+    "options": {
+      "educationLevel": {
+        "select": "Wählen Sie Ihr Bildungsniveau",
+        "highSchool": "Gymnasium (Klasse 12 oder gleichwertig)",
+        "someCollege": "Einige College/Universität",
+        "diploma": "College-Diplom",
+        "bachelors": "Bachelor-Abschluss",
+        "masters": "Master-Abschluss oder höher"
+      },
+      "location": {
+        "noPreference": "Keine Präferenz",
+        "calgary": "Calgary",
+        "edmonton": "Edmonton",
+        "lethbridge": "Lethbridge",
+        "online": "Online"
+      },
+      "studyMode": {
+        "noPreference": "Keine Präferenz",
+        "fullTime": "Vollzeit",
+        "partTime": "Teilzeit",
+        "online": "Online",
+        "hybrid": "Hybrid"
+      },
+      "financialAid": {
+        "notSure": "Nicht sicher",
+        "yes": "Ja, ich brauche finanzielle Unterstützung",
+        "maybe": "Vielleicht, ich würde gerne meine Optionen kennen",
+        "no": "Nein, ich brauche keine finanzielle Unterstützung"
+      }
+    },
+    "submit": "Empfehlungen erhalten",
+    "submitting": "Wird gespeichert...",
+    "required": "Erforderliche Felder",
+    "success": "Profil gespeichert! Weiterleitung zu Empfehlungen...",
+    "privacyNote": "Ihre Informationen sind privat und sicher. Es werden keine E-Mail- oder persönlichen Daten gesammelt.",
+    "mathHint": "Kursname und Note einschließen, falls verfügbar"
+  },
+  "compare": {
+    "title": "Institutionen vergleichen",
+    "subtitle": "Wählen Sie bis zu 4 Institutionen für einen Vergleich nebeneinander",
+    "addInstitution": "Institution hinzufügen",
+    "categories": {
+      "type": "Institutionstyp",
+      "programs": "Anzahl der Programme",
+      "tuition": "Studiengebührenbereich",
+      "students": "Studentenpopulation",
+      "acceptance": "Zulassungsrate",
+      "classSize": "Durchschnittliche Klassengröße",
+      "campus": "Campusgröße",
+      "online": "Online-Programme",
+      "coop": "Kooperationsprogramme",
+      "international": "Internationale Studierende",
+      "housing": "Wohnheim auf dem Campus",
+      "highlights": "Wichtige Highlights",
+      "website": "Webseite"
+    },
+    "noSelection": "Keine Institution ausgewählt",
+    "noSelectionText": "Wählen Sie oben Institutionen aus, um mit dem Vergleich zu beginnen",
+    "backToHome": "Zurück zur Startseite",
+    "remove": "Entfernen",
+    "visitWebsite": "Webseite besuchen"
+  },
+  "footer": {
+    "partnerText": "In Partnerschaft mit führenden Institutionen in Alberta",
+    "about": {
+      "title": "Über APAS",
+      "description": "KI-gestützte Programmempfehlungen, um Studenten in Alberta zu helfen, ihren perfekten postsekundären Weg zu finden."
+    },
+    "quickLinks": {
+      "title": "Schnelllinks",
+      "home": "Startseite",
+      "profile": "Profil erstellen",
+      "recommendations": "Empfehlungen erhalten"
+    },
+    "resources": {
+      "title": "Ressourcen",
+      "alberta": "Alberta.ca",
+      "applyAlberta": "ApplyAlberta",
+      "studentAid": "Studienhilfe Alberta"
+    },
+    "contact": {
+      "title": "Kontakt",
+      "capstone": "Abschlussprojekt 2026",
+      "demo": "Demo: 17. April 2026",
+      "powered": "Angetrieben von Claude AI und Convex"
+    },
+    "copyright": "APAS - Alberta Postsekundäres Beratungssystem. Alle Rechte vorbehalten.",
+    "privacy": "Datenschutzrichtlinie",
+    "terms": "Nutzungsbedingungen"
+  },
+  "common": {
+    "loading": "Lädt...",
+    "error": "Fehler",
+    "success": "Erfolg",
+    "save": "Speichern",
+    "cancel": "Abbrechen",
+    "close": "Schließen",
+    "next": "Weiter",
+    "previous": "Zurück",
+    "select": "Auswählen"
+  },
+  "recommendations": {
+    "noProfile": "Kein Studentenprofil gefunden",
+    "noProfileText": "Bitte erstellen Sie zuerst ein Studentenprofil, um personalisierte Empfehlungen zu erhalten.",
+    "createProfile": "Profil erstellen",
+    "loadingProfile": "Studentenprofil wird geladen...",
+    "loading": "Wird geladen...",
+    "title": "Programmempfehlungen für",
+    "education": "Bildung",
+    "careerGoal": "Karriereziel",
+    "mathScore": "Mathematiknote",
+    "interests": "Interessen",
+    "qualifyFor": "Sie qualifizieren sich für",
+    "upgradeNeeded": "Verbesserung erforderlich",
+    "notYetEligible": "Noch nicht berechtigt",
+    "analyzing": "Claude AI analysiert Ihr Profil",
+    "analyzingSubtitle": "Überprüfung von Programmen an Albertaer Institutionen",
+    "complete": "Abgeschlossen",
+    "errorTitle": "Fehler aufgetreten",
+    "tryAgain": "Erneut versuchen",
+    "foundMatches": "Perfekte Übereinstimmungen!",
+    "foundMatchesSubtitle": "Basierend auf Ihren Zielen, Interessen und Qualifikationen",
+    "newAnalysis": "Neue Analyse",
+    "programsSelected": "Programme ausgewählt",
+    "compareReady": "Bereit zum Vergleich nebeneinander",
+    "comparePrograms": "Programme vergleichen",
+    "clear": "Löschen",
+    "youQualify": "Sie sind qualifiziert!",
+    "youQualifyText": "Sie erfüllen alle Anforderungen! Sie können sich jetzt bewerben.",
+    "whyMissing": "Was fehlt:",
+    "whyProgram": "Warum dieses Programm?",
+    "careerAlignment": "Karriereausrichtung",
+    "whatYouNeed": "Was Sie benötigen werden",
+    "createNewProfile": "Neues Profil erstellen",
+    "backToHome": "Zurück zur Startseite",
+    "compareTitle": "Programme vergleichen",
+    "category": "Kategorie",
+    "matchScore": "Übereinstimmungspunktzahl",
+    "eligibility": "Berechtigung",
+    "qualified": "Qualifiziert",
+    "prerequisites": "Voraussetzungen",
+    "clearSelection": "Auswahl löschen",
+    "closeComparison": "Vergleich schließen",
+    "found": "Gefunden"
+  }
+}

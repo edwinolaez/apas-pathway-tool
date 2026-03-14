@@ -1,0 +1,251 @@
+{
+  "nav": {
+    "home": "Home",
+    "profile": "Create Profile",
+    "compare": "Compare",
+    "recommendations": "Recommendations",
+    "getStarted": "Get Started"
+  },
+  "home": {
+    "hero": {
+      "title": "Find Your Perfect Alberta Post-Secondary Program",
+      "subtitle": "AI-powered recommendations to match you with the right program at the right institution",
+      "getStarted": "Get Started",
+      "learnMore": "Learn More"
+    },
+    "stats": {
+      "programs": "Programs Available",
+      "institutions": "Partner Institutions",
+      "matches": "Personalized Matches",
+      "powered": "Powered"
+    },
+    "features": {
+      "title": "Powerful Features to Guide Your Journey",
+      "subtitle": "Everything you need to make an informed decision about your post-secondary education",
+      "aiMatching": {
+        "title": "AI-Powered Matching",
+        "description": "Advanced AI analyzes your profile to recommend programs that align with your goals and qualifications."
+      },
+      "instantResults": {
+        "title": "Instant Results",
+        "description": "Get your personalized program recommendations in under 60 seconds with detailed matching insights."
+      },
+      "prerequisiteChecking": {
+        "title": "Prerequisite Checking",
+        "description": "Automatically see which programs you qualify for based on your current education and math scores."
+      },
+      "voiceInput": {
+        "title": "Voice Input Support",
+        "description": "Speak your answers in 8 languages for easier profile creation and accessibility."
+      },
+      "labourMarket": {
+        "title": "Labour Market Data",
+        "description": "View salary ranges and job outlook information for careers related to each program."
+      },
+      "pdfExport": {
+        "title": "PDF Export",
+        "description": "Download your recommendations as a professional PDF to share with advisors and family."
+      }
+    },
+    "howItWorks": {
+      "title": "How It Works",
+      "subtitle": "Get personalized program recommendations in three simple steps",
+      "step1": {
+        "title": "Create Your Profile",
+        "description": "Share your educational background, career goals, interests, and qualifications in a simple form."
+      },
+      "step2": {
+        "title": "AI Analysis",
+        "description": "Our AI reviews 106 programs across 10 Alberta institutions to find your best matches."
+      },
+      "step3": {
+        "title": "Review Recommendations",
+        "description": "Receive 10 personalized program recommendations with detailed explanations and next steps."
+      }
+    },
+    "partners": {
+      "title": "Partner Institutions",
+      "subtitle": "10 trusted Alberta post-secondary institutions"
+    },
+    "finalCta": {
+      "title": "Ready to Find Your Perfect Program?",
+      "subtitle": "Start your journey today with AI-powered recommendations tailored to your goals",
+      "button": "Create Your Profile"
+    }
+  },
+  "profile": {
+    "title": "Create Your Profile",
+    "subtitle": "Tell us about yourself to get personalized program recommendations",
+    "privacy": "Your privacy is protected - no email required",
+    "sections": {
+      "personal": "Personal Information",
+      "education": "Education Background",
+      "careerInterests": "Career Goals & Interests",
+      "preferences": "Program Preferences"
+    },
+    "fields": {
+      "name": "Full Name",
+      "educationLevel": "Current Education Level",
+      "currentGrade": "Current/Final Grade",
+      "mathScore": "Math Level/Score",
+      "careerGoals": "Career Goals",
+      "interests": "Interests & Hobbies",
+      "workExperience": "Work Experience",
+      "preferredLocation": "Preferred Location",
+      "studyMode": "Study Mode",
+      "financialAid": "Financial Aid Interest"
+    },
+    "placeholders": {
+      "name": "Enter your full name",
+      "grade": "e.g., 85%, 3.5 GPA, B+",
+      "mathScore": "e.g., Math 30-1, Calculus, 85%",
+      "careerGoals": "What career are you interested in? What kind of work do you want to do?",
+      "interests": "What subjects or activities do you enjoy? What are you passionate about?",
+      "workExperience": "Describe any relevant work experience, internships, or volunteer work"
+    },
+    "options": {
+      "educationLevel": {
+        "select": "Select your education level",
+        "highSchool": "High School (Grade 12 or equivalent)",
+        "someCollege": "Some College/University",
+        "diploma": "College Diploma",
+        "bachelors": "Bachelor's Degree",
+        "masters": "Master's Degree or Higher"
+      },
+      "location": {
+        "noPreference": "No preference",
+        "calgary": "Calgary",
+        "edmonton": "Edmonton",
+        "lethbridge": "Lethbridge",
+        "online": "Online"
+      },
+      "studyMode": {
+        "noPreference": "No preference",
+        "fullTime": "Full-time",
+        "partTime": "Part-time",
+        "online": "Online",
+        "hybrid": "Hybrid"
+      },
+      "financialAid": {
+        "notSure": "Not sure",
+        "yes": "Yes, I need financial aid",
+        "maybe": "Maybe, I'd like to know my options",
+        "no": "No, I don't need financial aid"
+      }
+    },
+    "submit": "Get Recommendations",
+    "submitting": "Saving...",
+    "required": "Required fields",
+    "success": "Profile saved! Redirecting to recommendations...",
+    "privacyNote": "Your information is private and secure. No email or personal data is collected.",
+    "mathHint": "Include course name and grade if available"
+  },
+  "compare": {
+    "title": "Compare Institutions",
+    "subtitle": "Select up to 4 institutions to compare side-by-side",
+    "addInstitution": "Add Institution",
+    "categories": {
+      "type": "Institution Type",
+      "programs": "Number of Programs",
+      "tuition": "Tuition Range",
+      "students": "Student Population",
+      "acceptance": "Acceptance Rate",
+      "classSize": "Average Class Size",
+      "campus": "Campus Size",
+      "online": "Online Programs",
+      "coop": "Co-op Programs",
+      "international": "International Students",
+      "housing": "On-Campus Housing",
+      "highlights": "Key Highlights",
+      "website": "Website"
+    },
+    "noSelection": "No Institutions Selected",
+    "noSelectionText": "Select institutions above to start comparing",
+    "backToHome": "Back to Home",
+    "remove": "Remove",
+    "visitWebsite": "Visit Website"
+  },
+  "footer": {
+    "partnerText": "Partnering with Alberta's leading institutions",
+    "about": {
+      "title": "About APAS",
+      "description": "AI-powered program recommendations to help Alberta students find their perfect post-secondary path."
+    },
+    "quickLinks": {
+      "title": "Quick Links",
+      "home": "Home",
+      "profile": "Create Profile",
+      "recommendations": "Get Recommendations"
+    },
+    "resources": {
+      "title": "Resources",
+      "alberta": "Alberta.ca",
+      "applyAlberta": "ApplyAlberta",
+      "studentAid": "Student Aid Alberta"
+    },
+    "contact": {
+      "title": "Contact",
+      "capstone": "Capstone Project 2026",
+      "demo": "Demo: April 17, 2026",
+      "powered": "Powered by Claude AI & Convex"
+    },
+    "copyright": "APAS - Alberta Post-Secondary Advisory System. All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "save": "Save",
+    "cancel": "Cancel",
+    "close": "Close",
+    "next": "Next",
+    "previous": "Previous",
+    "select": "Select"
+  },
+  "recommendations": {
+    "noProfile": "No Student Profile Found",
+    "noProfileText": "Please create a student profile first to get personalized recommendations.",
+    "createProfile": "Create Profile",
+    "loadingProfile": "Loading student profile...",
+    "loading": "Loading...",
+    "title": "Program Recommendations for",
+    "education": "Education",
+    "careerGoal": "Career Goal",
+    "mathScore": "Math Score",
+    "interests": "Interests",
+    "qualifyFor": "You Qualify For",
+    "upgradeNeeded": "Upgrade Needed",
+    "notYetEligible": "Not Yet Eligible",
+    "analyzing": "Claude AI is Analyzing Your Profile",
+    "analyzingSubtitle": "Reviewing programs across Alberta institutions",
+    "complete": "Complete",
+    "errorTitle": "Error Occurred",
+    "tryAgain": "Try Again",
+    "foundMatches": "Perfect Matches!",
+    "foundMatchesSubtitle": "Based on your goals, interests, and qualifications",
+    "newAnalysis": "New Analysis",
+    "programsSelected": "programs selected",
+    "compareReady": "Ready to compare side-by-side",
+    "comparePrograms": "Compare Programs",
+    "clear": "Clear",
+    "youQualify": "You Qualify!",
+    "youQualifyText": "You meet all requirements! You can apply now.",
+    "whyMissing": "What's missing:",
+    "whyProgram": "Why This Program?",
+    "careerAlignment": "Career Alignment",
+    "whatYouNeed": "What You'll Need",
+    "createNewProfile": "Create New Profile",
+    "backToHome": "Back to Home",
+    "compareTitle": "Compare Programs",
+    "category": "Category",
+    "matchScore": "Match Score",
+    "eligibility": "Eligibility",
+    "qualified": "Qualified",
+    "prerequisites": "Prerequisites",
+    "clearSelection": "Clear Selection",
+    "closeComparison": "Close Comparison",
+    "found": "Found"
+  }
+}

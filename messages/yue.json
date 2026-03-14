@@ -1,0 +1,251 @@
+{
+  "nav": {
+    "home": "主頁",
+    "profile": "建立個人檔案",
+    "compare": "比較",
+    "recommendations": "推薦",
+    "getStarted": "開始"
+  },
+  "home": {
+    "hero": {
+      "title": "搵到你喺阿爾伯塔省嘅完美專上課程",
+      "subtitle": "AI 驅動嘅推薦，幫你配對啱嘅機構同啱嘅課程",
+      "getStarted": "開始",
+      "learnMore": "了解更多"
+    },
+    "stats": {
+      "programs": "可用課程",
+      "institutions": "合作機構",
+      "matches": "個人化配對",
+      "powered": "驅動"
+    },
+    "features": {
+      "title": "強大功能引導你嘅旅程",
+      "subtitle": "所有你需要嘅嘢，幫你對專上教育做出明智決定",
+      "aiMatching": {
+        "title": "AI 智能配對",
+        "description": "先進嘅 AI 分析你嘅檔案，推薦符合你目標同資格嘅課程。"
+      },
+      "instantResults": {
+        "title": "即時結果",
+        "description": "喺60秒內獲得你嘅個人化課程推薦同詳細嘅配對見解。"
+      },
+      "prerequisiteChecking": {
+        "title": "先決條件檢查",
+        "description": "根據你而家嘅教育同數學成績自動查睇你符合邊啲課程嘅資格。"
+      },
+      "voiceInput": {
+        "title": "語音輸入支援",
+        "description": "用8種語言講出你嘅答案，令建立檔案更容易，更易於訪問。"
+      },
+      "labourMarket": {
+        "title": "勞動力市場數據",
+        "description": "查睇同每個課程相關嘅職業嘅薪金範圍同就業前景資訊。"
+      },
+      "pdfExport": {
+        "title": "PDF 匯出",
+        "description": "將你嘅推薦下載為專業 PDF，同顧問同屋企人分享。"
+      }
+    },
+    "howItWorks": {
+      "title": "點樣運作",
+      "subtitle": "通過三個簡單步驟獲得個人化課程推薦",
+      "step1": {
+        "title": "建立你嘅檔案",
+        "description": "喺簡單嘅表格入面分享你嘅教育背景、職業目標、興趣同資格。"
+      },
+      "step2": {
+        "title": "AI 分析",
+        "description": "我哋嘅 AI 審查阿爾伯塔省10間機構嘅106個課程，為你搵到最佳配對。"
+      },
+      "step3": {
+        "title": "查睇推薦",
+        "description": "獲得10個個人化課程推薦，附有詳細解釋同後續步驟。"
+      }
+    },
+    "partners": {
+      "title": "合作機構",
+      "subtitle": "10間值得信賴嘅阿爾伯塔省專上教育機構"
+    },
+    "finalCta": {
+      "title": "準備好搵到你嘅完美課程未？",
+      "subtitle": "今日就開始你嘅旅程，使用為你嘅目標度身訂造嘅 AI 驅動推薦",
+      "button": "建立你嘅檔案"
+    }
+  },
+  "profile": {
+    "title": "建立你嘅檔案",
+    "subtitle": "話畀我哋知關於你嘅資訊，以獲得個人化課程推薦",
+    "privacy": "你嘅私隱受到保護 - 唔需要電郵",
+    "sections": {
+      "personal": "個人資料",
+      "education": "教育背景",
+      "careerInterests": "職業目標同興趣",
+      "preferences": "課程偏好"
+    },
+    "fields": {
+      "name": "全名",
+      "educationLevel": "而家嘅教育水平",
+      "currentGrade": "而家/最終成績",
+      "mathScore": "數學水平/成績",
+      "careerGoals": "職業目標",
+      "interests": "興趣同愛好",
+      "workExperience": "工作經驗",
+      "preferredLocation": "首選地點",
+      "studyMode": "學習模式",
+      "financialAid": "經濟援助興趣"
+    },
+    "placeholders": {
+      "name": "輸入你嘅全名",
+      "grade": "例如：85%、3.5 GPA、B+",
+      "mathScore": "例如：Math 30-1、Calculus、85%",
+      "careerGoals": "你對咩職業有興趣？你想做咩類型嘅工作？",
+      "interests": "你鍾意咩科目或者活動？你對咩充滿熱情？",
+      "workExperience": "描述任何相關嘅工作經驗、實習或者義工工作"
+    },
+    "options": {
+      "educationLevel": {
+        "select": "揀你嘅教育水平",
+        "highSchool": "高中（12年級或同等學歷）",
+        "someCollege": "部分大學/學院",
+        "diploma": "學院文憑",
+        "bachelors": "學士學位",
+        "masters": "碩士學位或更高"
+      },
+      "location": {
+        "noPreference": "無偏好",
+        "calgary": "卡加利",
+        "edmonton": "愛民頓",
+        "lethbridge": "萊斯布里奇",
+        "online": "網上"
+      },
+      "studyMode": {
+        "noPreference": "無偏好",
+        "fullTime": "全日制",
+        "partTime": "兼讀制",
+        "online": "網上",
+        "hybrid": "混合"
+      },
+      "financialAid": {
+        "notSure": "唔肯定",
+        "yes": "係，我需要經濟援助",
+        "maybe": "可能，我想了解我嘅選擇",
+        "no": "唔使，我唔需要經濟援助"
+      }
+    },
+    "submit": "獲取推薦",
+    "submitting": "儲存緊...",
+    "required": "必填欄位",
+    "success": "檔案已儲存！正在重新導向到推薦...",
+    "privacyNote": "你嘅資訊係私密同安全嘅。唔會收集電郵或者個人數據。",
+    "mathHint": "如有，請包括課程名稱同成績"
+  },
+  "compare": {
+    "title": "比較機構",
+    "subtitle": "揀最多4間機構進行並排比較",
+    "addInstitution": "新增機構",
+    "categories": {
+      "type": "機構類型",
+      "programs": "課程數量",
+      "tuition": "學費範圍",
+      "students": "學生人數",
+      "acceptance": "錄取率",
+      "classSize": "平均班級規模",
+      "campus": "校園規模",
+      "online": "網上課程",
+      "coop": "合作課程",
+      "international": "國際學生",
+      "housing": "校內住宿",
+      "highlights": "重點亮點",
+      "website": "網站"
+    },
+    "noSelection": "未揀機構",
+    "noSelectionText": "喺上面揀機構開始比較",
+    "backToHome": "返回主頁",
+    "remove": "移除",
+    "visitWebsite": "訪問網站"
+  },
+  "footer": {
+    "partnerText": "同阿爾伯塔省領先機構合作",
+    "about": {
+      "title": "關於 APAS",
+      "description": "AI 驅動嘅課程推薦，幫助阿爾伯塔省學生搵到佢哋完美嘅專上教育道路。"
+    },
+    "quickLinks": {
+      "title": "快速連結",
+      "home": "主頁",
+      "profile": "建立檔案",
+      "recommendations": "獲取推薦"
+    },
+    "resources": {
+      "title": "資源",
+      "alberta": "Alberta.ca",
+      "applyAlberta": "ApplyAlberta",
+      "studentAid": "阿爾伯塔省學生援助"
+    },
+    "contact": {
+      "title": "聯絡",
+      "capstone": "頂點項目2026",
+      "demo": "示範：2026年4月17日",
+      "powered": "由 Claude AI 同 Convex 提供支援"
+    },
+    "copyright": "APAS - 阿爾伯塔省專上教育諮詢系統。保留所有權利。",
+    "privacy": "私隱政策",
+    "terms": "服務條款"
+  },
+  "common": {
+    "loading": "載入緊...",
+    "error": "錯誤",
+    "success": "成功",
+    "save": "儲存",
+    "cancel": "取消",
+    "close": "關閉",
+    "next": "下一個",
+    "previous": "上一個",
+    "select": "揀"
+  },
+  "recommendations": {
+    "noProfile": "未搵到學生檔案",
+    "noProfileText": "請先建立學生檔案以獲取個人化推薦。",
+    "createProfile": "建立檔案",
+    "loadingProfile": "正在載入學生檔案...",
+    "loading": "載入中...",
+    "title": "為以下學生推薦嘅課程",
+    "education": "教育背景",
+    "careerGoal": "職業目標",
+    "mathScore": "數學成績",
+    "interests": "興趣",
+    "qualifyFor": "你符合資格嘅",
+    "upgradeNeeded": "需要提升",
+    "notYetEligible": "暫時未符合資格",
+    "analyzing": "Claude AI 正在分析你嘅檔案",
+    "analyzingSubtitle": "正在審查阿爾伯塔省各院校嘅課程",
+    "complete": "完成",
+    "errorTitle": "發生錯誤",
+    "tryAgain": "再試一次",
+    "foundMatches": "個完美配對!",
+    "foundMatchesSubtitle": "根據你嘅目標、興趣同資歷",
+    "newAnalysis": "新分析",
+    "programsSelected": "個課程已選擇",
+    "compareReady": "準備好並排比較",
+    "comparePrograms": "比較課程",
+    "clear": "清除",
+    "youQualify": "你符合資格!",
+    "youQualifyText": "你符合所有要求！依家可以申請。",
+    "whyMissing": "缺少咩:",
+    "whyProgram": "點解選呢個課程?",
+    "careerAlignment": "職業契合度",
+    "whatYouNeed": "你需要準備嘅",
+    "createNewProfile": "建立新檔案",
+    "backToHome": "返回首頁",
+    "compareTitle": "比較課程",
+    "category": "類別",
+    "matchScore": "配對分數",
+    "eligibility": "資格",
+    "qualified": "符合資格",
+    "prerequisites": "先決條件",
+    "clearSelection": "清除選擇",
+    "closeComparison": "關閉比較",
+    "found": "搵到"
+  }
+}

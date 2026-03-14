@@ -1,0 +1,251 @@
+{
+  "nav": {
+    "home": "Trang chủ",
+    "profile": "Tạo hồ sơ",
+    "compare": "So sánh",
+    "recommendations": "Đề xuất",
+    "getStarted": "Bắt đầu"
+  },
+  "home": {
+    "hero": {
+      "title": "Tìm chương trình sau trung học hoàn hảo của bạn tại Alberta",
+      "subtitle": "Đề xuất được hỗ trợ bởi AI để kết nối bạn với chương trình phù hợp tại cơ sở giáo dục phù hợp",
+      "getStarted": "Bắt đầu",
+      "learnMore": "Tìm hiểu thêm"
+    },
+    "stats": {
+      "programs": "Chương trình có sẵn",
+      "institutions": "Cơ sở đối tác",
+      "matches": "Kết quả phù hợp cá nhân",
+      "powered": "Được hỗ trợ"
+    },
+    "features": {
+      "title": "Tính năng mạnh mẽ để hướng dẫn hành trình của bạn",
+      "subtitle": "Mọi thứ bạn cần để đưa ra quyết định sáng suốt về giáo dục sau trung học",
+      "aiMatching": {
+        "title": "Ghép nối bằng AI",
+        "description": "AI tiên tiến phân tích hồ sơ của bạn để đề xuất các chương trình phù hợp với mục tiêu và trình độ của bạn."
+      },
+      "instantResults": {
+        "title": "Kết quả ngay lập tức",
+        "description": "Nhận đề xuất chương trình cá nhân hóa của bạn trong vòng chưa đầy 60 giây với thông tin chi tiết về sự phù hợp."
+      },
+      "prerequisiteChecking": {
+        "title": "Kiểm tra điều kiện tiên quyết",
+        "description": "Tự động xem bạn đủ điều kiện cho những chương trình nào dựa trên trình độ học vấn hiện tại và điểm toán."
+      },
+      "voiceInput": {
+        "title": "Hỗ trợ nhập giọng nói",
+        "description": "Nói câu trả lời của bạn bằng 8 ngôn ngữ để tạo hồ sơ dễ dàng hơn và khả năng tiếp cận tốt hơn."
+      },
+      "labourMarket": {
+        "title": "Dữ liệu thị trường lao động",
+        "description": "Xem phạm vi lương và thông tin triển vọng việc làm cho các nghề nghiệp liên quan đến từng chương trình."
+      },
+      "pdfExport": {
+        "title": "Xuất PDF",
+        "description": "Tải xuống đề xuất của bạn dưới dạng PDF chuyên nghiệp để chia sẻ với cố vấn và gia đình."
+      }
+    },
+    "howItWorks": {
+      "title": "Cách hoạt động",
+      "subtitle": "Nhận đề xuất chương trình cá nhân hóa trong ba bước đơn giản",
+      "step1": {
+        "title": "Tạo hồ sơ của bạn",
+        "description": "Chia sẻ lý lịch học vấn, mục tiêu nghề nghiệp, sở thích và trình độ của bạn trong một biểu mẫu đơn giản."
+      },
+      "step2": {
+        "title": "Phân tích AI",
+        "description": "AI của chúng tôi xem xét 106 chương trình tại 10 cơ sở ở Alberta để tìm những kết quả phù hợp nhất cho bạn."
+      },
+      "step3": {
+        "title": "Xem lại đề xuất",
+        "description": "Nhận 10 đề xuất chương trình cá nhân hóa với giải thích chi tiết và các bước tiếp theo."
+      }
+    },
+    "partners": {
+      "title": "Cơ sở đối tác",
+      "subtitle": "10 cơ sở giáo dục sau trung học đáng tin cậy tại Alberta"
+    },
+    "finalCta": {
+      "title": "Sẵn sàng tìm chương trình hoàn hảo của bạn?",
+      "subtitle": "Bắt đầu hành trình của bạn ngay hôm nay với các đề xuất được hỗ trợ bởi AI phù hợp với mục tiêu của bạn",
+      "button": "Tạo hồ sơ của bạn"
+    }
+  },
+  "profile": {
+    "title": "Tạo hồ sơ của bạn",
+    "subtitle": "Cho chúng tôi biết về bạn để nhận đề xuất chương trình cá nhân hóa",
+    "privacy": "Quyền riêng tư của bạn được bảo vệ - không cần email",
+    "sections": {
+      "personal": "Thông tin cá nhân",
+      "education": "Lý lịch học vấn",
+      "careerInterests": "Mục tiêu nghề nghiệp và sở thích",
+      "preferences": "Tùy chọn chương trình"
+    },
+    "fields": {
+      "name": "Họ và tên",
+      "educationLevel": "Trình độ học vấn hiện tại",
+      "currentGrade": "Điểm hiện tại/cuối cùng",
+      "mathScore": "Trình độ/Điểm toán",
+      "careerGoals": "Mục tiêu nghề nghiệp",
+      "interests": "Sở thích và thú vui",
+      "workExperience": "Kinh nghiệm làm việc",
+      "preferredLocation": "Địa điểm ưu tiên",
+      "studyMode": "Chế độ học",
+      "financialAid": "Quan tâm đến hỗ trợ tài chính"
+    },
+    "placeholders": {
+      "name": "Nhập họ và tên của bạn",
+      "grade": "ví dụ: 85%, 3.5 GPA, B+",
+      "mathScore": "ví dụ: Math 30-1, Calculus, 85%",
+      "careerGoals": "Bạn quan tâm đến nghề nghiệp nào? Bạn muốn làm loại công việc gì?",
+      "interests": "Bạn thích những môn học hoặc hoạt động nào? Bạn đam mê điều gì?",
+      "workExperience": "Mô tả bất kỳ kinh nghiệm làm việc, thực tập hoặc công việc tình nguyện liên quan nào"
+    },
+    "options": {
+      "educationLevel": {
+        "select": "Chọn trình độ học vấn của bạn",
+        "highSchool": "Trung học phổ thông (Lớp 12 hoặc tương đương)",
+        "someCollege": "Một số cao đẳng/đại học",
+        "diploma": "Bằng cao đẳng",
+        "bachelors": "Bằng cử nhân",
+        "masters": "Bằng thạc sĩ hoặc cao hơn"
+      },
+      "location": {
+        "noPreference": "Không ưu tiên",
+        "calgary": "Calgary",
+        "edmonton": "Edmonton",
+        "lethbridge": "Lethbridge",
+        "online": "Trực tuyến"
+      },
+      "studyMode": {
+        "noPreference": "Không ưu tiên",
+        "fullTime": "Toàn thời gian",
+        "partTime": "Bán thời gian",
+        "online": "Trực tuyến",
+        "hybrid": "Kết hợp"
+      },
+      "financialAid": {
+        "notSure": "Không chắc chắn",
+        "yes": "Có, tôi cần hỗ trợ tài chính",
+        "maybe": "Có thể, tôi muốn biết các lựa chọn của mình",
+        "no": "Không, tôi không cần hỗ trợ tài chính"
+      }
+    },
+    "submit": "Nhận đề xuất",
+    "submitting": "Đang lưu...",
+    "required": "Trường bắt buộc",
+    "success": "Đã lưu hồ sơ! Đang chuyển hướng đến đề xuất...",
+    "privacyNote": "Thông tin của bạn được bảo mật và an toàn. Không thu thập email hoặc dữ liệu cá nhân.",
+    "mathHint": "Bao gồm tên khóa học và điểm nếu có"
+  },
+  "compare": {
+    "title": "So sánh cơ sở",
+    "subtitle": "Chọn tối đa 4 cơ sở để so sánh cạnh nhau",
+    "addInstitution": "Thêm cơ sở",
+    "categories": {
+      "type": "Loại cơ sở",
+      "programs": "Số lượng chương trình",
+      "tuition": "Phạm vi học phí",
+      "students": "Số lượng sinh viên",
+      "acceptance": "Tỷ lệ chấp nhận",
+      "classSize": "Quy mô lớp trung bình",
+      "campus": "Quy mô khu học xá",
+      "online": "Chương trình trực tuyến",
+      "coop": "Chương trình hợp tác",
+      "international": "Sinh viên quốc tế",
+      "housing": "Nhà ở trong khu học xá",
+      "highlights": "Điểm nổi bật chính",
+      "website": "Trang web"
+    },
+    "noSelection": "Chưa chọn cơ sở nào",
+    "noSelectionText": "Chọn các cơ sở ở trên để bắt đầu so sánh",
+    "backToHome": "Quay lại trang chủ",
+    "remove": "Xóa",
+    "visitWebsite": "Truy cập trang web"
+  },
+  "footer": {
+    "partnerText": "Hợp tác với các cơ sở hàng đầu của Alberta",
+    "about": {
+      "title": "Về APAS",
+      "description": "Đề xuất chương trình được hỗ trợ bởi AI để giúp sinh viên Alberta tìm con đường sau trung học hoàn hảo của họ."
+    },
+    "quickLinks": {
+      "title": "Liên kết nhanh",
+      "home": "Trang chủ",
+      "profile": "Tạo hồ sơ",
+      "recommendations": "Nhận đề xuất"
+    },
+    "resources": {
+      "title": "Tài nguyên",
+      "alberta": "Alberta.ca",
+      "applyAlberta": "ApplyAlberta",
+      "studentAid": "Hỗ trợ sinh viên Alberta"
+    },
+    "contact": {
+      "title": "Liên hệ",
+      "capstone": "Dự án tốt nghiệp 2026",
+      "demo": "Demo: 17 tháng 4, 2026",
+      "powered": "Được hỗ trợ bởi Claude AI và Convex"
+    },
+    "copyright": "APAS - Hệ thống tư vấn sau trung học Alberta. Đã đăng ký bản quyền.",
+    "privacy": "Chính sách bảo mật",
+    "terms": "Điều khoản dịch vụ"
+  },
+  "common": {
+    "loading": "Đang tải...",
+    "error": "Lỗi",
+    "success": "Thành công",
+    "save": "Lưu",
+    "cancel": "Hủy",
+    "close": "Đóng",
+    "next": "Tiếp theo",
+    "previous": "Trước đó",
+    "select": "Chọn"
+  },
+  "recommendations": {
+    "noProfile": "Không tìm thấy hồ sơ học sinh",
+    "noProfileText": "Vui lòng tạo hồ sơ học sinh trước để nhận được các khuyến nghị cá nhân hóa.",
+    "createProfile": "Tạo hồ sơ",
+    "loadingProfile": "Đang tải hồ sơ học sinh...",
+    "loading": "Đang tải...",
+    "title": "Đề xuất chương trình cho",
+    "education": "Giáo dục",
+    "careerGoal": "Mục tiêu nghề nghiệp",
+    "mathScore": "Điểm toán",
+    "interests": "Sở thích",
+    "qualifyFor": "Bạn đủ điều kiện cho",
+    "upgradeNeeded": "Cần nâng cao",
+    "notYetEligible": "Chưa đủ điều kiện",
+    "analyzing": "Claude AI đang phân tích hồ sơ của bạn",
+    "analyzingSubtitle": "Xem xét các chương trình tại các trường đại học Alberta",
+    "complete": "Hoàn thành",
+    "errorTitle": "Đã xảy ra lỗi",
+    "tryAgain": "Thử lại",
+    "foundMatches": "Kết quả phù hợp hoàn hảo!",
+    "foundMatchesSubtitle": "Dựa trên mục tiêu, sở thích và trình độ của bạn",
+    "newAnalysis": "Phân tích mới",
+    "programsSelected": "chương trình đã chọn",
+    "compareReady": "Sẵn sàng so sánh cạnh nhau",
+    "comparePrograms": "So sánh chương trình",
+    "clear": "Xóa",
+    "youQualify": "Bạn đủ điều kiện!",
+    "youQualifyText": "Bạn đáp ứng tất cả các yêu cầu! Bạn có thể nộp đơn ngay bây giờ.",
+    "whyMissing": "Còn thiếu:",
+    "whyProgram": "Tại sao chương trình này?",
+    "careerAlignment": "Phù hợp nghề nghiệp",
+    "whatYouNeed": "Những gì bạn sẽ cần",
+    "createNewProfile": "Tạo hồ sơ mới",
+    "backToHome": "Quay lại trang chủ",
+    "compareTitle": "So sánh chương trình",
+    "category": "Danh mục",
+    "matchScore": "Điểm phù hợp",
+    "eligibility": "Điều kiện",
+    "qualified": "Đủ điều kiện",
+    "prerequisites": "Điều kiện tiên quyết",
+    "clearSelection": "Xóa lựa chọn",
+    "closeComparison": "Đóng so sánh",
+    "found": "Tìm thấy"
+  }
+}

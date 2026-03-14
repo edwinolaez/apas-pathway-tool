@@ -1,0 +1,251 @@
+{
+  "nav": {
+    "home": "主页",
+    "profile": "创建档案",
+    "compare": "比较",
+    "recommendations": "推荐",
+    "getStarted": "开始"
+  },
+  "home": {
+    "hero": {
+      "title": "找到您在阿尔伯塔省的完美专上课程",
+      "subtitle": "AI驱动的推荐，为您匹配合适机构的合适课程",
+      "getStarted": "开始",
+      "learnMore": "了解更多"
+    },
+    "stats": {
+      "programs": "可用课程",
+      "institutions": "合作机构",
+      "matches": "个性化匹配",
+      "powered": "驱动"
+    },
+    "features": {
+      "title": "强大功能指引您的旅程",
+      "subtitle": "您需要的一切，以便对您的专上教育做出明智决定",
+      "aiMatching": {
+        "title": "AI智能匹配",
+        "description": "先进的AI分析您的档案，推荐符合您目标和资格的课程。"
+      },
+      "instantResults": {
+        "title": "即时结果",
+        "description": "在60秒内获得您的个性化课程推荐和详细的匹配见解。"
+      },
+      "prerequisiteChecking": {
+        "title": "先决条件检查",
+        "description": "根据您当前的教育和数学成绩自动查看您符合哪些课程的资格。"
+      },
+      "voiceInput": {
+        "title": "语音输入支持",
+        "description": "用8种语言说出您的答案，让创建档案更容易，更易于访问。"
+      },
+      "labourMarket": {
+        "title": "劳动力市场数据",
+        "description": "查看与每个课程相关的职业的薪资范围和就业前景信息。"
+      },
+      "pdfExport": {
+        "title": "PDF导出",
+        "description": "将您的推荐下载为专业PDF，与顾问和家人分享。"
+      }
+    },
+    "howItWorks": {
+      "title": "如何运作",
+      "subtitle": "通过三个简单步骤获得个性化课程推荐",
+      "step1": {
+        "title": "创建您的档案",
+        "description": "在简单的表格中分享您的教育背景、职业目标、兴趣和资格。"
+      },
+      "step2": {
+        "title": "AI分析",
+        "description": "我们的AI审查阿尔伯塔省10所机构的106个课程，为您找到最佳匹配。"
+      },
+      "step3": {
+        "title": "查看推荐",
+        "description": "获得10个个性化课程推荐，附有详细解释和后续步骤。"
+      }
+    },
+    "partners": {
+      "title": "合作机构",
+      "subtitle": "10所值得信赖的阿尔伯塔省专上教育机构"
+    },
+    "finalCta": {
+      "title": "准备好找到您的完美课程了吗？",
+      "subtitle": "今天就开始您的旅程，使用为您的目标量身定制的AI驱动推荐",
+      "button": "创建您的档案"
+    }
+  },
+  "profile": {
+    "title": "创建您的档案",
+    "subtitle": "告诉我们关于您的信息，以获得个性化课程推荐",
+    "privacy": "您的隐私受到保护 - 无需电子邮件",
+    "sections": {
+      "personal": "个人信息",
+      "education": "教育背景",
+      "careerInterests": "职业目标与兴趣",
+      "preferences": "课程偏好"
+    },
+    "fields": {
+      "name": "全名",
+      "educationLevel": "当前教育水平",
+      "currentGrade": "当前/最终成绩",
+      "mathScore": "数学水平/成绩",
+      "careerGoals": "职业目标",
+      "interests": "兴趣与爱好",
+      "workExperience": "工作经验",
+      "preferredLocation": "首选地点",
+      "studyMode": "学习模式",
+      "financialAid": "经济援助兴趣"
+    },
+    "placeholders": {
+      "name": "输入您的全名",
+      "grade": "例如：85%、3.5 GPA、B+",
+      "mathScore": "例如：Math 30-1、Calculus、85%",
+      "careerGoals": "您对什么职业感兴趣？您想做什么样的工作？",
+      "interests": "您喜欢什么学科或活动？您对什么充满热情？",
+      "workExperience": "描述任何相关的工作经验、实习或志愿工作"
+    },
+    "options": {
+      "educationLevel": {
+        "select": "选择您的教育水平",
+        "highSchool": "高中（12年级或同等学历）",
+        "someCollege": "部分大学/学院",
+        "diploma": "大学文凭",
+        "bachelors": "学士学位",
+        "masters": "硕士学位或更高"
+      },
+      "location": {
+        "noPreference": "无偏好",
+        "calgary": "卡尔加里",
+        "edmonton": "埃德蒙顿",
+        "lethbridge": "莱斯布里奇",
+        "online": "在线"
+      },
+      "studyMode": {
+        "noPreference": "无偏好",
+        "fullTime": "全日制",
+        "partTime": "兼读制",
+        "online": "在线",
+        "hybrid": "混合"
+      },
+      "financialAid": {
+        "notSure": "不确定",
+        "yes": "是的，我需要经济援助",
+        "maybe": "也许，我想了解我的选择",
+        "no": "不，我不需要经济援助"
+      }
+    },
+    "submit": "获取推荐",
+    "submitting": "保存中...",
+    "required": "必填字段",
+    "success": "档案已保存！正在重定向到推荐...",
+    "privacyNote": "您的信息是私密和安全的。不会收集电子邮件或个人数据。",
+    "mathHint": "如有，请包括课程名称和成绩"
+  },
+  "compare": {
+    "title": "比较机构",
+    "subtitle": "选择最多4个机构进行并排比较",
+    "addInstitution": "添加机构",
+    "categories": {
+      "type": "机构类型",
+      "programs": "课程数量",
+      "tuition": "学费范围",
+      "students": "学生人数",
+      "acceptance": "录取率",
+      "classSize": "平均班级规模",
+      "campus": "校园规模",
+      "online": "在线课程",
+      "coop": "合作课程",
+      "international": "国际学生",
+      "housing": "校内住宿",
+      "highlights": "重点亮点",
+      "website": "网站"
+    },
+    "noSelection": "未选择机构",
+    "noSelectionText": "在上方选择机构开始比较",
+    "backToHome": "返回主页",
+    "remove": "删除",
+    "visitWebsite": "访问网站"
+  },
+  "footer": {
+    "partnerText": "与阿尔伯塔省领先机构合作",
+    "about": {
+      "title": "关于APAS",
+      "description": "AI驱动的课程推荐，帮助阿尔伯塔省学生找到他们完美的专上教育道路。"
+    },
+    "quickLinks": {
+      "title": "快速链接",
+      "home": "主页",
+      "profile": "创建档案",
+      "recommendations": "获取推荐"
+    },
+    "resources": {
+      "title": "资源",
+      "alberta": "Alberta.ca",
+      "applyAlberta": "ApplyAlberta",
+      "studentAid": "阿尔伯塔省学生援助"
+    },
+    "contact": {
+      "title": "联系",
+      "capstone": "顶点项目2026",
+      "demo": "演示：2026年4月17日",
+      "powered": "由Claude AI和Convex提供支持"
+    },
+    "copyright": "APAS - 阿尔伯塔省专上教育咨询系统。保留所有权利。",
+    "privacy": "隐私政策",
+    "terms": "服务条款"
+  },
+  "common": {
+    "loading": "加载中...",
+    "error": "错误",
+    "success": "成功",
+    "save": "保存",
+    "cancel": "取消",
+    "close": "关闭",
+    "next": "下一个",
+    "previous": "上一个",
+    "select": "选择"
+  },
+  "recommendations": {
+    "noProfile": "未找到学生档案",
+    "noProfileText": "请先创建学生档案以获取个性化推荐。",
+    "createProfile": "创建档案",
+    "loadingProfile": "正在加载学生档案...",
+    "loading": "加载中...",
+    "title": "为以下学生推荐的课程",
+    "education": "教育背景",
+    "careerGoal": "职业目标",
+    "mathScore": "数学成绩",
+    "interests": "兴趣爱好",
+    "qualifyFor": "您符合条件的",
+    "upgradeNeeded": "需要提升",
+    "notYetEligible": "暂不符合条件",
+    "analyzing": "Claude AI 正在分析您的档案",
+    "analyzingSubtitle": "正在审查阿尔伯塔省各院校的课程",
+    "complete": "完成",
+    "errorTitle": "发生错误",
+    "tryAgain": "重试",
+    "foundMatches": "个完美匹配!",
+    "foundMatchesSubtitle": "基于您的目标、兴趣和资历",
+    "newAnalysis": "新分析",
+    "programsSelected": "个课程已选择",
+    "compareReady": "准备并排比较",
+    "comparePrograms": "比较课程",
+    "clear": "清除",
+    "youQualify": "您符合条件!",
+    "youQualifyText": "您满足所有要求！现在可以申请。",
+    "whyMissing": "缺少什么:",
+    "whyProgram": "为什么选择这个课程?",
+    "careerAlignment": "职业契合度",
+    "whatYouNeed": "您需要准备的",
+    "createNewProfile": "创建新档案",
+    "backToHome": "返回首页",
+    "compareTitle": "比较课程",
+    "category": "类别",
+    "matchScore": "匹配分数",
+    "eligibility": "资格",
+    "qualified": "符合条件",
+    "prerequisites": "前提条件",
+    "clearSelection": "清除选择",
+    "closeComparison": "关闭比较",
+    "found": "找到"
+  }
+}

@@ -31,7 +31,7 @@ export default function HomePage() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">Find Your Perfect Alberta Post-Secondary Program</h1>
             <p className="text-xl md:text-2xl mb-8 text-blue-100 leading-relaxed">AI-powered recommendations to match you with the right program at the right institution</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/profile" className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-blue-700 bg-white rounded-lg hover:bg-blue-50 transition-all shadow-lg">Get Started</Link>
+              <Link href="profile" className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-blue-700 bg-white rounded-lg hover:bg-blue-50 transition-all shadow-lg">Get Started</Link>
               <a href="#partners" className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-blue-800 bg-opacity-50 rounded-lg hover:bg-opacity-70 transition-all border-2 border-white border-opacity-30">Learn More</a>
             </div>
           </div>
@@ -77,7 +77,7 @@ export default function HomePage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Find Your Perfect Program?</h2>
           <p className="text-xl mb-8 text-blue-100">Start your journey today with AI-powered recommendations</p>
-          <Link href="/profile" className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-blue-700 bg-white rounded-lg hover:bg-blue-50 transition-all shadow-lg">Create Your Profile</Link>
+          <Link href="profile" className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-blue-700 bg-white rounded-lg hover:bg-blue-50 transition-all shadow-lg">Create Your Profile</Link>
         </div>
       </section>
     </div>

@@ -449,7 +449,7 @@ export default function ComparePage() {
         )}
 
         <div className="mt-8 text-center">
-          <Link href="/" className="inline-flex items-center px-6 py-3 bg-white text-gray-700 font-medium rounded-md border border-gray-300 hover:bg-gray-50 transition-colors">
+          <Link href="../" className="inline-flex items-center px-6 py-3 bg-white text-gray-700 font-medium rounded-md border border-gray-300 hover:bg-gray-50 transition-colors">
             ← Back to Home
           </Link>
         </div>
